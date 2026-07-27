@@ -1,0 +1,44 @@
+# Ignore embedded Git repositories
+LibreTranslate/
+argos-translate/
+argos-translate-gui/
+
+# Ignore any file with "token" in its name
+*token*
+**/*token*
+
+# Ignore these filetypes
+*.mp3
+*.pdf
+*.epub
+*.exe
+**/*.mp3
+**/*.pdf
+**/*.epub
+**/*.exe
+*.pyc
+*.pyo
+
+
+# Ignore virtual environments
+.venv/
+.env/
+virtualenv/
+
+# Ignore common cache/config directories
+.cache/
+.config/
+.ipython/
+.local/
+.virtualenvs/
+
+# Ignore IDE folders
+.vscode/
+.idea/
+
+# Ignore system files
+.lesshst
+.bashrc
+.vimrc
+.profile
+.pythonstartup.py
