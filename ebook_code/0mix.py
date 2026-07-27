@@ -8,7 +8,7 @@ AudioSegment.ffprobe = r".\ffprobe.exe"
 
 song = "dmi.mp3"
 audio_book_folder = "volodarsky"
-start_file = 12
+start_file = 18
 end_file = 22
 
 #narrate_file = "part_13.mp3"
@@ -19,7 +19,7 @@ for a in range(start_file,end_file+1):
     output_file = narrate_file.replace("part","0"+audio_book_folder+"_part")
 
     #output_file = "0"+audio_book_folder+"_"+narrate_file.replace(".mp3","_")+song
-    print("output file is")
+    print("generating")
     print(output_file)
     #print(song+" and "+narrate_file)
     sound2 = AudioSegment.from_mp3(narrate_file)
