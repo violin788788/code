@@ -8,16 +8,20 @@ AudioSegment.ffprobe = r".\ffprobe.exe"
 
 song = "dmi.mp3"
 audio_book_folder = "volodarsky"
-start_file = 8
+start_file = 12
 end_file = 22
 
 #narrate_file = "part_13.mp3"
 start = datetime.now()
 sound1 = AudioSegment.from_mp3(song)
-for a in range(start_file,end_file):
+for a in range(start_file,end_file+1):
     narrate_file = os.path.join(audio_book_folder,"part_"+str(a)+".mp3")
-    print("starting to gen")
-    print(song+" and "+narrate_file)
+    output_file = narrate_file.replace("part","0"+audio_book_folder+"_part")
+
+    #output_file = "0"+audio_book_folder+"_"+narrate_file.replace(".mp3","_")+song
+    print("output file is")
+    print(output_file)
+    #print(song+" and "+narrate_file)
     sound2 = AudioSegment.from_mp3(narrate_file)
     if len(sound1) > len(sound2):
         narration, bg_music = sound1, sound2
@@ -29,7 +33,6 @@ for a in range(start_file,end_file):
     bg_music = bg_music - 15
     # Overlay with automatic looping (no huge repeated audio in memory)
     mixed_sound = narration.overlay(bg_music, loop=True)
-    output_file = narrate_file.replace(".mp3","_")+song
     mixed_sound.export(output_file, format="mp3")
     end = datetime.now()
     difference = end - start
