@@ -1,19 +1,19 @@
 import sys,os
 #new_path = os.path.join(a,b,c)
 #cwd = os.getcwd()
-
-
 from pydub import AudioSegment
 from datetime import datetime
 AudioSegment.converter = r".\ffmpeg.exe"
 AudioSegment.ffprobe = r".\ffprobe.exe"
+
 song = "dmi.mp3"
-audio_book_folder = "proudhon"
+audio_book_folder = "volodarsky"
+start_file = 8
+end_file = 22
+
 #narrate_file = "part_13.mp3"
 start = datetime.now()
 sound1 = AudioSegment.from_mp3(song)
-start_file = 15
-end_file = 20
 for a in range(start_file,end_file):
     narrate_file = os.path.join(audio_book_folder,"part_"+str(a)+".mp3")
     print("starting to gen")
