@@ -8,12 +8,11 @@ if name.lower().endswith(".py"):
     name=name[:-3]
 if name.lower().endswith(".bat"):
     name=name[:-4]
-py_text='''
-
+py_text=
+'''
 import sys,os
 #new_file = os.path.join(a,b,c)
 #cwd = os.getcwd()
-
 '''
 bat_text=f'''@echo off
 cd /d "%~dp0"

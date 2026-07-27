@@ -11,9 +11,8 @@ if name.lower().endswith(".bat"):
 py_text='''
 
 import sys,os
-
-new_path = os.path.join(a,b,c)
-cwd = os.getcwd()
+#new_file = os.path.join(a,b,c)
+#cwd = os.getcwd()
 
 '''
 bat_text=f'''@echo off
