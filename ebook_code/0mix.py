@@ -12,9 +12,9 @@ start_file = 12
 end_file = 22
 
 #narrate_file = "part_13.mp3"
-start = datetime.now()
 sound1 = AudioSegment.from_mp3(song)
 for a in range(start_file,end_file+1):
+    start_time = datetime.now()
     narrate_file = os.path.join(audio_book_folder,"part_"+str(a)+".mp3")
     output_file = narrate_file.replace("part","0"+audio_book_folder+"_part")
 
@@ -34,7 +34,7 @@ for a in range(start_file,end_file+1):
     # Overlay with automatic looping (no huge repeated audio in memory)
     mixed_sound = narration.overlay(bg_music, loop=True)
     mixed_sound.export(output_file, format="mp3")
-    end = datetime.now()
-    difference = end - start
-    print("time to gen file = ", difference)
+    end_time = datetime.now()
+    time_difference = end_time - start_time
+    print("time to gen file = ", time_difference)
     os.startfile(os.getcwd())
