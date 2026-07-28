@@ -1,7 +1,7 @@
 from PIL import Image
 import os,sys
 
-input_directory = "cheka"
+input_directory = "battle_of_britain"
 
 imgs = [f for f in os.listdir(input_directory) if f.lower().endswith(".png")]
 

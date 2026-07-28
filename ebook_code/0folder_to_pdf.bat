@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "pdf_screenshots.py"
+python "folder_to_pdf.py"
 pause

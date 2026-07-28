@@ -18,6 +18,12 @@ argos-translate-gui/
 **/*.exe
 *.pyc
 *.pyo
+*.png
+**/*.png
+*.jpg
+**/*.jpg
+
+
 
 
 # Ignore virtual environments

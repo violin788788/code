@@ -1,7 +1,7 @@
 from ebooklib import epub
 from pathlib import Path
 
-img_dir = Path("pages_500")
+img_dir = Path("battle_of_britain")
 book = epub.EpubBook()
 
 book.set_title("Scan")
@@ -9,7 +9,7 @@ book.set_language("en")
 
 chapters = []
 
-for i, img_path in enumerate(sorted(img_dir.glob("*.jpg"))):
+for i, img_path in enumerate(sorted(img_dir.glob("*.png"))):
     print(i)
     img_name = img_path.name
 

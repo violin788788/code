@@ -1,37 +1,75 @@
-import sys,os
-#new_file = os.path.join(a,b,c)
-#cwd = os.getcwd()
+from pynput import mouse
 import pyautogui
 import time
-import os
-# ==========================
-# Settings
-# ==========================
-# Screenshot region (left, top, width, height)
-# Replace these values with your own.
-SCREENSHOT_REGION = (100, 100, 1200, 1600)
-# Coordinates to click for "Next Page"
-# Replace these with your own.
-NEXT_BUTTON = (1800, 900)
-# Number of pages
-NUM_PAGES = 300
-# Time to wait after clicking next page
-PAGE_LOAD_DELAY = 0.8
-# Folder to save screenshots
-OUTPUT_FOLDER = "ww2_book_screenshots"
-# ==========================
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
-print("Starting in 5 seconds...")
-print("Switch to your ebook window.")
-time.sleep(5)
-for i in range(1, NUM_PAGES + 1):
-    filename = os.path.join(OUTPUT_FOLDER, f"page_{i:03}.png")
-    # Take screenshot
-    screenshot = pyautogui.screenshot(region=SCREENSHOT_REGION)
-    screenshot.save(filename)
-    print(f"Saved {filename}")
-    # Go to next page
-    pyautogui.click(*NEXT_BUTTON)
-    # Wait for page to load
-    time.sleep(PAGE_LOAD_DELAY)
-print("Done!")
+import os,sys
+
+clicks = []
+
+print("Do 3 clicks:")
+print("1st = top-left of capture area")
+print("2nd = bottom-right of capture area")
+#print("3rd = next-page button")
+
+def on_click(x, y, button, pressed):
+    if pressed and button == mouse.Button.left:
+        clicks.append((x, y))
+        print(f"Captured click {len(clicks)} at: ({x}, {y})")
+
+        if len(clicks) == 2:
+            return False  # stop listener
+
+with mouse.Listener(on_click=on_click) as listener:
+    listener.join()
+
+# unpack clicks
+top_left = clicks[0]
+bottom_right = clicks[1]
+#next_button = clicks[2]
+
+print(clicks)
+print(clicks[0])
+print(clicks[0][0]+clicks[1][0])
+print(clicks[1])
+#sys.exit()
+
+# user inputs
+pages = int(input("\nHow many pages to capture? "))
+folder = input("Enter folder name to save screenshots: ")
+
+os.makedirs(folder, exist_ok=True)
+
+# calculate region
+x1, y1 = top_left
+x2, y2 = bottom_right
+
+width = x2 - x1
+height = y2 - y1
+
+print("\nStarting capture in 3 seconds...")
+time.sleep(3)
+
+
+mid_x = (clicks[0][0]+clicks[1][0]) // 2
+mid_y = (clicks[0][1]+clicks[1][1]) // 2
+
+# Move the mouse and left-click at the center point
+pyautogui.click(x=mid_x, y=mid_y)
+
+
+for i in range(pages):
+    # screenshot region
+    screenshot = pyautogui.screenshot(region=(x1, y1, width, height))
+    
+    file_path = os.path.join(folder, f"page_{i+1}.png")
+    screenshot.save(file_path)
+
+    print(f"Saved {file_path}")
+
+    # click next page (skip after last page)
+    if i != pages - 1:
+        #pyautogui.click(next_button)
+        pyautogui.press('pagedown')
+        #pyautogui.press('right')
+        time.sleep(1)
+
+print("\nDone.")
