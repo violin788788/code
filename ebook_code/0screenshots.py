@@ -70,6 +70,7 @@ for i in range(pages):
         #pyautogui.click(next_button)
         pyautogui.press('pagedown')
         #pyautogui.press('right')
-        time.sleep(1)
+        #time to wait between new pages
+        time.sleep(2)
 
 print("\nDone.")
