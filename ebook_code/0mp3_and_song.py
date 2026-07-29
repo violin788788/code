@@ -7,9 +7,9 @@ AudioSegment.converter = r".\ffmpeg.exe"
 AudioSegment.ffprobe = r".\ffprobe.exe"
 
 song = "dmitri.mp3"
-audio_book_folder = "ten_days"
-start_file = 1
-end_file = 9
+audio_book_folder = "grant"
+start_file = 6
+end_file = 12
 
 #narrate_file = "part_13.mp3"
 sound1 = AudioSegment.from_mp3(song)
