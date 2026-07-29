@@ -7,7 +7,7 @@ AudioSegment.converter = r".\ffmpeg.exe"
 AudioSegment.ffprobe = r".\ffprobe.exe"
 
 song = "dmitri.mp3"
-audio_book_folder = "rothschilds"
+audio_book_folder = "ten_days"
 start_file = 1
 end_file = 9
 
