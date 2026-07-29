@@ -1,3 +1,20 @@
+import os
+import subprocess
+ffmpeg=r".\ffmpeg.exe"
+song="dmitri.mp3"
+directory="grant"
+start_file=6
+end_file=12
+for a in range(start_file,end_file):
+    print(directory,start_file,end_file)
+    part_file=os.path.join(directory,"part_"+str(a)+".mp3")
+    output_file=os.path.join(directory,"grant_"+str(a)+".mp3")
+    cmd=[ffmpeg,"-y","-vn","-i",part_file,"-stream_loop","-1","-vn","-i",song,"-filter_complex","[1:a]volume=0.18[bg];[0:a][bg]amix=inputs=2:duration=first:dropout_transition=2","-map_metadata","-1","-c:a","libmp3lame","-b:a","128k",output_file]
+    subprocess.run(cmd,check=True)
+    
+"""
+
+
 
 import os
 
@@ -24,7 +41,6 @@ for a in range(start_file,end_file):
 
 
 
-"""
 
 import os,subprocess
 from datetime import datetime
