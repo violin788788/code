@@ -10,6 +10,48 @@ import sys,os
 cwd = os.getcwd()
 files = os.listdir(cwd)
 
+
+from TTS.api import TTS
+
+tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC", gpu=False)
+
+tts.tts_to_file(
+    text="Hello world!",
+    file_path="output.wav"
+)
+
+
+"""
+import pyttsx3
+
+engine = pyttsx3.init()
+
+text = "Hello! This is an MP3 generated from Python."
+
+engine.save_to_file(text, "output.mp3")
+engine.runAndWait()
+
+print("Saved as output.mp3")
+
+
+from pathlib import Path
+import subprocess
+text=Path("french_revolution.txt").read_text(encoding="utf-8")
+words=text.split()[:100]
+chunks=[words[i:i+10] for i in range(0,len(words),10)]
+wavfiles=[]
+total=len(chunks)
+for i,chunk in enumerate(chunks,1):
+    percent=int((i/total)*100)
+    print(f"{percent}% complete",flush=True)
+    wavfile=f"chunk_{i}.wav"
+    wavfiles.append(wavfile)
+    subprocess.run(["piper","--model","en_US-lessac-medium.onnx","--output_file",wavfile],input=" ".join(chunk).encode("utf-8"))
+print("100% complete")
+print("done")
+
+
+
 from pathlib import Path
 import subprocess
 txtfile="french_revolution.txt"
@@ -33,7 +75,6 @@ for i,part in enumerate(parts,1):
 print("Done")
 
 
-"""
 !!! worked  !!!
 
 from pathlib import Path
