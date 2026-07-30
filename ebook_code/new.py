@@ -9,7 +9,6 @@ if name.lower().endswith(".py"):
 if name.lower().endswith(".bat"):
     name=name[:-4]
 py_text='''
-
 def show(value):
     #show(epub_file)
     for name, val in globals().items():
@@ -17,7 +16,6 @@ def show(value):
             print(f"{name} = {value}")
             return
     print(value)
-
 import sys,os
 #new_file = os.path.join(a,b,c)
 cwd = os.getcwd()

@@ -1,5 +1,4 @@
-
 @echo off
 cd /d "%~dp0"
-python "0new.py"
+python "tts_new.py"
 pause
