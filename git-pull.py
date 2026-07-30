@@ -1,6 +1,25 @@
 
 
 
+
+import subprocess
+from pathlib import Path
+
+# Repository directory (this script assumes it's inside the repo)
+repo_dir = Path(__file__).parent
+
+subprocess.run(["git", "pull"], cwd=repo_dir, check=True)
+
+print("Repository updated!")
+
+
+
+
+"""
+
+
+
+
 from datetime import datetime
 timestamp=datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 iden_last_pushed="git-pull"
@@ -24,7 +43,7 @@ import sys
 BRANCH = "main"
 
 def run(cmd):
-    """Run a shell command and print output."""
+    #Run a shell command and print output.
     try:
         result = subprocess.run(cmd, shell=True, check=True, text=True, capture_output=True)
         print(result.stdout)
@@ -53,3 +72,4 @@ if __name__ == "__main__":
     main()
 
 
+"""
