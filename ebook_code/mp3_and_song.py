@@ -1,140 +1,82 @@
-import os
+def show(value):
+    for name,val in globals().items():
+        if val is value:
+            print(f"{name} = {value}")
+            return
+    print(value)
+
+import asyncio
 import subprocess
-ffmpeg=r".\ffmpeg.exe"
-song="dmitri.mp3"
-directory="volodarsky"
-start_file=1
-end_file=30
-for a in range(start_file,end_file):
-    print(directory,start_file,end_file)
-    part_file=os.path.join(directory,"part_"+str(a)+".mp3")
-    output_file=os.path.join(directory,directory+"_"+str(a)+".mp3")
-    cmd=[ffmpeg,"-y","-vn","-i",part_file,"-stream_loop","-1","-vn","-i",song,"-filter_complex","[1:a]volume=0.18[bg];[0:a][bg]amix=inputs=2:duration=first:dropout_transition=2","-map_metadata","-1","-c:a","libmp3lame","-b:a","128k",output_file]
+from pathlib import Path
+from ebooklib import epub, ITEM_DOCUMENT
+from bs4 import BeautifulSoup
+import edge_tts
+
+BOOK_NAME="french_revolution"
+EPUB_FILE=BOOK_NAME+".epub"
+OUTPUT_DIR=BOOK_NAME+"_audio"
+VOICE="en-US-GuyNeural"
+WORDS_PER_FILE=9000
+SONG="dmitri.mp3"
+FFMPEG=r".\ffmpeg.exe"
+MUSIC_VOLUME=0.18
+
+Path(OUTPUT_DIR).mkdir(exist_ok=True)
+
+async def make_mp3(text,filename):
+    communicate=edge_tts.Communicate(text,VOICE)
+    await communicate.save(filename)
+
+def add_song(input_file,output_file):
+    cmd=[
+        FFMPEG,
+        "-y",
+        "-vn",
+        "-i",input_file,
+        "-stream_loop","-1",
+        "-vn",
+        "-i",SONG,
+        "-filter_complex",
+        f"[1:a]volume={MUSIC_VOLUME}[bg];[0:a][bg]amix=inputs=2:duration=first:dropout_transition=2",
+        "-map_metadata","-1",
+        "-c:a","libmp3lame",
+        "-b:a","128k",
+        output_file
+    ]
     subprocess.run(cmd,check=True)
 
-"""
+async def main():
+    book=epub.read_epub(EPUB_FILE)
+    part=1
 
+    for item in book.get_items():
+        if item.get_type()==ITEM_DOCUMENT:
+            soup=BeautifulSoup(item.get_content(),"html.parser")
 
+            for tag in soup(["script","style"]):
+                tag.decompose()
 
-import os
+            text=soup.get_text(separator=" ",strip=True)
 
-from pydub import AudioSegment
-AudioSegment.converter=r".\ffmpeg.exe"
-AudioSegment.ffprobe=r".\ffprobe.exe"
+            if text:
+                words=text.split()
 
-audio1=AudioSegment.from_mp3("dmitri.mp3")-15
-directory = "grant"
-start_file = 6
-end_file = 12
+                for i in range(0,len(words),WORDS_PER_FILE):
+                    chunk=" ".join(words[i:i+WORDS_PER_FILE])
 
-for a in range(start_file,end_file):
-    print(directory,start_file,end_file)
-    #print(a)
-    part_file = os.path.join(directory,"part_"+str(a)+".mp3")
-    audio2=AudioSegment.from_mp3(part_file)
-    #mixed=audio1.overlay(audio2,loop=True)
-    mixed=audio2.overlay(audio1,loop=True)
-    output_file = os.path.join(directory,"grant_"+str(a)+".mp3")
-    mixed.export(output_file,format="mp3")
-    #print(a)
+                    temp_file=f"{OUTPUT_DIR}/temp_{part:03d}.mp3"
+                    final_file=f"{OUTPUT_DIR}/{BOOK_NAME}_{part:03d}.mp3"
 
+                    print(f"Creating {temp_file}...")
+                    await make_mp3(chunk,temp_file)
 
+                    print(f"Adding music {final_file}...")
+                    add_song(temp_file,final_file)
 
+                    Path(temp_file).unlink()
 
+                    part+=1
 
-import os,subprocess
-from datetime import datetime
-ffmpeg=r".\ffmpeg.exe"
-song="dmitri.mp3"
-audio_book_folder="grant"
-start_file=6
-end_file=12
-for a in range(start_file,end_file+1):
-    start_time=datetime.now()
-    narrate_file=os.path.join(audio_book_folder,"part_"+str(a)+".mp3")
-    output_file=narrate_file.replace("part","0"+audio_book_folder+"_part")
-    print("generating")
-    print(output_file)
-    subprocess.run([ffmpeg,"-y","-i",narrate_file,"-stream_loop","-1","-i",song,"-filter_complex","[1:a]volume=0.18[bg];[0:a][bg]amix=inputs=2:duration=first","-c:a","libmp3lame","-q:a","2",output_file],check=True)
-    end_time=datetime.now()
-    print("time to gen file =",end_time-start_time)
-os.startfile(os.getcwd())
+asyncio.run(main())
 
-
-
-
-
-
-import os,gc
-from pydub import AudioSegment
-from datetime import datetime
-AudioSegment.converter=r".\ffmpeg.exe"
-AudioSegment.ffprobe=r".\ffprobe.exe"
-song="dmitri.mp3"
-audio_book_folder="grant"
-start_file=6
-end_file=12
-sound1=AudioSegment.from_mp3(song)
-for a in range(start_file,end_file+1):
-    start_time=datetime.now()
-    narrate_file=os.path.join(audio_book_folder,"part_"+str(a)+".mp3")
-    output_file=narrate_file.replace("part","0"+audio_book_folder+"_part")
-    print("generating")
-    print(output_file)
-    sound2=AudioSegment.from_mp3(narrate_file)
-    if len(sound1)>len(sound2):
-        narration,bg_music=sound1,sound2
-    else:
-        narration,bg_music=sound2,sound1
-    bg_music=bg_music-15
-    mixed_sound=narration.overlay(bg_music,loop=True)
-    mixed_sound.export(output_file,format="mp3")
-    del sound2,narration,bg_music,mixed_sound
-    gc.collect()
-    end_time=datetime.now()
-    print("time to gen file =",end_time-start_time)
-os.startfile(os.getcwd())
-
-
-import sys,os
-#new_path = os.path.join(a,b,c)
-#cwd = os.getcwd()
-from pydub import AudioSegment
-from datetime import datetime
-AudioSegment.converter = r".\ffmpeg.exe"
-AudioSegment.ffprobe = r".\ffprobe.exe"
-
-song = "dmitri.mp3"
-audio_book_folder = "grant"
-start_file = 6
-end_file = 12
-
-#narrate_file = "part_13.mp3"
-sound1 = AudioSegment.from_mp3(song)
-for a in range(start_file,end_file+1):
-    start_time = datetime.now()
-    narrate_file = os.path.join(audio_book_folder,"part_"+str(a)+".mp3")
-    output_file = narrate_file.replace("part","0"+audio_book_folder+"_part")
-
-    #output_file = "0"+audio_book_folder+"_"+narrate_file.replace(".mp3","_")+song
-    print("generating")
-    print(output_file)
-    #print(song+" and "+narrate_file)
-    sound2 = AudioSegment.from_mp3(narrate_file)
-    if len(sound1) > len(sound2):
-        narration, bg_music = sound1, sound2
-    else:
-        narration, bg_music = sound2, sound1
-    # Lower background music volume
-    #bg_music = bg_music - 6
-    #bg_music = bg_music - 12
-    bg_music = bg_music - 15
-    # Overlay with automatic looping (no huge repeated audio in memory)
-    mixed_sound = narration.overlay(bg_music, loop=True)
-    mixed_sound.export(output_file, format="mp3")
-    end_time = datetime.now()
-    time_difference = end_time - start_time
-    print("time to gen file = ", time_difference)
-    os.startfile(os.getcwd())
-
-    """
+print("Done!")
