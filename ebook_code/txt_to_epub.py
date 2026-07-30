@@ -3,10 +3,10 @@ from pathlib import Path
 import html
 import zipfile
 import shutil
-txtfile="war_and_national_finance.txt"
-title="War and National Finance"
-author="brand"
-coverfile="war_and_national_finance.png"
+txtfile="1776.txt"
+title = txtfile.replace(".txt","")
+author="mccullough"
+coverfile="1776.jpeg"
 text=Path(txtfile).read_text(encoding="utf-8")
 body="<p>"+html.escape(text).replace("\n\n","</p><p>").replace("\n","<br/>")+"</p>"
 book=epub.EpubBook()
