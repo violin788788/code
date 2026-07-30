@@ -1,3 +1,4 @@
+
 def show(value):
     #show(epub_file)
     for name, val in globals().items():
@@ -6,25 +7,68 @@ def show(value):
             return
     print(value)
 
+# pip install ebooklib beautifulsoup4 edge-tts
+import asyncio
+from pathlib import Path
+from ebooklib import epub, ITEM_DOCUMENT
+from bs4 import BeautifulSoup
+import edge_tts
+# ---------------- SETTINGS ----------------
+BOOK_NAME = "robert"          # without .epub
+EPUB_FILE = BOOK_NAME + ".epub"
+OUTPUT_DIR = BOOK_NAME + "_audio"
+VOICE = "en-US-GuyNeural"
+WORDS_PER_FILE = 9000
+Path(OUTPUT_DIR).mkdir(exist_ok=True)
+# ---------------- EXTRACT TEXT ----------------
+book = epub.read_epub(EPUB_FILE)
+chapters = []
+for item in book.get_items():
+    if item.get_type() == ITEM_DOCUMENT:
+        soup = BeautifulSoup(item.get_content(), "html.parser")
+        # Remove scripts/styles
+        for tag in soup(["script", "style"]):
+            tag.decompose()
+        text = soup.get_text(separator=" ", strip=True)
+        if text:
+            chapters.append(text)
+full_text = "\n\n".join(chapters)
+if not full_text.strip():
+    raise Exception("No text found in EPUB.")
+# ---------------- SPLIT INTO 9000-WORD CHUNKS ----------------
+words = full_text.split()
+print(f"Total words: {len(words)}")
+chunks = [
+    " ".join(words[i:i + WORDS_PER_FILE])
+    for i in range(0, len(words), WORDS_PER_FILE)
+]
+print(f"Generating {len(chunks)} MP3 files...")
+# ---------------- GENERATE MP3S ----------------
+async def make_mp3(text, filename):
+    communicate = edge_tts.Communicate(text, VOICE)
+    await communicate.save(filename)
+async def main():
+    for i, chunk in enumerate(chunks, start=1):
+        filename = f"{OUTPUT_DIR}/part_{i:03d}.mp3"
+        print(f"Creating {filename}...")
+        await make_mp3(chunk, filename)
+asyncio.run(main())
+print("Done!")
 
+
+
+
+"""
 # pip install ebooklib beautifulsoup4 edge-tts
 import asyncio,sys
 from pathlib import Path
 from ebooklib import epub, ITEM_DOCUMENT
 from bs4 import BeautifulSoup
 import edge_tts,os
-
 #name without .pdf
-"""
-with open("0book_to_work_on.txt", "r", encoding="utf-8") as file:
-    BOOK_NAME = file.read()
-    print(BOOK_NAME)
-"""
 #BOOK_NAME="lenin_socialism_and_war"
-
 BOOK_NAME = "robert"
 EPUB_FILE=BOOK_NAME+".epub"
-
 OUTPUT_DIR=BOOK_NAME
 Path(OUTPUT_DIR).mkdir(exist_ok=True)
 VOICE="en-US-GuyNeural"
@@ -47,7 +91,6 @@ while(quit<1):
     to_write = text[start:end]
     mp3_file = os.path.join(OUTPUT_DIR,"part_"+str(part)+".mp3") 
     show(mp3_file)
-
     async def make_mp3():
         await edge_tts.Communicate(to_write, "en-US-GuyNeural").save(mp3_file)
     asyncio.run(make_mp3())
@@ -55,42 +98,5 @@ while(quit<1):
     start = end
 
 
-
-
 sys.exit()
-
-"""
-pages=[]
-current_page=1
-for item in book.get_items():
-    if item.get_type()==ITEM_DOCUMENT:
-        soup=BeautifulSoup(item.get_content(),"html.parser")
-        text=soup.get_text(separator=" ",strip=True)
-        if text:
-            pages.append((current_page,text))
-            current_page+=1
-chunks=[]
-current_words=[]
-start_page=1
-for page_num,text in pages:
-    words=text.split()
-    if len(current_words)+len(words)>WORDS_PER_FILE and current_words:
-        chunks.append((start_page,page_num-1," ".join(current_words)))
-        current_words=[]
-        start_page=page_num
-    current_words.extend(words)
-if current_words:
-    chunks.append((start_page,pages[-1][0]," ".join(current_words)))
-print(f"Total audio parts: {len(chunks)}")
-Path(OUTPUT_DIR).mkdir(exist_ok=True)
-print (EPUB_FILE)
-async def generate():
-    total=len(chunks)
-    for i,(start,end,text) in enumerate(chunks,1):
-        filename=Path(OUTPUT_DIR)/f"part_{i:03}_{start}_{end}.mp3"
-        print(f"Generating {i}/{total}: {filename.name} ({len(text.split())} words)")
-        await edge_tts.Communicate(text,VOICE).save(str(filename))
-asyncio.run(generate())
-print(f"Done! Generated {len(chunks)} MP3 files in '{OUTPUT_DIR}'.")
-
 """
