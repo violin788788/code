@@ -1,5 +1,5 @@
 
 @echo off
 cd /d "%~dp0"
-python "imports.py"
+python "new-copy.py"
 pause

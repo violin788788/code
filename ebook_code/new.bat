@@ -1,4 +1,5 @@
+
 @echo off
-python new-copy.py
-python new.py
+cd /d "%~dp0"
+python "new.py"
 pause

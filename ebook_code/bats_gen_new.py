@@ -27,3 +27,6 @@ for a,val in enumerate(files):
         print(val)
         code_to_paste = bat_base_code.replace("___",val)
         print(code_to_paste)
+        bat_file = val.replace(".py",".bat")
+        with open(bat_file, "w", encoding="utf-8") as f:
+            f.write(code_to_paste)

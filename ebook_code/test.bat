@@ -1,4 +1,5 @@
+
 @echo off
 cd /d "%~dp0"
-python "0test.py"
+python "test.py"
 pause
