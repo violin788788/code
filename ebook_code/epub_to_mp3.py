@@ -1,6 +1,12 @@
-def show(what_to_show):
-    #show(count)
-    print(what_to_show)
+def show(value):
+    #show(epub_file)
+    for name, val in globals().items():
+        if val is value:
+            print(f"{name} = {value}")
+            return
+    print(value)
+
+
 # pip install ebooklib beautifulsoup4 edge-tts
 import asyncio,sys
 from pathlib import Path
@@ -9,10 +15,14 @@ from bs4 import BeautifulSoup
 import edge_tts,os
 
 #name without .pdf
+"""
 with open("0book_to_work_on.txt", "r", encoding="utf-8") as file:
     BOOK_NAME = file.read()
     print(BOOK_NAME)
+"""
 #BOOK_NAME="lenin_socialism_and_war"
+
+BOOK_NAME = "robert"
 EPUB_FILE=BOOK_NAME+".epub"
 
 OUTPUT_DIR=BOOK_NAME
@@ -21,9 +31,9 @@ VOICE="en-US-GuyNeural"
 CHARS_PER_FILE=55000
 book=epub.read_epub(EPUB_FILE)
 text=" ".join(BeautifulSoup(i.get_content(),"html.parser").get_text(" ",strip=True) for i in book.get_items() if i.get_type()==ITEM_DOCUMENT)
-chars = len(text)
+len_text = len(text)
 show(CHARS_PER_FILE)
-show(chars)
+show(len_text)
 show(int(chars/CHARS_PER_FILE))
 show(EPUB_FILE)
 quit = 0
@@ -49,7 +59,7 @@ while(quit<1):
 
 sys.exit()
 
-
+"""
 pages=[]
 current_page=1
 for item in book.get_items():
@@ -82,3 +92,5 @@ async def generate():
         await edge_tts.Communicate(text,VOICE).save(str(filename))
 asyncio.run(generate())
 print(f"Done! Generated {len(chunks)} MP3 files in '{OUTPUT_DIR}'.")
+
+"""
