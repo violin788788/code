@@ -9,9 +9,18 @@ if name.lower().endswith(".py"):
 if name.lower().endswith(".bat"):
     name=name[:-4]
 py_text='''
+def show(value):
+    #show(epub_file)
+    for name, val in globals().items():
+        if val is value:
+            print(f"{name} = {value}")
+            return
+    print(value)
 import sys,os
 #new_file = os.path.join(a,b,c)
-#cwd = os.getcwd()
+cwd = os.getcwd()
+files = os.listdir(cwd)
+
 '''
 bat_text=f'''@echo off
 cd /d "%~dp0"
