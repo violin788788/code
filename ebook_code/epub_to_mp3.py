@@ -14,7 +14,7 @@ from ebooklib import epub, ITEM_DOCUMENT
 from bs4 import BeautifulSoup
 import edge_tts
 # ---------------- SETTINGS ----------------
-BOOK_NAME = "robert"          # without .epub
+BOOK_NAME = "grant"          # without .epub
 EPUB_FILE = BOOK_NAME + ".epub"
 OUTPUT_DIR = BOOK_NAME + "_audio"
 VOICE = "en-US-GuyNeural"
@@ -89,12 +89,12 @@ while(quit<1):
     if end>len(text):
         quit=1
     to_write = text[start:end]
-    mp3_file = os.path.join(OUTPUT_DIR,"part_"+str(part)+".mp3") 
+    mp3_file = os.path.join(OUTPUT_DIR,"part_"+str(part)+".mp3")
     show(mp3_file)
     async def make_mp3():
         await edge_tts.Communicate(to_write, "en-US-GuyNeural").save(mp3_file)
     asyncio.run(make_mp3())
-    
+
     start = end
 
 
