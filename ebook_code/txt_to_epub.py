@@ -1,37 +1,25 @@
-def show(value):
-    #show(epub_file)
-    for name, val in globals().items():
-        if val is value:
-            print(f"{name} = {value}")
-            return
-    print(value)
-import os
-#new_file = os.path.join(a,b,c)
-cwd = os.getcwd()
-files = os.listdir(cwd)
 from ebooklib import epub
 from pathlib import Path
 import html
 
-txt_file = "finance_war.txt"
-author = "hepburn"
+txtfile="war_and_national_finance.txt"
+title=txtfile.replace(".txt","")
+author="brand"
 
-title = txt_file.replace(".txt","")
-epub_file = txt_file.replace(".txt",".epub")
-text=Path(txt_file).read_text(encoding="utf-8")
-paragraphs=text.split("\n\n")
-body="\n".join(f"<p>{html.escape(p).replace(chr(10),'<br/>')}</p>" for p in paragraphs if p.strip())
+text=Path(txtfile).read_text(encoding="utf-8")
+body="<p>"+html.escape(text).replace("\n\n","</p><p>").replace("\n","<br/>")+"</p>"
 book=epub.EpubBook()
-book.set_identifier(title+"-book")
+book.set_identifier(Path(txtfile).stem)
 book.set_title(title)
 book.set_language("en")
 book.add_author(author)
-chapter=epub.EpubHtml(title=title,file_name="chapter1.xhtml")
-chapter.content=f"<html><head><title>"+title+"</title></head><body><h1>"+title+"</h1>{body}</body></html>"
+chapter=epub.EpubHtml(title=title,file_name="index.xhtml")
+chapter.content=f"<html><body><h1>{html.escape(title)}</h1>{body}</body></html>"
 book.add_item(chapter)
 book.toc=(chapter,)
 book.add_item(epub.EpubNcx())
 book.add_item(epub.EpubNav())
 book.spine=["nav",chapter]
-epub.write_epub(epub_file,book)
-print("Created ",epub_file)
+outfile=Path(txtfile).with_suffix(".epub")
+epub.write_epub(str(outfile),book)
+print(f"Created {outfile}")

@@ -13,12 +13,14 @@ if __name__=="__main__":
 import fitz,os
 from ebooklib import epub
 
+"""
 #name without .pdf
 with open("0book_to_work_on.txt", "r", encoding="utf-8") as file:
     name = file.read()
     print(name)
-#name = "financial_accounting"
-author = "libby"
+"""
+name = "war_and_national_finance"
+author = "henry"
 
 PDF_FILE=name+".pdf"
 EPUB_FILE=name+".epub"
