@@ -12,7 +12,7 @@ from ebooklib import epub, ITEM_DOCUMENT
 from bs4 import BeautifulSoup
 import edge_tts
 
-BOOK_NAME="french_revolution"
+BOOK_NAME="ten_days"
 EPUB_FILE=BOOK_NAME+".epub"
 OUTPUT_DIR=BOOK_NAME
 VOICE="en-US-GuyNeural"
