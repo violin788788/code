@@ -14,7 +14,7 @@ import edge_tts
 
 BOOK_NAME="french_revolution"
 EPUB_FILE=BOOK_NAME+".epub"
-OUTPUT_DIR=BOOK_NAME+"_audio"
+OUTPUT_DIR=BOOK_NAME
 VOICE="en-US-GuyNeural"
 WORDS_PER_FILE=9000
 SONG="dmitri.mp3"

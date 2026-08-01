@@ -17,9 +17,9 @@ import edge_tts
 
 
 
-BOOK_NAME = "french_revolution"          # without .epub
+BOOK_NAME = "ten_days"          # without .epub
 EPUB_FILE = BOOK_NAME + ".epub"
-OUTPUT_DIR = BOOK_NAME + "_audio"
+OUTPUT_DIR = BOOK_NAME
 VOICE = "en-US-GuyNeural"
 WORDS_PER_FILE = 9000
 Path(OUTPUT_DIR).mkdir(exist_ok=True)
