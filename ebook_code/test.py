@@ -1,5 +1,6 @@
 from utils import *
-from gtts import gTTS
+import asyncio
+import edge_tts
 
 
 file = "french_revolution.txt"
@@ -7,15 +8,32 @@ len_portion = 55000
 
 
 text = read_txt(file)
+word_list = text.split()
 len_text = len(text)
 print(len_text)
+print(len(word_list))
+
+print(len_text/len(word_list))
+#print(word_list)
+
+
+#sys.exit()
+
 parts = math.ceil(len_text/len_portion)
 print(parts)
 
-tts = gTTS(text, lang="en")
+VOICE = "en-US-AndrewNeural"
+
 for a in range(0,parts):
     portion = text[a*len_portion:(a+1)*len_portion]
     output_file = file.replace(".txt","")+"_part"+str(a+1)+".mp3"
     print(output_file)
-    tts.save(output_file)
+    async def generate_tts():
+        # Initialize the communicate object
+        communicate = edge_tts.Communicate(portion, VOICE)
+        # Save the generated speech to an MP3 file
+        await communicate.save(output_file)
+        print(f"Audio successfully saved to {output_file}")
+    # Run the async function
+    asyncio.run(generate_tts())
     #os.startfile(output_file)
