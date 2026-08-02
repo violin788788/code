@@ -1,16 +1,18 @@
-
-import sys,os
-#new_file = os.path.join(a,b,c)
-#cwd = os.getcwd()
-#files = os.listdir(cwd)
+from gtts import gTTS
+import os
 
 
-cwd = os.getcwd()
-files = os.listdir(cwd)
+def read_txt(file_path):
+    # Add encoding='utf-8' here:
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+    return content
 
-for a in range(0,len(files)):
-    val = files[a]
-    if "0" in val:
-        new_name = val.replace("0","")
+    
+text = read_txt("french_revolution.txt")
+text = text[0:9000]
 
-        os.rename(val,new_name)
+tts = gTTS(text, lang="en")
+output_file = "output.mp3"
+tts.save(output_file)
+os.startfile(output_file)
