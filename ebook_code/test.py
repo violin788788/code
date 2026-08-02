@@ -1,18 +1,21 @@
+from utils import *
 from gtts import gTTS
-import os
 
 
-def read_txt(file_path):
-    # Add encoding='utf-8' here:
-    with open(file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-    return content
+file = "french_revolution.txt"
+len_portion = 55000
 
-    
-text = read_txt("french_revolution.txt")
-text = text[0:9000]
+
+text = read_txt(file)
+len_text = len(text)
+print(len_text)
+parts = math.ceil(len_text/len_portion)
+print(parts)
 
 tts = gTTS(text, lang="en")
-output_file = "output.mp3"
-tts.save(output_file)
-os.startfile(output_file)
+for a in range(0,parts):
+    portion = text[a*len_portion:(a+1)*len_portion]
+    output_file = file.replace(".txt","")+"_part"+str(a+1)+".mp3"
+    print(output_file)
+    tts.save(output_file)
+    #os.startfile(output_file)
