@@ -26,7 +26,7 @@ from bs4 import BeautifulSoup
 import edge_tts
 # ---------------- SETTINGS ----------------
 
-BOOK_NAME = "grant"          # without .epub
+BOOK_NAME = "ten_days"          # without .epub
 
 EPUB_FILE = BOOK_NAME + ".epub"
 OUTPUT_DIR = BOOK_NAME
