@@ -19,19 +19,20 @@ def tts_win7(txt_file):
         if end>len(words):
             quit=1
             end=len(words)
-        words = text[begin:end]
+        chunk_text = text[begin:end]
         #output_file = txt_file.replace(".txt","_part"+str(count)+".wav")
         ending = "_part"+str(count)+".mp3"
         output_file = txt_file.replace(".txt",ending)
         print("generating ",output_file)
         async def run_tts():
-            communicate = edge_tts.Communicate(words, voice)
+            communicate = edge_tts.Communicate(chunk_text, voice)
             await communicate.save(output_file)
         asyncio.run(run_tts())
 
         #with wave.open(output_file, "wb") as wav_file:
         #    voice.synthesize_wav(text, wav_file)
         #print("Done - output.wav created")
+
 def tts_linux(txt_file):
     from piper import PiperVoice
     minutes_per_file = 60
@@ -50,15 +51,16 @@ def tts_linux(txt_file):
         if end>len(words):
             quit=1
             end=len(words)
-        words = text[begin:end]
+        chunk_text = text[begin:end]
         print("txt_file",txt_file)
         #output_file = txt_file.replace(".txt","_part"+str(count)+".wav")
         ending = "_part"+str(count)+".mp3"
         output_file = str(txt_file).replace(".txt",ending)
         print("output_file ",output_file)
         with wave.open(output_file, "wb") as wav_file:
-            voice.synthesize_wav(text, wav_file)
+            voice.synthesize_wav(chunk_text, wav_file)
         #print("Done - output.wav created")
+
 def txt_to_txt(txt_file):
     return txt_file
 def epub_to_txt(epub_file):
@@ -91,9 +93,14 @@ os_identify = {}
 os_identify["Windows"] = tts_win7
 os_identify["Linux"] = tts_linux
 
-file_to_generate = "french_revolution.txt"
+
+
+#file_to_generate = "french_revolution.txt"
+file_to_generate = "ten_days.txt"
 file_path = Path(file_to_generate)
 txt_file = file_path.with_suffix(".txt")
+
+
 
 file_type = Path(file_to_generate).suffix
 for key, value in convert_to_txt.items():
