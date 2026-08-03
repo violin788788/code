@@ -1,9 +1,10 @@
 from utils import *
 #from piper import PiperVoice
 import wave,epub2txt,platform
+from pathlib import Path
 def tts_win7():
     blank = "blank"
-def tts_linux():
+def tts_linux(txt_file):
     minutes_per_file = 60
     text = read_txt(txt_file)
     words = text.split()
@@ -27,6 +28,9 @@ def tts_linux():
         with wave.open(output_file, "wb") as wav_file:
             voice.synthesize_wav(text, wav_file)
         #print("Done - output.wav created")
+
+def txt_to_txt(txt_file):
+    return txt_file
 def epub_to_txt(epub_file):
     #epub_to_txt("french_revolution.epub")
     import epub2txt
@@ -35,28 +39,68 @@ def epub_to_txt(epub_file):
     with open(txt_file, "w", encoding="utf-8") as f:
         f.write(text_content)
     print(f"Successfully converted {epub_file} to {txt_file}!")
+    return txt_file
 def pdf_to_txt(pdf_file):
     import fitz
+    txt_file = pdf_file.replace(".pdf",".txt")
     doc = fitz.open(pdf_file)
     text = ""
     for page in doc:
         text += page.get_text()
     cleaned_text = "\n".join([line for line in text.splitlines() if line.strip()])
-    with open("output.txt", "w", encoding="utf-8") as f:
+    with open(txt_file, "w", encoding="utf-8") as f:
         f.write(cleaned_text)
+    return txt_file
+
 
 #def epub_to_txt():
 #    blank = "blank"
 convert_to_txt = {}
-# Add a key called "name" with the value "Alice"
 convert_to_txt[".txt"] = ""
 convert_to_txt[".epub"] = epub_to_txt
 convert_to_txt[".pdf"] = pdf_to_txt
 
-print(convert_to_txt)
+gen_function = {}
+gen_function["Linux"] = tts_win7
+gen_function["Windows"] = tts_linux
+
+file_to_generate = "french_revolution.epub"
+txt_file = ""
+
+file_type = Path(file_to_generate).suffix
+for key, value in convert_to_txt.items():
+    if file_type == key:
+        if callable(value):
+            txt_file = value(file_to_generate)
+
+system = platform.system()
+print(system)
+for key, value in gen_function.items():
+    if system == key:
+        if callable(value):
+            value(txt_file)
 
 
-file_to_generate = "french_revolution.txt"
+sys.exit()
+"""
+for key, value in convert_to_txt.items():
+    if file_type in key:
+        #how to run function (value?) on file_to_generate?
+
+
+    print(f"{key}: {value}")
+    if key in file_to_generate:
+        print(key)
+        action_dict[key]()
+
+
+
+for file in files:
+    _, extension = os.path.splitext(file)
+
+    if extension in convert_to_txt:
+        convert_to_txt[extension](file)
+
 
 for key, value in convert_to_txt.items():
     print(f"{key}: {value}")
@@ -77,7 +121,6 @@ if system=="Windows":
 
 
 
-"""
 file_to_generate = "french_revolution.txt"
 
 if ".txt" not in file_to_generate:
