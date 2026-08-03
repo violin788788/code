@@ -1,4 +1,3 @@
-
 def show(value):
     #show(epub_file)
     for name, val in globals().items():
@@ -6,7 +5,6 @@ def show(value):
             print(f"{name} = {value}")
             return
     print(value)
-
 # pip install ebooklib beautifulsoup4 edge-tts
 import asyncio
 from pathlib import Path
@@ -14,18 +12,12 @@ from ebooklib import epub, ITEM_DOCUMENT
 from bs4 import BeautifulSoup
 import edge_tts
 # ---------------- SETTINGS ----------------
-
-
-
 BOOK_NAME = "ten_days"          # without .epub
 EPUB_FILE = BOOK_NAME + ".epub"
 OUTPUT_DIR = BOOK_NAME
 VOICE = "en-US-GuyNeural"
 WORDS_PER_FILE = 9000
 Path(OUTPUT_DIR).mkdir(exist_ok=True)
-
-
-
 # ---------------- EXTRACT TEXT ----------------
 book = epub.read_epub(EPUB_FILE)
 chapters = []
