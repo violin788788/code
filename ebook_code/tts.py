@@ -1,5 +1,4 @@
 from utils import *
-#from piper import PiperVoice
 import wave,epub2txt,platform
 from pathlib import Path
 def tts_win7(txt_file):
@@ -34,6 +33,7 @@ def tts_win7(txt_file):
         #    voice.synthesize_wav(text, wav_file)
         #print("Done - output.wav created")
 def tts_linux(txt_file):
+    from piper import PiperVoice
     minutes_per_file = 60
     text = read_txt(txt_file)
     words = text.split()
@@ -51,9 +51,11 @@ def tts_linux(txt_file):
             quit=1
             end=len(words)
         words = text[begin:end]
+        print("txt_file",txt_file)
         #output_file = txt_file.replace(".txt","_part"+str(count)+".wav")
-        output_file = txt_file.replace(".txt","_part"+str(count)+".mp3")
-        print("generating ",output_file)
+        ending = "_part"+str(count)+".mp3"
+        output_file = str(txt_file).replace(".txt",ending)
+        print("output_file ",output_file)
         with wave.open(output_file, "wb") as wav_file:
             voice.synthesize_wav(text, wav_file)
         #print("Done - output.wav created")
@@ -100,8 +102,8 @@ for key, value in convert_to_txt.items():
             txt_file = value(file_to_generate)
 
 system = platform.system()
-print(system)
+print("system",system)
 for key, value in os_identify.items():
     if system == key:
-        if callable(value):
-            value(txt_file)
+        #if callable(value):
+        value(txt_file)
