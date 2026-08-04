@@ -19,8 +19,10 @@ with open("0book_to_work_on.txt", "r", encoding="utf-8") as file:
     name = file.read()
     print(name)
 """
-name = "war_and_national_finance"
-author = "henry"
+#name = "war_and_national_finance"
+
+name = "constitution_law"
+author = "?"
 
 PDF_FILE=name+".pdf"
 EPUB_FILE=name+".epub"
@@ -32,6 +34,7 @@ book.set_language("en")
 book.add_author(author)
 chapters=[]
 for i,page in enumerate(pdf):
+    print(i,page)
     text=page.get_text("text").strip()
     chapter=epub.EpubHtml(title=f"Page {i+1}",file_name=f"page_{i+1}.xhtml",lang="en")
     #chapter.content=f"<html><body><h2>Page {i+1}</h2><pre>{text}</pre></body></html>"

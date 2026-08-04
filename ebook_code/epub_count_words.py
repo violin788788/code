@@ -1,3 +1,23 @@
+
+
+from ebooklib import epub
+from bs4 import BeautifulSoup
+import re
+
+book=epub.read_epub("constitution_law.epub")
+
+
+
+text=""
+for item in book.get_items():
+    if item.get_type()==9:
+        text+=" "+BeautifulSoup(item.get_content(),"html.parser").get_text(" ")
+words=re.findall(r"\b[\w']+\b",text)
+print(f"Word count: {len(words):,}")
+
+
+
+"""
 import sys, os
 #new_file = os.path.join(a,b,c)
 #cwd = os.getcwd()
@@ -20,6 +40,10 @@ def count_epub_words_by_page(epub_path, start_page, end_page, words_per_page=300
     print("end_page =", end_page)
     print("target_words =", len(target_words))
     #return len(target_words)
-print(count_epub_words_by_page("volodarsky.epub", start_page=1, end_page=500))
-print(count_epub_words_by_page("volodarsky.epub", start_page=1, end_page=450))
-print(count_epub_words_by_page("volodarsky.epub", start_page=1, end_page=50))
+
+print(count_epub_words_by_page("finance.epub", start_page=1, end_page=1000))
+
+#print(count_epub_words_by_page("volodarsky.epub", start_page=1, end_page=450))
+#print(count_epub_words_by_page("volodarsky.epub", start_page=1, end_page=50))
+
+"""
