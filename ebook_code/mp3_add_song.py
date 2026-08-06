@@ -32,6 +32,9 @@ def add_song(directory,song_file):
         subprocess.run(command)
         print("saved",output_file)
     os.startfile(directory)
+
+
+    
 add_song("ten_days","dmitri.mp3")
 
 
