@@ -19,7 +19,7 @@ def main():
             break
     directory = txt_file.replace(".txt","")
     os.startfile(txt_file)
-    txt_to_mp3(directory,txt_file)
+    edge_tts_to_mp3(directory,txt_file)
     add_song(directory,"dmitri.mp3")
     print("u done jack!")
     #add music
@@ -46,7 +46,7 @@ def epub_to_txt(epub_file):
     print(f"Successfully converted {epub_file} to {txt_file}!")
     return txt_file
 
-def txt_to_mp3(directory,txt_file):
+def edge_tts_to_mp3(directory,txt_file):
     import os
     import asyncio
     import edge_tts
@@ -80,28 +80,30 @@ def txt_to_mp3(directory,txt_file):
 
 
 
+import os
+import subprocess
 def add_song(directory,song_file):
     main_file=os.path.abspath(song_file)
     for val in os.listdir(directory):
-        if val==song_file:
-            continue
-        if not val.lower().endswith(".mp3"):
+        if song_file in val:
             continue
         part_file=os.path.join(directory,val)
-        output_file=part_file.replace(".mp3","_mixed.mp3")
+        output_file=part_file.replace(".mp3","_"+song_file)
         print("mixing",part_file)
         command=[
             "ffmpeg",
             "-y",
-            "-i",main_file,
             "-i",part_file,
+            "-stream_loop","-1",
+            "-vn",
+            "-i",main_file,
             "-filter_complex",
-            "[0:a]aloop=loop=-1:size=2e+09[a0];[1:a]aloop=loop=-1:size=2e+09[a1];[a0][a1]amix=inputs=2:duration=longest",
+            "[0:a][1:a]amix=inputs=2:duration=first",
             "-c:a","libmp3lame",
             "-q:a","2",
             output_file
         ]
-        subprocess.run(command,stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
+        subprocess.run(command)
         print("saved",output_file)
     os.startfile(directory)
 
