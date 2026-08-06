@@ -12,6 +12,18 @@ cwd = os.getcwd()
 files = os.listdir(cwd)
 
 
+packages_to_install = "matplotlib"
+
+#subprocess.run(["demo_toolbox.lnk"],check=True)
+
+try:
+    subprocess.run(["cmd", "/c", "start", "", "demo_toolbox.lnk"], check=True)
+except:
+    print("meow")
+
+
+
+"""
 import subprocess
 import sys
 import re
@@ -33,8 +45,6 @@ while True:
     break
 
 
-
-"""
 packages_to_install = "matplotlib"
 
 subprocess.run(["pip", "install", packages_to_install],check=True)
