@@ -1,19 +1,41 @@
 import subprocess
 import sys
 
-def run(pkg):
-    print("Installing:",pkg)
-    subprocess.check_call([sys.executable,"-m","pip","install",pkg])
+def run(cmd):
+    print("\nRunning:", cmd)
+    subprocess.check_call(cmd)
 
-def main():
-    run("pip==23.3.2")
-    run("setuptools==68.0.0")
-    run("wheel==0.41.3")
-    run("numpy==1.21.6")
-    run("scipy==1.7.3")
-    run("safetensors==0.3.3")
-    run("transformers==4.30.2")
-    run("TTS==0.13.3")
+# Upgrade install tools first
+run([
+    sys.executable, "-m", "pip",
+    "install", "--upgrade",
+    "pip", "setuptools", "wheel"
+])
 
-if __name__=="__main__":
-    main()
+# Install PyTorch 1.7.1 from the old PyTorch wheel repository
+run([
+    sys.executable, "-m", "pip",
+    "install",
+    "torch==1.7.1",
+    "-f",
+    "https://download.pytorch.org/whl/torch_stable.html"
+])
+
+# Install matching torchvision
+run([
+    sys.executable, "-m", "pip",
+    "install",
+    "torchvision==0.8.2",
+    "-f",
+    "https://download.pytorch.org/whl/torch_stable.html"
+])
+
+# Test installation
+print("\nTesting PyTorch...")
+import torch
+import torchvision
+
+print("Torch:", torch.__version__)
+print("Torchvision:", torchvision.__version__)
+
+print("\nPyTorch installation OK")

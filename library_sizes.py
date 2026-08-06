@@ -12,7 +12,7 @@ cwd = os.getcwd()
 files = os.listdir(cwd)
 
 
-path=r"B:\Users\-\AppData\Local\Programs\Python\Python37\Lib\site-packages"
+path=r"B:\Users\-\AppData\Local\Programs\Python\Python38\Lib\site-packages"
 sizes=[]
 for d in os.listdir(path):
     print("getting size of ",d)
