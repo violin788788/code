@@ -4,7 +4,6 @@ import wave,epub2txt,platform,os
 from pathlib import Path
 def main():
     #original_file = "rothschild_1798_1848.pdf"
-
     original_file = "ten_days.epub"
 
     functions_to_run = []
@@ -18,10 +17,13 @@ def main():
             run(original_file)
             txt_file = original_file.replace(check,".txt")
             break
+    directory = txt_file.replace(".txt","")
     os.startfile(txt_file)
-    txt_to_mp3(txt_file)
-    print("u done jack! now add the music!")
+    txt_to_mp3(directory,txt_file)
+    add_song(directory,"dmitri.mp3")
+    print("u done jack!")
     #add music
+
 def pdf_to_txt(pdf):
     import fitz
     doc=fitz.open(pdf)
@@ -44,7 +46,7 @@ def epub_to_txt(epub_file):
     print(f"Successfully converted {epub_file} to {txt_file}!")
     return txt_file
 
-def txt_to_mp3(txt_file):
+def txt_to_mp3(directory,txt_file):
     import os
     import asyncio
     import edge_tts
@@ -67,6 +69,7 @@ def txt_to_mp3(txt_file):
         if chunk_text.strip()=="":
             break
         output_file=txt_file.replace(".txt","_part"+str(count+1)+".mp3")
+        output_file=os.path.join(directory,output_file)
         print("generating",output_file,"of",parts)
         async def run_tts():
             communicate=edge_tts.Communicate(chunk_text,voice)
@@ -74,6 +77,36 @@ def txt_to_mp3(txt_file):
         asyncio.run(run_tts())
         count+=1
     print("done")
+
+
+
+def add_song(directory,song_file):
+    #add_song("common_sense","dmitri.mp3"):
+    import os
+    import time
+    import threading
+    from pydub import AudioSegment
+    #directory="common_sense"
+    #song_file="dmitri.mp3"
+    audio1=AudioSegment.from_mp3(song_file)
+    for val in os.listdir(directory):
+        if song_file in val:
+            continue
+        part_file=os.path.join(directory,val)
+        audio2=AudioSegment.from_mp3(part_file)
+        if len(audio1)>len(audio2):
+            loops=(len(audio1)//len(audio2))+1
+            audio2=(audio2*loops)[:len(audio1)]
+        elif len(audio2)>len(audio1):
+            loops=(len(audio2)//len(audio1))+1
+            audio1=(audio1*loops)[:len(audio2)]
+        combined=audio1.overlay(audio2)
+        output_file=part_file.replace(".mp3","_"+song_file)
+        print("creating",output_file)
+        combined.export(output_file,format="mp3")
+        thread.join()
+        print("saved",output_file,"length",len(combined)//1000,"seconds")
+    os.startfile(directory)
 
 
 
