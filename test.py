@@ -1,15 +1,19 @@
 import subprocess
 import sys
-def run(cmd):
-    print("Running:",cmd)
-    subprocess.check_call(cmd)
+
+def run(pkg):
+    print("Installing:",pkg)
+    subprocess.check_call([sys.executable,"-m","pip","install",pkg])
+
 def main():
-    run([sys.executable,"-m","pip","install","--upgrade","pip","setuptools","wheel"])
-    run([sys.executable,"-m","pip","install","torch==1.13.1","torchaudio==0.13.1"])
-    run([sys.executable,"-m","pip","install","numpy==1.21.6"])
-    run([sys.executable,"-m","pip","install","numba==0.53.1"])
-    run([sys.executable,"-m","pip","install","librosa==0.9.2"])
-    run([sys.executable,"-m","pip","install","TTS==0.13.3"])
-    print("Done!")
+    run("pip==23.3.2")
+    run("setuptools==68.0.0")
+    run("wheel==0.41.3")
+    run("numpy==1.21.6")
+    run("scipy==1.7.3")
+    run("safetensors==0.3.3")
+    run("transformers==4.30.2")
+    run("TTS==0.13.3")
+
 if __name__=="__main__":
     main()

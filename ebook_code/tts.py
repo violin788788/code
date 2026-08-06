@@ -1,4 +1,5 @@
 from utils import *
+#from ..utils import *
 import wave,epub2txt,platform
 from pathlib import Path
 def tts_win7(txt_file):
