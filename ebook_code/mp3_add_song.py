@@ -24,7 +24,7 @@ def add_song(directory,song_file):
             "-vn",
             "-i",main_file,
             "-filter_complex",
-            "[0:a]volume=1.0[a0];[1:a]volume=0.5[a1];[a0][a1]amix=inputs=2:duration=first",
+            "[0:a]volume=1.0[a0];[1:a]volume=0.3[a1];[a0][a1]amix=inputs=2:duration=first",
             "-c:a","libmp3lame",
             "-q:a","2",
             output_file
@@ -32,7 +32,11 @@ def add_song(directory,song_file):
         subprocess.run(command)
         print("saved",output_file)
     os.startfile(directory)
-add_song("ten_days","dmitri.mp3")
+
+
+
+
+#add_song("ten_days","dmitri.mp3")
 
 
 

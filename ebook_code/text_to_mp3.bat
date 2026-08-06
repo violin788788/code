@@ -1,5 +1,4 @@
-
 @echo off
 cd /d "%~dp0"
-python "mp3_and_song.py"
+python "text_to_mp3.py"
 pause
