@@ -5,6 +5,67 @@ cwd = os.getcwd()
 files = os.listdir(cwd)
 
 
+import os
+import subprocess
+def add_song(directory,song_file):
+    main_file=os.path.abspath(song_file)
+    for val in os.listdir(directory):
+        if val==song_file:
+            continue
+        if not val.lower().endswith(".mp3"):
+            continue
+        part_file=os.path.join(directory,val)
+        output_file=part_file.replace(".mp3","_mixed.mp3")
+        print("mixing",part_file)
+        command=[
+            "ffmpeg",
+            "-y",
+            "-i",main_file,
+            "-i",part_file,
+            "-filter_complex",
+            "[0:a]aloop=loop=-1:size=2e+09[a0];[1:a]aloop=loop=-1:size=2e+09[a1];[a0][a1]amix=inputs=2:duration=longest",
+            "-c:a","libmp3lame",
+            "-q:a","2",
+            output_file
+        ]
+        subprocess.run(command,stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
+        print("saved",output_file)
+    os.startfile(directory)
+add_song("ten_days","dmitri.mp3")
+
+
+
+
+
+"""
+def add_song(directory,song_file):
+    import os
+    import subprocess
+    for val in os.listdir(directory):
+        if song_file in val:
+            continue
+        if not val.lower().endswith(".mp3"):
+            continue
+        part_file=os.path.join(directory,val)
+        output_file=part_file.replace(".mp3","_"+song_file)
+        print("mixing",part_file)
+        cmd=[
+            "ffmpeg",
+            "-i",song_file,
+            "-stream_loop","-1",
+            "-i",part_file,
+            "-filter_complex",
+            "[1:a]aloop=loop=-1:size=2e+09[a1];[0:a][a1]amix=inputs=2:duration=longest",
+            "-y",
+            output_file
+        ]
+        subprocess.run(cmd)
+        print("saved",output_file)
+    os.startfile(directory)
+add_song("common_sense","dmitri.mp3")
+
+
+
 def add_song(directory,song_file):
     #add_song("common_sense","dmitri.mp3"):
     import os
@@ -18,6 +79,7 @@ def add_song(directory,song_file):
         if song_file in val:
             continue
         part_file=os.path.join(directory,val)
+        print("getting",part_file)
         audio2=AudioSegment.from_mp3(part_file)
         if len(audio1)>len(audio2):
             loops=(len(audio1)//len(audio2))+1
@@ -33,4 +95,6 @@ def add_song(directory,song_file):
     os.startfile(directory)
 
 
-add_song("common_sense","dmitri.mp3")
+add_song("ten_days","dmitri.mp3")
+
+"""
