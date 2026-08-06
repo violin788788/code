@@ -1,5 +1,4 @@
-
 @echo off
 cd /d "%~dp0"
-python "tts.py"
+python "tts_add_song.py"
 pause
