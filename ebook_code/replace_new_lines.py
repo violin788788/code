@@ -1,4 +1,4 @@
-file_path = "epub_to_mp3.py"
+file_path = "mp3_and_song.py"
 text = """
 
 click enter to replace all \n\n with just \n

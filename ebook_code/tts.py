@@ -4,7 +4,8 @@ import wave,epub2txt,platform,os
 from pathlib import Path
 def main():
     #original_file = "rothschild_1798_1848.pdf"
-    original_file = "common_sense.epub"
+
+    original_file = "ten_days.epub"
 
     functions_to_run = []
     functions_to_run.append([".pdf",pdf_to_txt])
@@ -19,8 +20,8 @@ def main():
             break
     os.startfile(txt_file)
     txt_to_mp3(txt_file)
-    #convert txt file to mp3s
-    #that's it!
+    print("u done jack! now add the music!")
+    #add music
 def pdf_to_txt(pdf):
     import fitz
     doc=fitz.open(pdf)
