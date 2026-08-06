@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "utils.py"
+python "chat.py"
 pause

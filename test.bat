@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "git-clone.py"
+python "test.py"
 pause
