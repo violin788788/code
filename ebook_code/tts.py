@@ -1,7 +1,52 @@
-from utils import *
+#from utils import *
 #from ..utils import *
 import wave,epub2txt,platform
 from pathlib import Path
+def main():
+    file_to_generate = "ten_days.pdf"
+
+    functions_to_run = []
+    functions_to_run.append([".pdf","pdf_function"])
+    functions_to_run.append([".epub","epub_function"])
+    txt_file = file_to_generate
+    for a in range(0,len(functions_to_run)):
+        check = functions_to_run[a][0]
+        if check in file_to_generate:
+            #run thing
+            txt_file = txt_file.replace(check,".txt")
+            break
+    #convert txt file to mp3s
+    #that's it!
+
+
+    convert_to_txt = {}
+    convert_to_txt[".txt"] = ""
+    convert_to_txt[".epub"] = epub_to_txt
+    convert_to_txt[".pdf"] = pdf_to_txt
+    os_identify = {}
+    os_identify["Windows"] = tts_win7
+    os_identify["Linux"] = tts_linux
+
+    #file_to_generate = "french_revolution.txt"
+    file_to_generate = "ten_days.txt"
+    file_path = Path(file_to_generate)
+    txt_file = file_path.with_suffix(".txt")
+
+    file_type = Path(file_to_generate).suffix
+    for key, value in convert_to_txt.items():
+        if file_type == key:
+            if callable(value):
+                txt_file = value(file_to_generate)
+
+    system = platform.system()
+    print("system",system)
+    for key, value in os_identify.items():
+        if system == key:
+            #if callable(value):
+            value(txt_file)
+
+
+
 def tts_win7(txt_file):
     minutes_per_file = 60
     text = read_txt(txt_file)
@@ -86,32 +131,6 @@ def pdf_to_txt(pdf_file):
     return txt_file
 #def epub_to_txt():
 #    blank = "blank"
-convert_to_txt = {}
-convert_to_txt[".txt"] = ""
-convert_to_txt[".epub"] = epub_to_txt
-convert_to_txt[".pdf"] = pdf_to_txt
-os_identify = {}
-os_identify["Windows"] = tts_win7
-os_identify["Linux"] = tts_linux
 
 
-
-#file_to_generate = "french_revolution.txt"
-file_to_generate = "ten_days.txt"
-file_path = Path(file_to_generate)
-txt_file = file_path.with_suffix(".txt")
-
-
-
-file_type = Path(file_to_generate).suffix
-for key, value in convert_to_txt.items():
-    if file_type == key:
-        if callable(value):
-            txt_file = value(file_to_generate)
-
-system = platform.system()
-print("system",system)
-for key, value in os_identify.items():
-    if system == key:
-        #if callable(value):
-        value(txt_file)
+main()
