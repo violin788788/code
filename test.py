@@ -1,21 +1,15 @@
-from utils import *
-def show(value):
-    #show(epub_file)
-    for name, val in globals().items():
-        if val is value:
-            print(f"{name} = {value}")
-            return
-    print(value)
-#new_file = os.path.join(a,b,c)
-cwd = os.getcwd()
-files = os.listdir(cwd)
-
-
 import subprocess
-
-repo_url = "https://github.com/yl4579/StyleTTS2.git"
-repo_name = repo_url.split("/")[-1]
-repo_name = repo_name.replace(".git","")
-print(repo_name)
-subprocess.run(["cd", repo_name],check=True)
-subprocess.run(["pip install -r requirements.txt"],check=True)
+import sys
+def run(cmd):
+    print("Running:",cmd)
+    subprocess.check_call(cmd)
+def main():
+    run([sys.executable,"-m","pip","install","--upgrade","pip","setuptools","wheel"])
+    run([sys.executable,"-m","pip","install","torch==1.13.1","torchaudio==0.13.1"])
+    run([sys.executable,"-m","pip","install","numpy==1.21.6"])
+    run([sys.executable,"-m","pip","install","numba==0.53.1"])
+    run([sys.executable,"-m","pip","install","librosa==0.9.2"])
+    run([sys.executable,"-m","pip","install","TTS==0.13.3"])
+    print("Done!")
+if __name__=="__main__":
+    main()
