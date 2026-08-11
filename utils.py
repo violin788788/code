@@ -10,8 +10,12 @@ def show(value):
     print(value)
 """
 def read_txt(file_path):
+    #read_txt("song.txt")
     #text = read_txt("file.txt")
     # Add encoding='utf-8' here:
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
     return content
+
+
+    #A:\Users\-\code\utils.py
