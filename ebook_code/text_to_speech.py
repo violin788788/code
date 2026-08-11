@@ -20,9 +20,12 @@ def main():
             break
     directory = txt_file.replace(".txt","")
     #os.startfile(txt_file)
-    edge_tts_to_mp3(directory,txt_file)
-    add_song(directory,"dmitri.mp3")
-    print("u done jack!")
+    #edge_tts_to_mp3(directory,txt_file)
+    #add_song(directory,"dmitri.mp3")
+    add_song(directory,"plane_sound_new.mp3")
+    #plane_sound_new
+
+    #print("u done jack!")
     #add music
 
 def pdf_to_txt(pdf):

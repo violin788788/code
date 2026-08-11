@@ -13,3 +13,7 @@ drive = os.path.splitdrive(os.getcwd())[0]
 cwd = os.getcwd()
 files = os.listdir(cwd)
 
+files_to_copy = []
+files_to_copy.append("new__file - copies+runs from code dir")
+files_to_copy.append("taskmgr")
+files_to_copy.append("new_directory")
