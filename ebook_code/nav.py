@@ -1,4 +1,9 @@
-from utils import *
+#from utils import *
+
+import os,pyautogui,pyperclip
+import subprocess,time
+
+
 def show(value):
     #show(epub_file)
     for name, val in globals().items():
@@ -10,39 +15,30 @@ def show(value):
 drive = os.path.splitdrive(os.getcwd())[0]
 cwd = os.getcwd()
 files = os.listdir(cwd)
+
 import os,pyautogui,pyperclip
 import subprocess,time
 
-chrome_32_or_64_bit = 32
-firefox_32_or_64_bit = 32
+chrome_location = "B:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+firefox_location = "B:\\Program Files (x86)\\Mozilla Firefox\\private_browsing.exe"
 
-match = []
-match.append([32,"Program Files (x86)"])
-match.append([64,"Program Files"])
-chrome_program_files = ""
-firefox_program_files = ""
-for a in range(0,len(match)):
-    if chrome_32_or_64_bit==match[a][0]:
-        chrome_program_files = match[a][1]
-    if firefox_32_or_64_bit==match[a][0]:
-        firefox_program_files = match[a][1]
-print("chrome_program_files",chrome_program_files)
-print("firefox_program_files",firefox_program_files)
-#chrome_location = "B:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-chrome_location = drive+"\\"+chrome_program_files+"\\Google\\Chrome\\Application\\chrome.exe"
-firefox_location = drive+"\\"+firefox_program_files+"\\Mozilla Firefox\\private_browsing.exe"
+
 #chrome_path = os.path.join(os.path.splitdrive(os.getcwd())[0] + "\\", "Program Files (x86)", "Google", "Chrome", "Application", "chrome.exe")
 #print ("chrome path = ",chrome_path)
+
 url = "https://info34.pythonanywhere.com"
 pyperclip.copy(url)
+
 subprocess.Popen([chrome_location, "--incognito"])
 time.sleep(2)
 pyautogui.hotkey("win", "right")
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
+
 subprocess.Popen([firefox_location, "--incognito"])
 time.sleep(2)
 pyautogui.hotkey("win", "left")
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
+
 

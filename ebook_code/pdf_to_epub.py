@@ -21,8 +21,8 @@ with open("0book_to_work_on.txt", "r", encoding="utf-8") as file:
 """
 #name = "war_and_national_finance"
 
-name = "constitution_law"
-author = "?"
+name = "jp_morgan"
+author = "martin horn"
 
 PDF_FILE=name+".pdf"
 EPUB_FILE=name+".epub"
