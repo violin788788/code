@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "jpg_to_epub.py"
+python "mp3_loop_gen.py"
 pause

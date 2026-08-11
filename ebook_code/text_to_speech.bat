@@ -1,4 +1,5 @@
+
 @echo off
 cd /d "%~dp0"
-python "pdf_to_jpg.py"
+python "text_to_speech.py"
 pause

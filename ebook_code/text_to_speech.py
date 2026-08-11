@@ -5,7 +5,7 @@ import wave,epub2txt,platform,os
 from pathlib import Path
 def main():
     #original_file = "rothschild_1798_1848.pdf"
-    original_file = "common_sense.epub"
+    original_file = "jp_morgan.epub"
 
     functions_to_run = []
     functions_to_run.append([".pdf",pdf_to_txt])
@@ -19,7 +19,7 @@ def main():
             txt_file = original_file.replace(check,".txt")
             break
     directory = txt_file.replace(".txt","")
-    os.startfile(txt_file)
+    #os.startfile(txt_file)
     #edge_tts_to_mp3(directory,txt_file)
     add_song(directory,"dmitri.mp3")
     print("u done jack!")
