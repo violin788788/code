@@ -1,7 +1,3 @@
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from utils import *
+import subprocess
 
-stuff = read_txt("song.txt")
-print(stuff)
+subprocess.Popen("taskmgr.exe")
