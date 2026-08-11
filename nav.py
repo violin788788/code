@@ -48,7 +48,7 @@ pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
 subprocess.Popen([firefox_location, "--incognito"])
 time.sleep(2)
-pyautogui.hotkey("win", "left")
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
+pyautogui.hotkey("win", "left")
 
