@@ -44,7 +44,7 @@ def epub_to_txt(epub_file):
     text_content = epub2txt.epub2txt(epub_file)
     with open(txt_file, "w", encoding="utf-8") as f:
         f.write(text_content)
-    print(f"Successfully generated {txt_file} from {epub_file}!")
+    print(f"Successfully converted {epub_file} to {txt_file}!")
     return txt_file
 
 def edge_tts_to_mp3(directory,txt_file):
