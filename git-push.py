@@ -41,7 +41,7 @@ python_anywhere_console = "https://www.pythonanywhere.com/user/info34/consoles/"
 #if os.path.exists(chrome_path):
 subprocess.run([chrome_path,"--incognito",github_repo])
 subprocess.run([chrome_path,"--incognito",python_anywhere_console])
-
+print("don't forget to run python git-pull.py on python anywhere console")
 #https://www.pythonanywhere.com/user/info34/consoles/
 
 #else:
