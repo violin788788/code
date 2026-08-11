@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, r"A:\\Users\\-\\code")
 from utils import *
 from pathlib import Path
 name=input("Enter the name of the new script (without .py): ").strip()
@@ -9,7 +11,11 @@ if name.lower().endswith(".py"):
     name=name[:-3]
 if name.lower().endswith(".bat"):
     name=name[:-4]
-py_text='''from utils import *
+
+
+py_text='''import sys
+sys.path.insert(0, r"A:\\Users\\-\\code")
+from utils import *
 def show(value):
     #show(epub_file)
     for name, val in globals().items():

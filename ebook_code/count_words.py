@@ -1,5 +1,6 @@
 #from utils import *
 import os
+from pathlib import Path
 def show(value):
     #show(epub_file)
     for name, val in globals().items():
@@ -12,43 +13,50 @@ drive = os.path.splitdrive(os.getcwd())[0]
 cwd = os.getcwd()
 files = os.listdir(cwd)
 
-file_path = "jp_morgan.pdf"
+file_to_count = "jp_morgan.pdf"
 
 
-from pathlib import Path
-from pypdf import PdfReader
-from ebooklib import epub
-from bs4 import BeautifulSoup
-import re
-def count_words(text):
-    words = re.findall(r"\b[\w'-]+\b", text)
-    return len(words)
-def count_pdf_words(file_path):
-    reader = PdfReader(file_path)
-    text = ""
-    for page in reader.pages:
-        page_text = page.extract_text()
-        if page_text:
-            text += page_text + "\n"
-    return count_words(text)
-def count_epub_words(file_path):
-    book = epub.read_epub(file_path)
-    text = ""
-    for item in book.get_items():
-        if item.get_type() == 9:
-            soup = BeautifulSoup(item.get_content(), "html.parser")
-            text += soup.get_text(separator=" ") + "\n"
-    return count_words(text)
-def count_book_words(file_path):
-    file_path = Path(file_path)
-    if not file_path.exists():
-        raise FileNotFoundError(f"File not found: {file_path}")
-    extension = file_path.suffix.lower()
-    if extension == ".pdf":
-        return count_pdf_words(file_path)
-    elif extension == ".epub":
-        return count_epub_words(file_path)
-    else:
-        raise ValueError("Only PDF and EPUB files are supported.")
-word_count = count_book_words(file_path)
-print(f"Word count: {word_count:,}")
+def pdf_to_txt(pdf):
+    import fitz
+    doc=fitz.open(pdf)
+    print("pages:",len(doc))
+    text=""
+    for i,page in enumerate(doc):
+        print("getting page",i+1,"of",len(doc))
+        text+=page.get_text()+"\n"
+    output_file=pdf.replace(".pdf",".txt")
+    with open(output_file,"w",encoding="utf-8") as f:
+        f.write(text)
+    print("generated",output_file)
+def epub_to_txt(epub_file):
+    #epub_to_txt("french_revolution.epub")
+    import epub2txt
+    txt_file = epub_file.replace(".epub",".txt")
+    text_content = epub2txt.epub2txt(epub_file)
+    with open(txt_file, "w", encoding="utf-8") as f:
+        f.write(text_content)
+    print(f"Successfully converted {epub_file} to {txt_file}!")
+    return txt_file
+
+
+def read_txt(file_path):
+    #read_txt("song.txt")
+    #text = read_txt("file.txt")
+    # Add encoding='utf-8' here:
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+    return content
+
+
+
+if ".pdf" in file_to_count:
+    pdf_to_txt(file_to_count)
+if ".epub" in file_to_count:
+    epub_to_txt(file_to_count)
+get = file_to_count
+get = Path(file_to_count).with_suffix(".txt")
+text = read_txt(get)
+number_of_spaces = text.count(" ")
+number_of_new_lines = text.count("\n")
+words = number_of_spaces+number_of_new_lines
+print("words = ",words)
