@@ -61,8 +61,8 @@ firefox_location = drive+"\\"+firefox_program_files+"\\Mozilla Firefox\\private_
 github_repo=f"https://github.com/violin788788/{directory_name}"
 python_anywhere_console = "https://www.pythonanywhere.com/user/info34/consoles/"
 #if os.path.exists(chrome_path):
-subprocess.run([firefox_location,"--incognito",github_repo])
-subprocess.run([firefox_location,"--incognito",python_anywhere_console])
+subprocess.run([chrome_location,"--incognito",github_repo])
+subprocess.run([chrome_location,"--incognito",python_anywhere_console])
 print("")
 print("don't forget to run python git-pull.py on python anywhere console")
 print("")

@@ -6,7 +6,7 @@ from pathlib import Path
 def main():
     #original_file = "rothschild_1798_1848.pdf"
     
-    original_file = "ten_days.epub"
+    original_file = "jp_morgan.epub"
     start_file = 0
     gen_narration = "no"
     add_song_and_sound = "yes"
@@ -98,15 +98,14 @@ def add_song_sound(directory,song,plane):
     import math
     files = os.listdir(directory)
     for a,val in enumerate(files):
-        print(f"working on {val},{song},and {plane}!")
         narrate_file=os.path.join(directory,val)
+        print(f"working on {narrate_file},{song},and {plane}!")
         tracks = [
             (narrate_file, 1.0),
             (song, 0.3),
             (plane, 1.0),
         ]
         audio_tracks = []
-
         for filename, volume in tracks:
             audio = AudioSegment.from_mp3(filename)
             if volume != 1.0:
@@ -119,15 +118,15 @@ def add_song_sound(directory,song,plane):
         audio_tracks = [loop_to_length(audio, target_length) for audio in audio_tracks]
         chunk_size = 1000
         mixed = AudioSegment.empty()
+        out_file = tracks[0][0]+"_"+tracks[1][0]
+        out_file = out_file.replace(".mp3","")+".mp3"
+        out_file=os.path.join(directory,out_file)
+        print("working on",out_file)
         for position in tqdm(range(0, target_length, chunk_size), desc="Mixing", unit="sec"):
             chunk = audio_tracks[0][position:position + chunk_size]
             for audio in audio_tracks[1:]:
                 chunk = chunk.overlay(audio[position:position + chunk_size])
             mixed += chunk
-        out_file = tracks[0][0]+"_"+tracks[1][0]
-        out_file = out_file.replace(".mp3","")+".mp3"
-        out_file=os.path.join(directory,out_file)
-        print(out_file)
         mixed.export(out_file, format="mp3")
 
 
