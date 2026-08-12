@@ -5,7 +5,13 @@ import wave,epub2txt,platform,os
 from pathlib import Path
 def main():
     #original_file = "rothschild_1798_1848.pdf"
-    original_file = "jp_morgan.epub"
+    
+    original_file = "ten_days.epub"
+    start_file = 0
+    gen_narration = "no"
+    add_song_and_sound = "yes"
+    song = "dmitri.mp3"
+    plane_sound ="plane_sound.mp3"
 
     functions_to_run = []
     functions_to_run.append([".pdf",pdf_to_txt])
@@ -20,13 +26,11 @@ def main():
             break
     directory = txt_file.replace(".txt","")
     #os.startfile(txt_file)
-    edge_tts_to_mp3(directory,txt_file,9)
-    #add_song(directory,"dmitri.mp3")
-    add_song(directory,"plane_sound_new.mp3")
-    #plane_sound_new
-
+    if gen_narration=="yes":
+        edge_tts_to_mp3(directory,txt_file,start_file)
+    if add_song_and_sound=="yes":
+        add_song_sound(directory,song,"plane_sound.mp3")
     #print("u done jack!")
-    #add music
 
 def pdf_to_txt(pdf):
     import fitz
@@ -86,8 +90,49 @@ def edge_tts_to_mp3(directory,txt_file,start):
     print("done")
 
 
+def add_song_sound(directory,song,plane):
+    #add_song_sound(directory,song,plane)
+    #add_song_sound("part_003.mp3","dmitri.mp3","plane_sound.mp3")
+    from pydub import AudioSegment
+    from tqdm import tqdm
+    import math
+    files = os.listdir(directory)
+    for a,val in enumerate(files):
+        print(f"working on {val},{song},and {plane}!")
+        narrate_file=os.path.join(directory,val)
+        tracks = [
+            (narrate_file, 1.0),
+            (song, 0.3),
+            (plane, 1.0),
+        ]
+        audio_tracks = []
+
+        for filename, volume in tracks:
+            audio = AudioSegment.from_mp3(filename)
+            if volume != 1.0:
+                audio = audio.apply_gain(20 * math.log10(volume))
+            audio_tracks.append(audio)
+        target_length = max(len(audio) for audio in audio_tracks)
+        def loop_to_length(audio, length):
+            repeats = (length // len(audio)) + 1
+            return (audio * repeats)[:length]
+        audio_tracks = [loop_to_length(audio, target_length) for audio in audio_tracks]
+        chunk_size = 1000
+        mixed = AudioSegment.empty()
+        for position in tqdm(range(0, target_length, chunk_size), desc="Mixing", unit="sec"):
+            chunk = audio_tracks[0][position:position + chunk_size]
+            for audio in audio_tracks[1:]:
+                chunk = chunk.overlay(audio[position:position + chunk_size])
+            mixed += chunk
+        out_file = tracks[0][0]+"_"+tracks[1][0]
+        out_file = out_file.replace(".mp3","")+".mp3"
+        out_file=os.path.join(directory,out_file)
+        print(out_file)
+        mixed.export(out_file, format="mp3")
 
 
+
+    """
 def add_song(directory,song_file):
     #main_file=os.path.abspath(song_file)
     for val in os.listdir(directory):
@@ -112,7 +157,7 @@ def add_song(directory,song_file):
         subprocess.run(command)
         print("saved",output_file)
     os.startfile(directory)
-
+    """
 
 
 

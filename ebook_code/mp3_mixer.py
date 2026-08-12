@@ -14,6 +14,8 @@ cwd = os.getcwd()
 files = os.listdir(cwd)
 
 
+
+
 from pydub import AudioSegment
 from tqdm import tqdm
 import math
@@ -22,7 +24,6 @@ tracks = [
     ("dmitri.mp3", 0.3),
     ("plane_sound.mp3", 0.3),
 ]
-
 audio_tracks = []
 for filename, volume in tracks:
     audio = AudioSegment.from_mp3(filename)
@@ -41,10 +42,7 @@ for position in tqdm(range(0, target_length, chunk_size), desc="Mixing", unit="s
     for audio in audio_tracks[1:]:
         chunk = chunk.overlay(audio[position:position + chunk_size])
     mixed += chunk
-
 out_file = tracks[0][0]+"_"+tracks[1][0]
 out_file = out_file.replace(".mp3","")+".mp3"
 print(out_file)
-
-
 mixed.export(out_file, format="mp3")
