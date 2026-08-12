@@ -20,7 +20,7 @@ def main():
             break
     directory = txt_file.replace(".txt","")
     #os.startfile(txt_file)
-    #edge_tts_to_mp3(directory,txt_file)
+    edge_tts_to_mp3(directory,txt_file,9)
     #add_song(directory,"dmitri.mp3")
     add_song(directory,"plane_sound_new.mp3")
     #plane_sound_new
@@ -50,7 +50,8 @@ def epub_to_txt(epub_file):
     print(f"Successfully generated {txt_file} from {epub_file}!")
     return txt_file
 
-def edge_tts_to_mp3(directory,txt_file):
+def edge_tts_to_mp3(directory,txt_file,start):
+    #edge_tts_to_mp3(directory,txt_file,8,20)
     import os
     import asyncio
     import edge_tts
@@ -71,14 +72,16 @@ def edge_tts_to_mp3(directory,txt_file):
         print("part",count+1,"words",begin,"to",end)
         chunk_text=" ".join(words[begin:end])
         if chunk_text.strip()=="":
-            break
-        output_file=txt_file.replace(".txt","_part"+str(count+1)+".mp3")
+            break  
+        part_number = count+1
+        output_file=txt_file.replace(".txt","_part"+str(part_number)+".mp3")
         output_file=os.path.join(directory,output_file)
-        print("generating",output_file,"of",parts)
         async def run_tts():
             communicate=edge_tts.Communicate(chunk_text,voice)
             await communicate.save(output_file)
-        asyncio.run(run_tts())
+        if part_number>=start: 
+            print("generating",output_file,"of",parts)
+            asyncio.run(run_tts())
         count+=1
     print("done")
 

@@ -18,9 +18,9 @@ from pydub import AudioSegment
 from tqdm import tqdm
 import math
 tracks = [
-    ("plane_sound.mp3", 1.0),
     ("part_003.mp3", 1.0),
-    #("track3.mp3", 0.3)
+    ("dmitri.mp3", 0.3),
+    ("plane_sound.mp3", 0.3),
 ]
 
 audio_tracks = []
@@ -41,4 +41,10 @@ for position in tqdm(range(0, target_length, chunk_size), desc="Mixing", unit="s
     for audio in audio_tracks[1:]:
         chunk = chunk.overlay(audio[position:position + chunk_size])
     mixed += chunk
-mixed.export("mixed.mp3", format="mp3")
+
+out_file = tracks[0][0]+"_"+tracks[1][0]
+out_file = out_file.replace(".mp3","")+".mp3"
+print(out_file)
+
+
+mixed.export(out_file, format="mp3")

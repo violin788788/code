@@ -20,9 +20,12 @@ def main():
             break
     directory = txt_file.replace(".txt","")
     #os.startfile(txt_file)
-    edge_tts_to_mp3(directory,txt_file)
-    add_song(directory,"dmitri.mp3")
-    print("u done jack!")
+    #edge_tts_to_mp3(directory,txt_file)
+    #add_song(directory,"dmitri.mp3")
+    add_song(directory,"plane_sound_new.mp3")
+    #plane_sound_new
+
+    #print("u done jack!")
     #add music
 
 def pdf_to_txt(pdf):
@@ -44,7 +47,7 @@ def epub_to_txt(epub_file):
     text_content = epub2txt.epub2txt(epub_file)
     with open(txt_file, "w", encoding="utf-8") as f:
         f.write(text_content)
-    print(f"Successfully converted {epub_file} to {txt_file}!")
+    print(f"Successfully generated {txt_file} from {epub_file}!")
     return txt_file
 
 def edge_tts_to_mp3(directory,txt_file):
