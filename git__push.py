@@ -38,7 +38,7 @@ if system_type=="Linux":
 
 
 chrome_32_or_64_bit = 32
-firefox_32_or_64_bit = 32
+firefox_32_or_64_bit = 64
 drive = "B:"
 
 match = []
