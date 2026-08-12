@@ -5,7 +5,7 @@ import wave,epub2txt,platform,os
 from pathlib import Path
 
 
-def main(original_file, gen_narration=0, add_song_and_sound=0, narrate_start_file=4, song="dmitri.mp3", plane_sound="plane_sound.mp3"):
+def main(original_file, gen_narration=0, add_song_and_sound=0, narrate_start_file=1, song="dmitri.mp3", plane_sound="plane_sound.mp3"):
     functions_to_run = []
     functions_to_run.append([".pdf", pdf_to_txt])
     functions_to_run.append([".epub", epub_to_txt])
@@ -174,9 +174,9 @@ def add_song_sound(directory,song,plane):
         part_number = a+1
         main_part = os.path.join(directory, directory+f"_part{part_number}.mp3")
         out_part = os.path.join(directory, directory+f"_part{part_number}_mixed.mp3")
-        if os.path.exists(main_part):
-            print(f"\nProcessing part {part_number}...")
-            mix_audio_fast(main_part, 1.0, song, 0.1, plane, 0.5, out_part)
+        #if os.path.exists(main_part):
+        print(f"\nProcessing part {part_number}...")
+        mix_audio_fast(main_part, 1.0, song, 0.1, plane, 0.5, out_part)
     input("\nAll done! Press Enter to exit...")
 
 
