@@ -6,10 +6,10 @@ from pathlib import Path
 def main():
     #original_file = "rothschild_1798_1848.pdf"
     
-    original_file = "ten_days.epub"
-    start_file = 1
-    gen_narration = "yes"
-    add_song_and_sound = "no"
+    original_file = "jp_morgan.epub"
+    narrate_start_file = 1
+    gen_narration = 0
+    add_song_and_sound = 1
     song = "dmitri.mp3"
     plane_sound ="plane_sound.mp3"
 
@@ -26,9 +26,9 @@ def main():
             break
     directory = txt_file.replace(".txt","")
     #os.startfile(txt_file)
-    if gen_narration=="yes":
-        edge_tts_to_mp3(directory,txt_file,start_file)
-    if add_song_and_sound=="yes":
+    if gen_narration==1:
+        edge_tts_to_mp3(directory,txt_file,narrate_start_file)
+    if add_song_and_sound==1:
         add_song_sound(directory,song,"plane_sound.mp3")
     #print("u done jack!")
 
