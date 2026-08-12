@@ -156,9 +156,9 @@ def add_song_sound(directory,song,plane):
         audio_tracks = [loop_to_length(audio, target_length) for audio in audio_tracks]
         chunk_size = 1000
         mixed = AudioSegment.empty()
-        out_file = tracks[0][0]+"_"+tracks[1][0]
-        out_file = out_file.replace(".mp3","")+".mp3"
-        out_file=os.path.join(directory,out_file)
+        #out_file = tracks[0][0]+"_"+tracks[1][0]
+        out_file = narrate_file.replace(".mp3","_"+song)
+        #out_file=os.path.join(directory,out_file)
         print("working on",out_file)
         for position in tqdm(range(0, target_length, chunk_size), desc="Mixing", unit="sec"):
             chunk = audio_tracks[0][position:position + chunk_size]

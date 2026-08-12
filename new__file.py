@@ -2,6 +2,9 @@ import sys
 sys.path.insert(0, r"A:\\Users\\-\\code")
 from utils import *
 from pathlib import Path
+
+import sys,os,math,subprocess
+import sys,pyperclip,time
 name=input("Enter the name of the new script (without .py): ").strip()
 if not name:
     print("No name entered.")
