@@ -7,8 +7,8 @@ def main():
     #original_file = "rothschild_1798_1848.pdf"
     
     #original_file = "jp_morgan.epub"
-    original_file = "french_revolution.epub"
-    gen_narration = 0
+    original_file = "too_big_to_fail.epub"
+    gen_narration = 1
     narrate_start_file = 1
     add_song_and_sound = 1
     song = "dmitri.mp3"
@@ -62,6 +62,8 @@ def edge_tts_to_mp3(directory,txt_file,start):
     import asyncio
     import edge_tts
     from tqdm import tqdm
+    dir_path = Path(directory)
+    dir_path.mkdir(parents=True, exist_ok=True)
     minutes_per_file=60
     with open(txt_file,"r",encoding="utf-8") as f:
         text=f.read()
