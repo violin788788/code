@@ -7,8 +7,8 @@ def main():
     #original_file = "rothschild_1798_1848.pdf"
     
     original_file = "jp_morgan.epub"
-    narrate_start_file = 1
-    gen_narration = 0
+    narrate_start_file = 0
+    gen_narration = 1
     add_song_and_sound = 1
     song = "dmitri.mp3"
     plane_sound ="plane_sound.mp3"
@@ -131,70 +131,26 @@ def edge_tts_to_mp3(directory,txt_file,start):
 def add_song_sound(directory,song,plane):
     #add_song_sound(directory,song,plane)
     #add_song_sound("part_003.mp3","dmitri.mp3","plane_sound.mp3")
-    from pydub import AudioSegment
-    from tqdm import tqdm
-    import math
-    files = os.listdir(directory)
-    for a,val in enumerate(files):
-        narrate_file=os.path.join(directory,val)
-        print(f"working on {narrate_file},{song},and {plane}!")
-        tracks = [
-            (narrate_file, 1.0),
-            (song, 0.3),
-            (plane, 1.0),
-        ]
-        audio_tracks = []
-        for filename, volume in tracks:
-            audio = AudioSegment.from_mp3(filename)
-            if volume != 1.0:
-                audio = audio.apply_gain(20 * math.log10(volume))
-            audio_tracks.append(audio)
-        target_length = max(len(audio) for audio in audio_tracks)
-        def loop_to_length(audio, length):
-            repeats = (length // len(audio)) + 1
-            return (audio * repeats)[:length]
-        audio_tracks = [loop_to_length(audio, target_length) for audio in audio_tracks]
-        chunk_size = 1000
-        mixed = AudioSegment.empty()
-        #out_file = tracks[0][0]+"_"+tracks[1][0]
-        out_file = narrate_file.replace(".mp3","_"+song)
-        #out_file=os.path.join(directory,out_file)
-        print("working on",out_file)
-        for position in tqdm(range(0, target_length, chunk_size), desc="Mixing", unit="sec"):
-            chunk = audio_tracks[0][position:position + chunk_size]
-            for audio in audio_tracks[1:]:
-                chunk = chunk.overlay(audio[position:position + chunk_size])
-            mixed += chunk
-        mixed.export(out_file, format="mp3")
 
+    import subprocess, os
+    def get_duration(file_path):
+        cmd = ['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', file_path]
+        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+        try: return float(res.stdout.strip())
+        except: return 0
+    def mix_audio_fast(main_file, v1, overlay1, v2, overlay2, v3, output_file):
+        dur = get_duration(main_file)
+        cmd = ['ffmpeg', '-y', '-i', main_file, '-stream_loop', '-1', '-t', str(dur), '-i', overlay1, '-stream_loop', '-1', '-t', str(dur), '-i', overlay2, '-filter_complex', f'[0:a]volume={v1}[a0];[1:a]volume={v2}[a1];[2:a]volume={v3}[a2];[a0][a1][a2]amix=inputs=3:duration=first:dropout_transition=0', '-c:a', 'libmp3lame', '-q:a', '4', output_file]
+        subprocess.run(cmd)
+    folder, dmitri, plane = directory, song, plane
+    for i in range(1, 100):
+        main_part = os.path.join(folder, directory+f"_part{i}.mp3")
+        out_part = os.path.join(folder, directory+f"_part{i}_mixed.mp3")
+        if os.path.exists(main_part):
+            print(f"\nProcessing part {i}...")
+            mix_audio_fast(main_part, 1, dmitri, 0.3, plane, .5, out_part)
+    input("\nAll done! Press Enter to exit...")
 
-
-    """
-def add_song(directory,song_file):
-    #main_file=os.path.abspath(song_file)
-    for val in os.listdir(directory):
-        if song_file in val:
-            continue
-        narrate_file=os.path.join(directory,val)
-        output_file=narrate_file.replace(".mp3","_"+song_file)
-        print("mixing",narrate_file)
-        command=[
-            "ffmpeg",
-            "-y",
-            "-i",narrate_file,
-            "-stream_loop","-1",
-            "-vn",
-            "-i",song_file,
-            "-filter_complex",
-            "[0:a]volume=1.0[a0];[1:a]volume=0.2[a1];[a0][a1]amix=inputs=2:duration=first",
-            "-c:a","libmp3lame",
-            "-q:a","2",
-            output_file
-        ]
-        subprocess.run(command)
-        print("saved",output_file)
-    os.startfile(directory)
-    """
 
 
 
