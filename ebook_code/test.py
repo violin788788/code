@@ -1,43 +1,56 @@
-import subprocess, os
-def get_duration(file_path):
-    cmd = ['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', file_path]
-    res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-    try: return float(res.stdout.strip())
-    except: return 0
-def mix_audio_fast(main_file, v1, overlay1, v2, overlay2, v3, output_file):
-    dur = get_duration(main_file)
-    cmd = ['ffmpeg', '-y', '-i', main_file, '-stream_loop', '-1', '-t', str(dur), '-i', overlay1, '-stream_loop', '-1', '-t', str(dur), '-i', overlay2, '-filter_complex', f'[0:a]volume={v1}[a0];[1:a]volume={v2}[a1];[2:a]volume={v3}[a2];[a0][a1][a2]amix=inputs=3:duration=first:dropout_transition=0', '-c:a', 'libmp3lame', '-q:a', '4', output_file]
-    subprocess.run(cmd)
-folder, dmitri, plane = "jp_morgan", "dmitri.mp3", "plane_sound.mp3"
-for i in range(1, 100):
-    main_part = os.path.join(folder, f"jp_morgan_part{i}.mp3")
-    out_part = os.path.join(folder, f"jp_morgan_part{i}_mixed.mp3")
-    if os.path.exists(main_part):
-        print(f"\nProcessing part {i}...")
-        mix_audio_fast(main_part, 1, dmitri, 0.3, plane, .5, out_part)
-input("\nAll done! Press Enter to exit...")
-
-
-
-"""
-#worked!!
-
-import subprocess, os
-def get_duration(file_path):
-    cmd = ['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', file_path]
-    res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-    try: return float(res.stdout.strip())
-    except: return 0
-def mix_audio_fast(main_file, v1, overlay1, v2, overlay2, v3, output_file):
-    dur = get_duration(main_file)
-    cmd = ['ffmpeg', '-y', '-i', main_file, '-stream_loop', '-1', '-t', str(dur), '-i', overlay1, '-stream_loop', '-1', '-t', str(dur), '-i', overlay2, '-filter_complex', f'[0:a]volume={v1}[a0];[1:a]volume={v2}[a1];[2:a]volume={v3}[a2];[a0][a1][a2]amix=inputs=3:duration=first:dropout_transition=0', '-c:a', 'libmp3lame', '-q:a', '4', output_file]
-    subprocess.run(cmd)
-folder, dmitri, plane = "jp_morgan", "dmitri.mp3", "plane_sound.mp3"
-for i in range(1, 100):
-    main_part = os.path.join(folder, f"jp_morgan_part{i}.mp3")
-    out_part = os.path.join(folder, f"jp_morgan_part{i}_mixed.mp3")
-    if os.path.exists(main_part):
-        print(f"\nProcessing part {i}...")
-        mix_audio_fast(main_part, 0.7, dmitri, 0.5, plane, 0.3, out_part)
-input("\nAll done! Press Enter to exit...")
-"""
+import tkinter as tk
+from tkinter import filedialog, messagebox
+from pathlib import Path
+class NarrationApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Narration Tool")
+        self.root.geometry("500x400")
+        self.root.resizable(False, False)
+        self.selected_file = None
+        main = tk.Frame(root, bg="#181818")
+        main.pack(fill="both", expand=True)
+        title = tk.Label(main, text="Narration Tool", font=("Arial", 24, "bold"), fg="white", bg="#181818")
+        title.pack(pady=(30, 25))
+        select_button = tk.Button(main, text="Select File", command=self.select_file, font=("Arial", 12, "bold"), bg="#333333", fg="white", activebackground="#444444", activeforeground="white", relief="flat", padx=25, pady=10, cursor="hand2")
+        select_button.pack()
+        self.file_label = tk.Label(main, text="No file selected", font=("Arial", 10), fg="#aaaaaa", bg="#181818")
+        self.file_label.pack(pady=(10, 25))
+        options_frame = tk.Frame(main, bg="#181818")
+        options_frame.pack()
+        self.generate_var = tk.BooleanVar(value=False)
+        self.song_var = tk.BooleanVar(value=False)
+        self.generate_circle = tk.Checkbutton(options_frame, text="Generate Narration", variable=self.generate_var, font=("Arial", 13), fg="white", bg="#181818", activebackground="#181818", activeforeground="white", selectcolor="#181818", cursor="hand2")
+        self.generate_circle.pack(anchor="w", pady=8)
+        self.song_circle = tk.Checkbutton(options_frame, text="Add Song to Narration", variable=self.song_var, font=("Arial", 13), fg="white", bg="#181818", activebackground="#181818", activeforeground="white", selectcolor="#181818", cursor="hand2")
+        self.song_circle.pack(anchor="w", pady=8)
+        run_button = tk.Button(main, text="RUN", command=self.run, font=("Arial", 14, "bold"), bg="#4CAF50", fg="white", activebackground="#45a049", activeforeground="white", relief="flat", padx=50, pady=12, cursor="hand2")
+        run_button.pack(pady=30)
+    def select_file(self):
+        file_path = filedialog.askopenfilename(title="Select a file", filetypes=[("Video files", "*.mp4 *.mov *.avi *.mkv *.webm"), ("Audio files", "*.mp3 *.wav *.m4a *.aac"), ("All files", "*.*")])
+        if file_path:
+            self.selected_file = file_path
+            filename = Path(file_path).name
+            self.file_label.config(text=f"Selected: {filename}", fg="#4CAF50")
+    def run(self):
+        if not self.selected_file:
+            messagebox.showwarning("No File", "Please select a file first.")
+            return
+        if not self.generate_var.get() and not self.song_var.get():
+            messagebox.showwarning("No Option", "Please select at least one option.")
+            return
+        generate_narration = self.generate_var.get()
+        add_song = self.song_var.get()
+        print("RUNNING")
+        print("File:", self.selected_file)
+        print("Generate narration:", generate_narration)
+        print("Add song:", add_song)
+        if generate_narration:
+            print("Generating narration...")
+        if add_song:
+            print("Adding song...")
+        messagebox.showinfo("Complete", "The selected operations have been started.")
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = NarrationApp(root)
+    root.mainloop()

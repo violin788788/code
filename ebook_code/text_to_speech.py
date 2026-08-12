@@ -3,13 +3,34 @@
 #from tts_add_song import *
 import wave,epub2txt,platform,os 
 from pathlib import Path
+
+
+def main(original_file, gen_narration=0, add_song_and_sound=0, narrate_start_file=4, song="dmitri.mp3", plane_sound="plane_sound.mp3"):
+    functions_to_run = []
+    functions_to_run.append([".pdf", pdf_to_txt])
+    functions_to_run.append([".epub", epub_to_txt])
+    txt_file = original_file
+    for a in range(0, len(functions_to_run)):
+        check = functions_to_run[a][0]
+        if check in original_file:
+            run = functions_to_run[a][1]
+            run(original_file)
+            txt_file = original_file.replace(check, ".txt")
+            break
+    directory = txt_file.replace(".txt", "")
+    if gen_narration == 1:
+        edge_tts_to_mp3(directory, txt_file, narrate_start_file)
+    if add_song_and_sound == 1:
+        add_song_sound(directory, song, plane_sound)
+
+"""
 def main():
     #original_file = "rothschild_1798_1848.pdf"
     
     #original_file = "jp_morgan.epub"
     original_file = "too_big_to_fail.epub"
-    gen_narration = 1
-    narrate_start_file = 1
+    gen_narration = 0
+    narrate_start_file = 4
     add_song_and_sound = 1
     song = "dmitri.mp3"
     plane_sound ="plane_sound.mp3"
@@ -33,7 +54,7 @@ def main():
     if add_song_and_sound==1:
         add_song_sound(directory,song,"plane_sound.mp3")
     #print("u done jack!")
-
+"""
 def pdf_to_txt(pdf):
     import fitz
     doc=fitz.open(pdf)
@@ -164,7 +185,7 @@ def add_song_sound(directory,song,plane):
 import os
 import subprocess
 
-main()
+#main()
 
 
 
