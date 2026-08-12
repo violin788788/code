@@ -37,6 +37,10 @@ if system_type=="Linux":
     sys.exit()
 
 
+chrome_32_or_64_bit = 32
+firefox_32_or_64_bit = 32
+drive = "B:"
+
 match = []
 match.append([32,"Program Files (x86)"])
 match.append([64,"Program Files"])
@@ -52,6 +56,7 @@ print("firefox_program_files",firefox_program_files)
 #chrome_location = "B:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 chrome_location = drive+"\\"+chrome_program_files+"\\Google\\Chrome\\Application\\chrome.exe"
 firefox_location = drive+"\\"+firefox_program_files+"\\Mozilla Firefox\\private_browsing.exe"
+
 
 github_repo=f"https://github.com/violin788788/{directory_name}"
 python_anywhere_console = "https://www.pythonanywhere.com/user/info34/consoles/"
