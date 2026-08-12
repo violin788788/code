@@ -35,12 +35,29 @@ except subprocess.CalledProcessError as e:
 if system_type=="Linux":
     print("Linux detected - not opening Chrome.")
     sys.exit()
-chrome_path=r"A:\Program Files\Google\Chrome\Application\chrome.exe"
+
+
+match = []
+match.append([32,"Program Files (x86)"])
+match.append([64,"Program Files"])
+chrome_program_files = ""
+firefox_program_files = ""
+for a in range(0,len(match)):
+    if chrome_32_or_64_bit==match[a][0]:
+        chrome_program_files = match[a][1]
+    if firefox_32_or_64_bit==match[a][0]:
+        firefox_program_files = match[a][1]
+print("chrome_program_files",chrome_program_files)
+print("firefox_program_files",firefox_program_files)
+#chrome_location = "B:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+chrome_location = drive+"\\"+chrome_program_files+"\\Google\\Chrome\\Application\\chrome.exe"
+firefox_location = drive+"\\"+firefox_program_files+"\\Mozilla Firefox\\private_browsing.exe"
+
 github_repo=f"https://github.com/violin788788/{directory_name}"
 python_anywhere_console = "https://www.pythonanywhere.com/user/info34/consoles/"
 #if os.path.exists(chrome_path):
-subprocess.run([chrome_path,"--incognito",github_repo])
-subprocess.run([chrome_path,"--incognito",python_anywhere_console])
+subprocess.run([firefox_location,"--incognito",github_repo])
+subprocess.run([firefox_location,"--incognito",python_anywhere_console])
 print("")
 print("don't forget to run python git-pull.py on python anywhere console")
 print("")
