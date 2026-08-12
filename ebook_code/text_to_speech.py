@@ -148,7 +148,7 @@ def add_song_sound(directory,song,plane):
         out_part = os.path.join(folder, directory+f"_part{i}_mixed.mp3")
         if os.path.exists(main_part):
             print(f"\nProcessing part {i}...")
-            mix_audio_fast(main_part, 1.0, dmitri, 0.2, plane, 0.5, out_part)
+            mix_audio_fast(main_part, 1.0, dmitri, 0.15, plane, 0.5, out_part)
     input("\nAll done! Press Enter to exit...")
 
 
