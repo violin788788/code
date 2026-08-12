@@ -9,7 +9,26 @@ def main(original_file, gen_narration=0, add_song_and_sound=0, narrate_start_fil
     functions_to_run = []
     functions_to_run.append([".pdf", pdf_to_txt])
     functions_to_run.append([".epub", epub_to_txt])
-    txt_file = original_file
+    file_path = Path(original_file)
+    suffix = file_path.suffix
+    for a,val in enumerate(functions_to_run):
+        if suffix in val[0]:
+            val[1](original_file)
+            break
+    directory = original_file.replace(suffix,"")
+    txt_file = original_file.replace(suffix,".txt")
+    print("directory",directory)
+    print("txt_file",txt_file)
+    sys.exit()
+
+    if gen_narration == 1:
+        edge_tts_to_mp3(directory, txt_file, narrate_start_file)
+    if add_song_and_sound == 1:
+        add_song_sound(directory, song, plane_sound)
+
+        """
+
+    txt_file = original_file[0:original_file.find(".")]
     for a in range(0, len(functions_to_run)):
         check = functions_to_run[a][0]
         if check in original_file:
@@ -18,10 +37,12 @@ def main(original_file, gen_narration=0, add_song_and_sound=0, narrate_start_fil
             txt_file = original_file.replace(check, ".txt")
             break
     directory = txt_file.replace(".txt", "")
+
     if gen_narration == 1:
         edge_tts_to_mp3(directory, txt_file, narrate_start_file)
     if add_song_and_sound == 1:
         add_song_sound(directory, song, plane_sound)
+        """
 
 """
 def main():
@@ -115,44 +136,6 @@ def edge_tts_to_mp3(directory,txt_file,start):
                             pbar.update(len(chunk["data"]))
         asyncio.run(run_tts())
     print("done")
-
-
-"""
-def edge_tts_to_mp3(directory,txt_file,start):
-    #edge_tts_to_mp3(directory,txt_file,8,20)
-    import os
-    import asyncio
-    import edge_tts
-    minutes_per_file=60
-    with open(txt_file,"r",encoding="utf-8") as f:
-        text=f.read()
-    words=text.split()
-    voice="en-US-GuyNeural"
-    print("len(words)",len(words))
-    words_per_file=minutes_per_file*150
-    parts=(len(words)+words_per_file-1)//words_per_file
-    count=0
-    while count<parts:
-        begin=words_per_file*count
-        end=words_per_file*(count+1)
-        if end>len(words):
-            end=len(words)
-        print("part",count+1,"words",begin,"to",end)
-        chunk_text=" ".join(words[begin:end])
-        if chunk_text.strip()=="":
-            break  
-        part_number = count+1
-        output_file=txt_file.replace(".txt","_part"+str(part_number)+".mp3")
-        output_file=os.path.join(directory,output_file)
-        async def run_tts():
-            communicate=edge_tts.Communicate(chunk_text,voice)
-            await communicate.save(output_file)
-        if part_number>=start: 
-            print("generating",output_file,"of",parts)
-            asyncio.run(run_tts())
-        count+=1
-    print("done")
-"""
 
 def add_song_sound(directory,song,plane):
     #add_song_sound(directory,song,plane)

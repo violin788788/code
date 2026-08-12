@@ -20,7 +20,7 @@ tk.Checkbutton(root,text="Generate Narration(if applicable?)",variable=generate_
 tk.Checkbutton(root,text="Add Song to Narration",variable=song_var).pack()
 tk.Label(root,text="Narrate Start File").pack()
 start_file=tk.Entry(root)
-start_file.insert(0,"4")
+start_file.insert(0,"1")
 start_file.pack()
 tk.Label(root,text="Song").pack()
 song=tk.Entry(root)
