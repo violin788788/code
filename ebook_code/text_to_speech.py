@@ -1,10 +1,8 @@
-#from utils import *
-#from ..utils import *
-#from tts_add_song import *
-import wave,epub2txt,platform,os 
+import sys
+sys.path.insert(0, r"A:\\Users\\-\\code")
+from utils import *
 from pathlib import Path
-
-
+import wave,epub2txt,platform,os 
 def main(original_file, gen_narration=0, add_song_and_sound=0, narrate_start_file=1, song="dmitri.mp3", plane_sound="plane_sound.mp3"):
     functions_to_run = []
     functions_to_run.append([".pdf", pdf_to_txt])
@@ -19,63 +17,13 @@ def main(original_file, gen_narration=0, add_song_and_sound=0, narrate_start_fil
     txt_file = original_file.replace(suffix,".txt")
     print("directory",directory)
     print("txt_file",txt_file)
-    sys.exit()
+    #sys.exit()
 
     if gen_narration == 1:
         edge_tts_to_mp3(directory, txt_file, narrate_start_file)
     if add_song_and_sound == 1:
         add_song_sound(directory, song, plane_sound)
 
-        """
-
-    txt_file = original_file[0:original_file.find(".")]
-    for a in range(0, len(functions_to_run)):
-        check = functions_to_run[a][0]
-        if check in original_file:
-            run = functions_to_run[a][1]
-            run(original_file)
-            txt_file = original_file.replace(check, ".txt")
-            break
-    directory = txt_file.replace(".txt", "")
-
-    if gen_narration == 1:
-        edge_tts_to_mp3(directory, txt_file, narrate_start_file)
-    if add_song_and_sound == 1:
-        add_song_sound(directory, song, plane_sound)
-        """
-
-"""
-def main():
-    #original_file = "rothschild_1798_1848.pdf"
-    
-    #original_file = "jp_morgan.epub"
-    original_file = "too_big_to_fail.epub"
-    gen_narration = 0
-    narrate_start_file = 4
-    add_song_and_sound = 1
-    song = "dmitri.mp3"
-    plane_sound ="plane_sound.mp3"
-
-    functions_to_run = []
-    functions_to_run.append([".pdf",pdf_to_txt])
-    functions_to_run.append([".epub",epub_to_txt])
-    txt_file = original_file
-    for a in range(0,len(functions_to_run)):
-        check = functions_to_run[a][0]
-        if check in original_file:
-            run = functions_to_run[a][1]
-            run(original_file)
-            txt_file = original_file.replace(check,".txt")
-            break
-    directory = txt_file.replace(".txt","")
-
-    #os.startfile(txt_file)
-    if gen_narration==1:
-        edge_tts_to_mp3(directory,txt_file,narrate_start_file)
-    if add_song_and_sound==1:
-        add_song_sound(directory,song,"plane_sound.mp3")
-    #print("u done jack!")
-"""
 def pdf_to_txt(pdf):
     import fitz
     doc=fitz.open(pdf)
@@ -165,21 +113,38 @@ def add_song_sound(directory,song,plane):
 
 
 
-import os
-import subprocess
+import tkinter as tk
+from tkinter import filedialog
+from text_to_speech import main
+def select_file():
+    global selected_file
+    selected_file = filedialog.askopenfilename(filetypes=[("EPUB/PDF", "*.epub *.pdf")])
+    file_label.config(text=selected_file)
+def run():
+    main(selected_file,int(generate_var.get()),int(song_var.get()),int(start_file.get()),song.get(),plane_sound.get())
+selected_file=""
+root=tk.Tk()
+root.title("gen mp3 and add song to it")
+root.geometry("500x400")
+tk.Button(root,text="Select File",command=select_file).pack(pady=10)
+file_label=tk.Label(root,text="No file selected")
+file_label.pack()
+generate_var=tk.IntVar()
+song_var=tk.IntVar()
+tk.Checkbutton(root,text="Generate Narration(if applicable?)",variable=generate_var).pack()
+tk.Checkbutton(root,text="Add Song to Narration",variable=song_var).pack()
+tk.Label(root,text="Narrate Start File").pack()
+start_file=tk.Entry(root)
+start_file.insert(0,"1")
+start_file.pack()
+tk.Label(root,text="Song").pack()
+song=tk.Entry(root)
+song.insert(0,"dmitri.mp3")
+song.pack()
+tk.Label(root,text="Plane Sound").pack()
+plane_sound=tk.Entry(root)
+plane_sound.insert(0,"plane_sound.mp3")
+plane_sound.pack()
+tk.Button(root,text="RUN",command=run).pack(pady=20)
+root.mainloop()
 
-#main()
-
-
-
-"""
-voice = "en-US-AriaNeural"
-voice="en-US-GuyNeural"
-or:
-voice="en-US-ChristopherNeural"
-Other male voices:
-
-voice="en-US-EricNeural"
-voice="en-US-RogerNeural"
-voice="en-US-SteffanNeural"
-"""
