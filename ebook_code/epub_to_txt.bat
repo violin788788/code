@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "epub_to_text.py"
+python "epub_to_txt.py"
 pause

@@ -1,6 +1,6 @@
 #from utils import *
 import sys,os,math,subprocess
-import sys,pyperclip,time
+import sys,pyperclip,time,pyautogui
 """
 def show(value):
     #show(epub_file)

@@ -28,5 +28,5 @@ def pdf_to_txt(pdf_path, txt_path):
                 txt_file.write("\n\n")
 
 # Run the conversion
-file_without_pdf_or_txt = "rothschild_1798_1848"
+file_without_pdf_or_txt = "direkte"
 pdf_to_txt(file_without_pdf_or_txt+".pdf",file_without_pdf_or_txt+".txt")

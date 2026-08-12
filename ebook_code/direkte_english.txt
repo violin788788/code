@@ -1,0 +1,427 @@
+Direct legislation by the people
+.fakecover {
+margin:0;
+padding:0;
+border:none;
+height:100%;
+width:100%;
+background:black;
+text-align: center;
+font-weight: normal;
+font-family: Georgia,"Times New Roman",Serif;
+}
+.cover {
+color: black;
+margin: 0px;
+padding:100px 0px 100px 0px;
+background:white;
+}
+.title {
+font-size: 35px;
+padding: 25px 5px 40px 5px;
+}
+.author {
+padding: 40px 5px 25px 5px;
+font-size: 25px;
+}
+.notice {
+padding: 80px 5px 10px 5px;
+font-size: 18px;
+color: white;
+}
+.top {
+height:120px;
+}
+.bottom {
+height:120px;
+}
+.flow {
+margin: 0;
+font-size: 1em;
+}
+.flow .pagebreak {
+page-break-before: always;
+}
+.flow p {
+text-align: left;
+text-indent: 0;
+margin-top: 0;
+margin-bottom: 0.5em;
+}
+.flow .gstxt_sup {
+font-size: 75%;
+position: relative;
+bottom: 0.5em;
+}
+.flow .gstxt_sub {
+font-size: 75%;
+position: relative;
+top: 0.3em;
+}
+.flow .gstxt_hlt {
+background-color: yellow;
+}
+.flow div.gtxt_inset_box {
+padding: 0.5em 0.5em 0.5em 0.5em;
+margin: 1em 1em 1em 1em;
+border: 1px black solid;
+}
+.flow div.gtxt_footnote {
+padding: 0 0.5em 0 0.5em;
+border: 1px black dotted;
+}
+.flow .gstxt_underline {
+text-decoration: underline;
+}
+.flow .gtxt_heading {
+text-align: center;
+margin-bottom: 1em;
+font-size: 150%;
+font-weight: bold;
+font-variant: small-caps;
+}
+.flow .gtxt_h1_heading {
+text-align: center;
+font-size: 120%;
+font-weight: bold;
+}
+.flow .gtxt_h2_heading {
+font-size: 110%;
+font-weight: bold;
+}
+.flow .gtxt_h3_heading {
+font-weight: bold;
+}
+.flow .gtxt_lineated {
+margin-left: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+white-space: pre-wrap;
+}
+.flow .gtxt_lineated_code {
+margin-left: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+white-space: pre-wrap;
+font-family: monospace;
+}
+.flow .gtxt_quote {
+margin-left: 2em;
+margin-right: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow .gtxt_list_entry {
+margin-left: 2ex;
+text-indent: -2ex;
+}
+.flow .gimg_graphic {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow .gimg_table {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow {
+font-family: serif;
+}
+.flow span,p {
+font-family: inherit;
+}
+Direct legislation by the people
+Karl Bürkli
+Google™ Book Search
+This is a digital copy of a book that was preserved for generations on library shelves before it was carefully scanned by Google as part of a project to make the world's books discoverable online. See the back of the book for detailed information.
+Direct legislation by the people
+.flow {
+margin: 0;
+font-size: 1em;
+}
+.flow .pagebreak {
+page-break-before: always;
+}
+.flow p {
+text-align: left;
+text-indent: 0;
+margin-top: 0;
+margin-bottom: 0.5em;
+}
+.flow .gstxt_sup {
+font-size: 75%;
+position: relative;
+bottom: 0.5em;
+}
+.flow .gstxt_sub {
+font-size: 75%;
+position: relative;
+top: 0.3em;
+}
+.flow .gstxt_hlt {
+background-color: yellow;
+}
+.flow div.gtxt_inset_box {
+padding: 0.5em 0.5em 0.5em 0.5em;
+margin: 1em 1em 1em 1em;
+border: 1px black solid;
+}
+.flow div.gtxt_footnote {
+padding: 0 0.5em 0 0.5em;
+border: 1px black dotted;
+}
+.flow .gstxt_underline {
+text-decoration: underline;
+}
+.flow .gtxt_heading {
+text-align: center;
+margin-bottom: 1em;
+font-size: 150%;
+font-weight: bold;
+font-variant: small-caps;
+}
+.flow .gtxt_h1_heading {
+text-align: center;
+font-size: 120%;
+font-weight: bold;
+}
+.flow .gtxt_h2_heading {
+font-size: 110%;
+font-weight: bold;
+}
+.flow .gtxt_h3_heading {
+font-weight: bold;
+}
+.flow .gtxt_lineated {
+margin-left: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+white-space: pre-wrap;
+}
+.flow .gtxt_lineated_code {
+margin-left: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+white-space: pre-wrap;
+font-family: monospace;
+}
+.flow .gtxt_quote {
+margin-left: 2em;
+margin-right: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow .gtxt_list_entry {
+margin-left: 2ex;
+text-indent: -2ex;
+}
+.flow .gimg_graphic {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow .gimg_table {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow {
+font-family: serif;
+}
+.flow span,p {
+font-family: inherit;
+}
+Nat-okay. Comm. 124 No. 4
+ERSITY LIBRARY
+UNIVE
+* BASEL
+*
+EK
+Directly through the people.
+Presentation and proposal from the Zurich section to the Congress of the International Workers' Association to be opened in Basel on September 6, 1869.
+The experience of the last few decades has thoroughly cured the working class of Europe of the delusion that imperial democracy, imperial socialism, i.e. h. the dictatorship of an individual is able or even willing to do something for the social upliftment of the working masses. Nothing but fake reforms, sand in the eyes, in reality the worker is more than ever a tax machine and cannon fodder.
+Since Bonaparte's coup, the belief has been spread from above among the working masses with great cunning that the political or state form has nothing to do with social, i.e. social, reforms; Therefore, workers should not concern themselves with politics but only with their social situation. The ruling classIt is only too well known from experience what great advantages it derives from a form of government that is favorable to it; knows only too well that as long as the working masses allow themselves to be led politically without will and have nothing direct to say about legislation, i.e. h. does not organize the form of government according to their interests, the interests of the work, socialism, even the most radical, is a vague nonsense because it lacks the political support for its social leverage with which it can unhinge the old society with its mass poverty and individual wealth. Social reform is doomed to remain in a state of theory as long as it has not found the right means to see it in practice and this means can be no other than to create a political reform, a form of government, in which the law is made by all citizens and no longer just by a few privileged ones.
+France's workers are from the so-called Napoleon's imperial democracy has been thoroughly healed, they want to make the social democratic ne public. The workers of Northern Germany have defeated imperial socialism, the Junker dictatorship, etc. Swiss (who, according to his unnatural, Mannheim-like hobbies, also the working class
+2318
+catalog)
+to after-politics and after-socialism) are so fed up that they turn away from this seducer of the youth and the people with disgust and go with all their baggage to the camp of the International Workers' Association. pass over, where the pannier of the right to self-determination, of the socially democratic form of government, of the European Federal Republic blows, around which the workers of southern Germany, Destreich, Italy and Spain are beginning to gather in ever greater numbers.
+But how should this social democratic state be organized? That is the big question, so important for the worker. The International Workers' Confederation should be completely clear and agreed on what kind of republic it wants, so that when a revolution breaks out, the working masses everywhere know what to do.
+The political movement in Switzerland, mainly in the canton of Zurich in the last two years, is probably just a symptom, a prelude to a great, profound movement that is taking place in European politics. The bourgeois republic or representative democracy is in the process of dying out in Switzerland, because it has been found too easy to fight against the pernicious influences, the Jesuitism of big capital, so to speak, it has neither the strength nor the will to solve the social question, and from now on pure democracy appears on the scene, where the people take a direct part in the legislation and will therefore shape it according to their social needs.
+The idea of ​​direct legislation by the people must be spread more and more among the working masses of Europe so that it becomes second nature during the next monarchical flaying and creates political institutions on a large scale throughout Europe similar to those that already exist on a small scale in Switzerland.
+The representative state is the same everywhere. The workers of Paris know only too well from the June days of 1848 that these bourgeois representatives want to solve the social question with grapeshot, and more recently the miners in Belgium have learned that their constitutionalists know no other means than powder and lead; and even in the representative democracy of Zurich there had been harsh exceptional laws against the workers' coalition for more than 20 years. the social democratic press. As long as the workers fabricate the state laws through their exploiters and allow them to be dictated to them, the laws will also be unfavorable for the workers and only favorable for the masters; or since when has a monarch made laws against his dynasty in the interests of the people? First comes He, his interest, his ruling house and the tools for maintaining the state exploitation machine, and only when everyone has enough of these, is the exploited people thought of and, as a rule, they are offered stones instead of bread. (There are, of course, so-called Christian monarchs who, like the good-natured riders, stroke the neck of the creature that is panting under their burden, but that the one who has been ridden to shame and is heavily burdened is the most benefited by this
+It would be helpful if the gentleman and all his entourage got out of the saddle - the upper one doesn't think of that from afar - until the lower one throws him off).
+Likewise, an aristocracy can make excellent laws for itself but not for the people, or has the cleverest of all aristocracies, that of England, ever done anything in the interests of the workers? No, if it has held up until now, it is only because it has not developed the stubbornness to unduly resist the absolutely necessary reforms. But the legislators of the representative state, elected by the people, are also unable to make good laws for the working classes, although they are able to enact very excellent ones for the bourgeois class; Why? Because experience has shown that the representative bodies consist in their majority of capitalists and their creatures, bourgeois hostile to social progress, and just as the slave owner is by nature incapable of ever making laws in the interests of his slaves, so the capitalist representative is also incapable of ever passing laws in the interests of the workers. Representative democracy, even though it is relatively much a better form of government than monarchy or aristocracy, is therefore not the political form in which the working world can develop and social questions can be solved. It would perhaps be better if the workers and especially the farmers only elected the most intelligent of their class to the council, but unfortunately the experience of all countries shows that this only happens in exceptional cases. As a rule, the people only elect members of the so-called higher classes, because it has the pernicious prejudice, which dates back to monarchical times, that only the intelligentsia produce good laws and that only well-study people are needed for this, while in the creation of laws, on the contrary, interest is decisive. In addition, daily allowances and rice compensation are systematically set so low that it is economically impossible for a member of the working class to act as a representative.
+The experience of democracy also teaches that the people are far more likely to make mistakes and are far more easily seduced when it comes to people (council elections) than when it comes to judging things (e.g. votes on laws), for the simple reason that the heart and soul of a person are infinitely more difficult to examine than the core of a thing, i.e. h. meaning and spirit of a law; because it is far easier to judge whether a law is made in the interests of the working masses than if a councilor will speak and vote in the interests of the people.
+Thus, the touchstone with which one can distinguish true gold from false gold would be the following: In the true, pure democracy or people's republic, the people are concerned not only with the people (council elections), but also and above all with the things (laws). In the false, representative democracy or bourgeois republic, the people are only allowed to concern themselves with the people (council elections) who then make things (laws) according to their own discretion, advantage and prejudice.
+The
+4
+Bourgeois democrats want only them to govern the people for the benefit of a few. The Social Democrats want the people to govern themselves for the benefit of all, by taking the legislation into their own hands, taking care of themselves and no longer worrying, i.e. applying self-help on the most unlimited scale, including in the political sphere.
+World history proves abundantly that vision is only the written interest of the legislator; To put it more prosaically, one can say that the spirit of the law lies in the belly of the lawmaker; The quintessence of the laws is determined by the money bag of the legislators. This is all the more true when it concerns not an individual but a whole class, not individuals but class rule. The exploiting class has never emancipated the exploited, or voluntarily passed laws favorable to the latter. Only when the exploited class became masters in the state and took legislation into their own hands was the Gesek in their, i.e. h. made to the more general interest; Only then could she develop in accordance with her social needs. But what is true of the third class, the bourgeois, is all the more true when it concerns the working class, the entire people. Like the chemical germ, i.e. h. the inner drive of a plant to flourish physical peculiarities, i.e. h. While external conditions, such as favorable soil and climate, are required, the internal, so to speak chemical drives of society, the social ideas, also need a peculiar, physical form of government in order to develop naturally and to germinate in practical life, i.e. kh favorable å u = external conditions and these are precisely the social democratic laws, which can never be made by princes or priests (who already have heaven here), but only by the working masses who long for such a social transformation, a humane existence here below.
+No Savior will ever redeem the people; they must redeem themselves. Hence the general urge of the peoples of Europe for emancipation; HowAs the plant grows in the dark vault towards the cellar hole towards the sunlight, the working world of Europe also strives from the dull monarchy to the bright democracy. In freedom, the people will instinctively feel the right path to social salvation, precisely because they experience the suffering every day, which also gives them the necessary incentive to learn the cause and remedy of the distress.
+In the true people's state, where direct legislation has given it the tools for permanent movement and the path to eternal peaceful revolution lies open before it, it will create new forms and laws not according to preconceived social theories, but according to the needs that make themselves felt in practice, and it will assert its will, as in Switzerland, with the pencil and no longer with the firearm, through bloody revolution, as in the despotic state.
+The fear that the ideal achievements of humanity are less nurtured and promoted in the social democratic state than in monarchical or representative forms of government is a vain one; Because history proves that the freer a people is, the more willing they are to make sacrifices for educational purposes, because they realize that it is not spirit-killing, sterile faith, but only spirit-elevating, fertilizing science that can redeem the world. Direct legislation by the people is the most favorable form of government for promoting popular education, because everyone has an interest in their fellow human beings, who also have something to say about the law, casting their voice consciously, and above all the so-called Educated people, to whom direct legislation by the people seems like a modern invasion of the barbarians, a downfall of all culture, have the greatest interest and are willing to lend a hand to ensure that the masses are educated free of charge and as well as possible and that higher educational institutions are accessible to everyone who is qualified. Incidentally, direct legislation in and of itself is a powerful means of education because the people are stimulated by their most immediate interest to obtain instruction so that they are not still influenced by the so-called. higher education and legal subtleties are duped and exploited. Strangely enough, these so-called educated people, who consider direct legislation to be incapable of cultivating the ideal goods of humanity and therefore describe it as a step backwards, cannot sufficiently admire the ancient Greeks as the main bearers of the civilization of antiquity and probably do not think about the fact that it was precisely the most advanced of all Greeks, the Athenians, who supported direct legislation by the people, i.e. h. had its free citizens and that it was precisely this form of government that contributed most significantly to the development of the Attic spirit; Because with the suppression of this form of government, with foreign rule, the great spirits also disappeared. The ancient Germanic tribes also had direct legislation by the people in a similar organization to that which was preserved for many centuries in the small rural community cantons of Switzerland. The Germanic tribes paid homage to the basic principle of the state: every free man should be a warden, a soldier and a judge.
+Strangely enough, the geseyes, war and right. knowledgeable Romans subjugated all peoples of the old world, except this Germanic people, whose state was so fragmented; Why? Precisely because popular organization, popular militia and popular courts had become flesh and blood in him and had produced men whose primal strength destroyed Rome's almighty power. Unfortunately, over the course of time, the Germans became so simple as to prefer the Roman Trinity (God the Father, Son and Holy Spirit) to the Germanic Trinity (Governor, Wehrmann and Judge in one person), and they will be pinched with red-hot tongs by priests and Caesars until the ancient Germanic state institutions remain intact; People's legislation, people's militia and people's court back on the bushel
+★
+6
+put. The old democracy, which was torn from the people by monarchical ignorance and priests' beliefs, must be reconquered through reason and science and developed in keeping with the times. Everyone must become a legislator, a soldier and a judge again; He must exercise these rights and obligations temporarily and in his own person. Here, no division of labor, no transfer to others is possible without falling into servitude. If the people give up the right to make final decisions about laws, if they leave this duty to a single person or only a few, they will soon take the right to make the laws only for themselves and against the common good. The people leaves the defense of their rights and their fatherland exclusively to a numberIf he becomes a trained and separated person, he creates a standing army, the most terrible tool in the hands of the rulers of the state, which is used against his rights and his freedom every time the bourgeois sheep become unruly under the monarchical scissors. If the people entrust the right and the duty to "administer justice" to permanent officials rather than to magistrates, they run the risk of a bureaucracy and a jurisprudence establishing themselves and developing which, the devil knows! whatever foreign, Roman "law" is based on, just not that based on the legal views of the people.
+Little Switzerland, crammed in the middle of powerful monarchies whose population is a hundred times larger, despite the pernicious monarchical influences, despite the miasma of God's grace, has for centuries at least partially preserved the proto-Germanic health, the eternally true principles of those Germanic tribes before which the oppressive Rome trembled, especially those of arming the people. Because the Swiss armed forcesman always has defenses and weapons at home, i.e. h. had the armed right to vote because the Swiss never wanted anything to do with a standing army, that's why their republic was preserved and that's why the awakening national spirit was always able to easily break through.
+With all the force that historical memory from Germanic antiquity and from the heroic times of the old Confederation (where the people in the large cantons were consulted about important questions such as war and peace, the Reformation, taxes, etc. and their approval or rejection was obtained) can give a modern idea, direct legislation by the people is now breaking out in the Swiss people. It already rightly exists in the larger cantons of German-speaking Switzerland, Bern, Thurgau, Graubünden, but above all in 3 Zurich, whichever canton has the most pronounced and purest constitution. The movement that is already beginning
+1
+7
+direct legislation by the people also wants to extend to federal legislation in such a form as it could be exercised by the people in the largest states.
+The French Constitution of 1793, which at its peak contains the ever-memorable Declaration of Human Rights, established direct legislation by the people, albeit in a less developed form than it appears today, namely in the form of the so-called veto, where a certain number of those entitled to vote must raise an objection before the vote on the law in question takes place.
+Article 53 of the French Constitution of 1793 says;
+“The legislative body proposes laws (propose des lois).
+Art. 58. "The draft law will be printed and sent to all municipalities of the Republic under the title: Law - Proposal (loi proposée)".
+Art. 59. If 40 days after sending the legislative proposal, in "the half of the departments, more than one, the tenth part of the" regularly convened primary assemblies have not complained, the draft is accepted and becomes law.
+Art. 60. “If this complaint is made, the legislative body must “convene the original assemblies” (for the purpose of voting on laws). Unfortunately, this constitution was never implemented because the severity of the external and internal difficulties of the young republic did not allow peaceful development. But just as in the life of nations a good idea is never lost and no step towards improvement is taken in vain, these ideas from 1793 also lay dormant deep in the hearts of the French people. When the second republic emerged from the February Revolution of 1848 and the Social Democrat Nittinghausen of Cologne introduced the idea of direct legislation by the people, the further development and spread of which he had made as his life's task, into the French people in 1850 and 1851, these thoughts immediately ignited and a powerful movement broke out in the minds against the representative state, which would inevitably have soon borne its good fruits, if not for this beautiful blossom would have been cut short by the devastating coup of the “savior of society” Bonaparte. - It is precisely one of Caesarism's fates that the grass withers wherever he sets his feet. From this desert of reaction the seed fled to the only remaining republican existence, on Swiss soil, where it gradually took deep roots in the healthy life of the people. If Caesarism is dying off and a new wave of spring is sweeping through the peoples, the seed that has been sown will also sprout out of the ground everywhere as real seeds and the idea of direct legislation by the people, which has been germinating for a long time, will take on practical form as a form of government.
+It is understood by selbst that direct legislation cannot be exercised in larger states in the same way as before
+in the public square in Athens, in the oak groves of ancient Germania and still today in the rural cantons of Switzerland. The essence, i.e. h. Participation in the making of legislation must continue, only the form in which participation is carried out must disappear, must become completely different, because the circumstances have also become different and greater, which no longer allow the entire people to gather at one point for deliberation. This century, however, with its great inventions, has prepared and made pure democracy possible on a large scale, by almost eliminating long distances, so that a large body of people is connected by steam and telegraphy in such a way that the expressions and twitches of the individual members are immediately felt everywhere and become conscious. After all, the old, venerable form has to be abandoned because it is too narrow.
+The majority of the rural community, i.e. the open vote, since everyone can write, must be seen through the secret vote in the communities using the ballot box, which is open for several hours on voting Sunday, so that every citizen can throw in his or her written ballot paper at the time that suits him. This cuts off the thread of life from the influence of capital and the undue demands of employers, which all too often cloud open voices. With the secret vote, the worker will be able to express his will more freely than if he has to fear, as is all too often the case with open voting, that he would have to atone for the free expression of his political convictions through social disadvantages (deprivation of work, etc.).
+Since everyone can read, the consultation at the regional community will always be replaced by the printed explanations of the Geseyes proposals, by discussion in the newspapers and by free meetings if the importance of the Geseyes proposals causes such discussions.
+The application in the rural cantons is expressed in larger state associations through a differently organized popular initiative (the people's right to make proposals); This consists in the fact that a fraction of the people determined by the constitution (around 1210 to 1220) makes a proposal, can put their request into law through a committee elected for this purpose and finally bring it to a referendum.
+Direct legislation by the people therefore consists of two elements: a stimulating and a deciding one, 1) the people's right to make proposals, also known as a popular initiative,
+2) from the popular vote on the Geseke, also called a referendum.
+Between the two, the council functions as a regular organ, which is no longer a decision-making body, but only a decision-making body
+9
+gender, d. h. is a mere advisor whose advice may or may not be followed.
+The Rath is thus caught between two fires, which will keep him constantly warm.
+If the council proposes bad laws (if it commits crimes), they are rejected by the people (referendum).
+If the council does not want to propose good laws (if it commits literary sins), the popular initiative comes and makes its suggestions.
+In the canton of Zurich, for example, the popular initiative can express itself in two ways:
+1. If the 13th part of the people (in Zurich 5,000 initiators out of 65,000 eligible voters) makes a proposal, it must be put to the referendum.
+2. If an individual makes a proposal that is approved by 123 of the council, it must also be voted on by the people. Therefore, in the canton of Zurich there are 1) 5000 initiators, 2) An individual that is approved by 123 of the members of the canton council,
+3) The cantonal council itself (consisting of around 220 members),
+all three have equal rights to submit proposals to the people for a vote; only the council is the usual organ; The other two organs are the extraordinary ones, which only come into action when the ordinary one becomes lame.
+For better understanding, we now follow the articles on the initiative and referendum from the Zurich Constitution, which begins with the following words:
+“The people of the canton of Zurich give themselves by their strength
+Right to self-determination "following constitution":
+III. Legislation and popular representation
+Article 28.
+“The people exercise the legislative power with the participation of the Kan
+“tonsrathes out.
+A. The people's right to make proposals.
+Article 29.
+“The right of those entitled to propose (initiative) includes the “request for the enactment, repeal or amendment of a law or a decision that does not constitutionally fall exclusively within the authority of the cantonal council. SuchDesires can take the form of simple ones
+“Suggestion or the elaborated draft must be made and must be justified in one case as well as in the other.
+"If an individual or an authority makes such a request, which is supported by a third of the members of the cantonal council, the same must be decided by the people. The applicant or the representative of the authority making the request has the right to provide personal justification in the bosom of the cantonal council, insofar as 25 members of the cantonal council support the request for personal justification.
+"Similarly, the referendum must be initiated if 5,000 eligible voters or a number of community meetings at which at least 5,000 eligible voters voted for it make such a request, insofar as the cantonal council does not comply with it. A proposal submitted in a timely manner should be submitted to the people for a decision at the latest in the second regular referendum.
+“The suggestion, or the draft, must always be submitted to the cantonal council for review before the vote.
+“In the event that a draft proposal based on the popular initiative is voted on, the cantonal council can, in addition to its report, also present a modified draft to the people for decision.
+B. Referendum.
+Article 30.
+"Twice a year, in spring and autumn, the people vote on the legislative acts of the cantonal council (referendum). In urgent cases, the cantonal council can order an extraordinary vote.
+“The referendum is subject to:
+"1) all constitutional amendments, laws and concordats;
+"2) those resolutions of the cantonal council which it does not
+“is authorized to take final decisions (see Article 31);
+"3) Conclusions that the cantonal council made on its own initiative
+“I want to bring a mood.
+"When presenting a law or resolution, the cantonal council is entitled, in addition to the vote on the whole, to exceptionally also order a vote on individual points.
+"Voting takes place in the communities using the ballot box. "Participation in this is a general civic duty.
+“The referendum can only be affirmative or negative.
+“In this case, the absolute majority of the affirmative and negative decides
+“No voices.
+“The cantonal council is not authorized to see laws or resolutions provisionally in force before the vote.
+“All proposals that are put to the referendum must be thirty at the latest
+“To be published days before the same and handed over to those entitled to vote
+C. Cantonal Council.
+Article 31.
+“The cantonal council has the following:
+1. deliberation and decision-making on all matters
+“be subject to the referendum;
+2.
+3.
+4. monitoring of the entire state administration and the administration of justice
+"5. the final decision on new one-off expenses for a specific purpose, which do not exceed the amount of 250,000 francs, as well as on new annual recurring expenses up to the amount of 20,000 francs;
+10
+6. Determination of the annual estimate of income and expenditure of the state budget in accordance with existing laws and resolutions.
+“7. the audit of the state accounts...''
+We do not want to claim that the above articles are absolutely correct in all parts and are, so to speak, set up as an infallible scheme. The diversity of individual views will reveal deficiencies here and there. These articles alone deserve all attention as a first serious attempt insofar as they are a collective work, a new form of government that emerged from the deliberations and votes of an entire people, in which the collective can develop unhindered according to its progressive needs.
+We are convinced that direct legislation by the people through the institutions of popular initiative and popular vote on laws can and must be introduced in the largest states, and that social questions cannot be solved without these political institutions.
+The Zurich Section therefore considers itself both obliged and entitled to bring the idea of direct legislation by the people to the forum of the International Workers' Confederation, in the conviction that this idea, like the ever-memorable Declaration of Human Rights, will make its way around the world as the most effective means of realizing these social rights.
+She therefore submits the following request:
+12
+The Congress of the International Workers' Confederation
+Considering:
+in Basel.
+that the law is the written judgment of the legislator;
+that the interest of the community as a whole naturally prevails when making laws. should be giving;
+that experience shows that representative bodies are morerepresent capital as labor, and therefore laws are generally made at the expense of the working masses in favor of capital;
+that only through direct participation in legislation can the political-social consciousness penetrate the people, which is the first prerequisite for solving social questions;
+decides:
+It is a main task of the working classes to work towards the realization of the social-democratic republic in which legislation is exercised directly by the people. Everything for the people and everything through the people!
+Direct legislation by the people
+.frontmatter_header {
+font-size:1.2em;
+font-weight:bold
+;}
+.frontmatter_body {
+font-size:1em;
+}
+About this Book - From Google
+This is a digital copy of a book that was preserved for generations on library
+shelves before it was carefully scanned by Google as part of a project to make
+the world's books discoverable online. It has survived long enough for the
+copyright to expire and the book to enter the public domain. A public domain
+book is one that was never subject to copyright or whose legal copyright term
+has expired. Whether a book is in the public domain may vary country to country
+country. Public domain books are our gateways to the past, representing a
+wealth of history, culture and knowledge that's often difficult to discover.
+Marks, notations and other marginalia present in the original volume may appear
+in this file - a reminder of this book's long journey from the publisher to a
+library and finally to you.
+Google Book Search has digitized millions of physical books and made them
+available online at the Google Books website. The digitization at
+the most basic level is based on page images of the
+physical books. To make this book available as an ePub formatted file we have
+taken those page images and extracted the text using Optical Character
+Recognition (or OCR for short) technology. The extraction of text from page
+images is a difficult engineering task. Smudges on the physical books' pages,
+Fancy fonts, old fonts, torn pages, etc. can all lead to errors in the
+extracted text. Imperfect OCR is only the first challenge in the ultimate goal
+of moving from collections of page images to extracted-text based books. Our
+computer algorithms also have to automatically determine the structure of the
+book (what are the headers and footers, where images are placed, whether text
+is verse or prose, and so forth). Getting this right allows us to render the
+book in a way that follows the format of the original book.
+Despite our best efforts you may see spelling mistakes, garbage characters,
+extraneous images, or missing pages in this book. Based on our estimates, these
+Errors should not prevent you from enjoying the content of the book. The
+technical challenges of automatically constructing a perfect book are daunting,
+but we continue to make enhancements to our OCR and book structure extraction
+technologies.
+We hope you'll enjoy these books as much as we do.
+Usage guidelines
+Google is proud to partner with libraries to digitize public domain
+materials and make them widely accessible. Public domain books belong
+to the public and we are merely their custodians. Nevertheless, this
+work is expensive, so in order to keep providing this resource, we
+have taken steps to prevent abuse by commercial parties, including
+placing technical restrictions on automated querying.
+We also ask that you:
+Make non-commercial use of the files: We designed Google Book
+Search for use by individuals, and we request that you use these files
+for personal, non-commercial purposes.
+Refrain from automated querying: Do not send automated queries
+of any sort to Google's system: If you are conducting research on
+machine translation, optical character recognition or other areas
+where access to a large amount of text is helpful, please contact
+us. We encourage the use of public domain materials for these purposes
+and may be able to help.
+Maintain attribution: The Google "watermark" you see on
+each file is essential for informing people about this project and
+helping them find additional materials through Google Book Search.
+Please do not remove it.
+Keep it legal: Whatever your use, remember that you are responsible
+for ensuring that what you are doing is legal. Don't assume that
+just because we believe a book is in the public domain for users
+the United States, that the work is also in the public domain
+users in other countries. Whether a book is still in copyright varies
+from country to country, and we can't offer guidance on whether any
+specific use of any specific book is allowed. Please do not assume
+that a book's appearance in Google Book Search means it can be used
+in any manner anywhere in the world. Copyright infringement liability
+can be quite severe.
+About Google Book Search
+Google's mission is to organize the world's information andto make
+it universally accessible and useful. Google Book Search helps readers
+discover the world's books while helping authors and publishers reach
+new audiences.

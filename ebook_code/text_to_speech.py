@@ -8,9 +8,9 @@ def main():
     
     #original_file = "jp_morgan.epub"
     original_file = "french_revolution.epub"
-    narrate_start_file = 10
-    gen_narration = 1
-    add_song_and_sound = 0
+    gen_narration = 0
+    narrate_start_file = 1
+    add_song_and_sound = 1
     song = "dmitri.mp3"
     plane_sound ="plane_sound.mp3"
 
@@ -26,6 +26,7 @@ def main():
             txt_file = original_file.replace(check,".txt")
             break
     directory = txt_file.replace(".txt","")
+
     #os.startfile(txt_file)
     if gen_narration==1:
         edge_tts_to_mp3(directory,txt_file,narrate_start_file)
@@ -45,6 +46,7 @@ def pdf_to_txt(pdf):
     with open(output_file,"w",encoding="utf-8") as f:
         f.write(text)
     print("generated",output_file)
+    
 def epub_to_txt(epub_file):
     #epub_to_txt("french_revolution.epub")
     import epub2txt
@@ -132,7 +134,6 @@ def edge_tts_to_mp3(directory,txt_file,start):
 def add_song_sound(directory,song,plane):
     #add_song_sound(directory,song,plane)
     #add_song_sound("part_003.mp3","dmitri.mp3","plane_sound.mp3")
-
     import subprocess, os
     def get_duration(file_path):
         cmd = ['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', file_path]
@@ -143,13 +144,16 @@ def add_song_sound(directory,song,plane):
         dur = get_duration(main_file)
         cmd = ['ffmpeg', '-y', '-i', main_file, '-stream_loop', '-1', '-t', str(dur), '-i', overlay1, '-stream_loop', '-1', '-t', str(dur), '-i', overlay2, '-filter_complex', f'[0:a]volume={v1}[a0];[1:a]volume={v2}[a1];[2:a]volume={v3}[a2];[a0][a1][a2]amix=inputs=3:duration=first:dropout_transition=0', '-c:a', 'libmp3lame', '-q:a', '4', output_file]
         subprocess.run(cmd)
-    folder, dmitri, plane = directory, song, plane
-    for i in range(1, 100):
-        main_part = os.path.join(folder, directory+f"_part{i}.mp3")
-        out_part = os.path.join(folder, directory+f"_part{i}_mixed.mp3")
+    #folder, dmitri, plane = directory, song, plane
+    files = os.listdir(directory)
+    for a,val in enumerate(files):
+    #for i in range(1, 100):
+        part_number = a+1
+        main_part = os.path.join(directory, directory+f"_part{part_number}.mp3")
+        out_part = os.path.join(directory, directory+f"_part{part_number}_mixed.mp3")
         if os.path.exists(main_part):
-            print(f"\nProcessing part {i}...")
-            mix_audio_fast(main_part, 1.0, dmitri, 0.1, plane, 0.5, out_part)
+            print(f"\nProcessing part {part_number}...")
+            mix_audio_fast(main_part, 1.0, song, 0.1, plane, 0.5, out_part)
     input("\nAll done! Press Enter to exit...")
 
 

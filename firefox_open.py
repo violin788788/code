@@ -1,4 +1,4 @@
-import sys,pyperclip,time
+import sys,pyperclip,time,pyautogui
 sys.path.insert(0, r"A:\Users\-\code")
 from utils import *
 def show(value):
@@ -34,9 +34,23 @@ chrome_location = drive+"\\"+chrome_program_files+"\\Google\\Chrome\\Application
 firefox_location = drive+"\\"+firefox_program_files+"\\Mozilla Firefox\\private_browsing.exe"
 
 url = "https://info34.pythonanywhere.com"
+#pyperclip.copy(url)
+#subprocess.Popen([firefox_location, "--incognito"])
+subprocess.Popen([firefox_location, "--private-window", url])
+time.sleep(2)
 pyperclip.copy(url)
-subprocess.Popen([firefox_location, "--incognito"])
+pyautogui.hotkey("ctrl", "v")
+pyautogui.press("enter")
+pyautogui.hotkey("win", "left")
+"""
 time.sleep(2)
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
 pyautogui.hotkey("win", "left")
+
+
+import subprocess
+url = "https://example.com"
+firefox_path = r"C:\Program Files\Mozilla Firefox\firefox.exe"
+subprocess.Popen([firefox_path, "--private-window", url])
+"""
