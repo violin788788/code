@@ -6,10 +6,11 @@ from pathlib import Path
 def main():
     #original_file = "rothschild_1798_1848.pdf"
     
-    original_file = "jp_morgan.epub"
-    narrate_start_file = 1
-    gen_narration = 0
-    add_song_and_sound = 1
+    #original_file = "jp_morgan.epub"
+    original_file = "french_revolution.epub"
+    narrate_start_file = 10
+    gen_narration = 1
+    add_song_and_sound = 0
     song = "dmitri.mp3"
     plane_sound ="plane_sound.mp3"
 
@@ -148,7 +149,7 @@ def add_song_sound(directory,song,plane):
         out_part = os.path.join(folder, directory+f"_part{i}_mixed.mp3")
         if os.path.exists(main_part):
             print(f"\nProcessing part {i}...")
-            mix_audio_fast(main_part, 1.0, dmitri, 0.15, plane, 0.5, out_part)
+            mix_audio_fast(main_part, 1.0, dmitri, 0.1, plane, 0.5, out_part)
     input("\nAll done! Press Enter to exit...")
 
 
