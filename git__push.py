@@ -66,6 +66,9 @@ python_anywhere_console = "https://www.pythonanywhere.com/user/info34/consoles/"
 #subprocess.run([firefox_location,github_repo])
 #subprocess.run([firefox_location,python_anywhere_console])
 
+print("firefox_location",firefox_location)
+sys.exit()
+
 firefox_location = "B:\\Program Files\\Mozilla Firefox\\private_browsing.exe"
 
 subprocess.Popen([firefox_location, "--private-window", python_anywhere_console])
