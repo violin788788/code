@@ -6,10 +6,10 @@ from pathlib import Path
 def main():
     #original_file = "rothschild_1798_1848.pdf"
     
-    original_file = "jp_morgan.epub"
-    start_file = 0
-    gen_narration = "no"
-    add_song_and_sound = "yes"
+    original_file = "ten_days.epub"
+    start_file = 1
+    gen_narration = "yes"
+    add_song_and_sound = "no"
     song = "dmitri.mp3"
     plane_sound ="plane_sound.mp3"
 
@@ -55,6 +55,44 @@ def epub_to_txt(epub_file):
     return txt_file
 
 def edge_tts_to_mp3(directory,txt_file,start):
+    import os
+    import asyncio
+    import edge_tts
+    from tqdm import tqdm
+    minutes_per_file=60
+    with open(txt_file,"r",encoding="utf-8") as f:
+        text=f.read()
+    words=text.split()
+    voice="en-US-GuyNeural"
+    print("len(words)",len(words))
+    words_per_file=minutes_per_file*150
+    parts=(len(words)+words_per_file-1)//words_per_file
+    for count in range(start-1,parts):
+        begin=words_per_file*count
+        end=min(words_per_file*(count+1),len(words))
+        print(f"part {count+1}: words {begin} to {end}")
+        chunk_text=" ".join(words[begin:end])
+        if not chunk_text.strip():
+            break
+        part_number=count+1
+        output_file=txt_file.replace(".txt","_part"+str(part_number)+".mp3")
+        output_file=os.path.join(directory,output_file)
+        print(f"generating {output_file} of {parts}")
+        async def run_tts():
+            communicate=edge_tts.Communicate(chunk_text,voice)
+            with open(output_file,"wb") as f:
+                with tqdm(total=len(chunk_text),desc=f"Part {part_number}/{parts}",unit="char",unit_scale=True) as pbar:
+                    last_length=0
+                    async for chunk in communicate.stream():
+                        if chunk["type"]=="audio":
+                            f.write(chunk["data"])
+                            pbar.update(len(chunk["data"]))
+        asyncio.run(run_tts())
+    print("done")
+
+
+"""
+def edge_tts_to_mp3(directory,txt_file,start):
     #edge_tts_to_mp3(directory,txt_file,8,20)
     import os
     import asyncio
@@ -88,7 +126,7 @@ def edge_tts_to_mp3(directory,txt_file,start):
             asyncio.run(run_tts())
         count+=1
     print("done")
-
+"""
 
 def add_song_sound(directory,song,plane):
     #add_song_sound(directory,song,plane)
