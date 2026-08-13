@@ -25,16 +25,21 @@ def main(original_file, gen_narration=0, add_song_and_sound=0, narrate_start_fil
         add_song_sound(directory, song, plane_sound)
 
 def pdf_to_txt(pdf):
+    cwd = os.getcwd()
+    files = os.listdir(cwd) 
     import fitz
     doc=fitz.open(pdf)
     print("pages:",len(doc))
     text=""
-    for i,page in enumerate(doc):
-        print("getting page",i+1,"of",len(doc))
-        text+=page.get_text()+"\n"
     output_file=pdf.replace(".pdf",".txt")
-    with open(output_file,"w",encoding="utf-8") as f:
-        f.write(text)
+    if output_file not in files:
+    #if output_file in cwd:
+        for i,page in enumerate(doc):
+            print("getting page",i+1,"of",len(doc))
+            text+=page.get_text()+"\n"
+        #output_file=pdf.replace(".pdf",".txt")
+        with open(output_file,"w",encoding="utf-8") as f:
+            f.write(text)
     print("generated",output_file)
     
 def epub_to_txt(epub_file):

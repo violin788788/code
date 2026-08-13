@@ -39,16 +39,40 @@ print("firefox_location",firefox_location)
 
 #chrome_path = os.path.join(os.path.splitdrive(os.getcwd())[0] + "\\", "Program Files (x86)", "Google", "Chrome", "Application", "chrome.exe")
 #print ("chrome path = ",chrome_path)
+
+import subprocess
+url = "https://info34.pythonanywhere.com/"
+seconds_wait_after_open_browser = 3
+subprocess.Popen([
+    r"B:\Program Files\Mozilla Firefox\firefox.exe",
+    "--private-window",
+    url
+])
+time.sleep(seconds_wait_after_open_browser)
+pyautogui.hotkey("win", "left")
+subprocess.Popen([
+    r"B:\Program Files\Mozilla Firefox\firefox.exe",
+    "--private-window",
+    url
+])
+time.sleep(seconds_wait_after_open_browser)
+pyautogui.hotkey("win", "right")
+"""
 url = "https://info34.pythonanywhere.com"
 pyperclip.copy(url)
-subprocess.Popen([chrome_location, "--incognito"])
+#subprocess.Popen([firefox_location, "--incognito"])
+subprocess.Popen([firefox_location, "--private-window", url])
+
 time.sleep(2)
 pyautogui.hotkey("win", "right")
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
-subprocess.Popen([firefox_location, "--incognito"])
+#subprocess.Popen([firefox_location, "--incognito"])
+subprocess.Popen([firefox_location, "--private-window", url])
+
 time.sleep(2)
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
 pyautogui.hotkey("win", "left")
 
+"""

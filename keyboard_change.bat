@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "tts-piper.py"
+python "keyboard_change.py"
 pause
