@@ -1,9 +1,6 @@
-import subprocess
+import sys
+sys.path.insert(0, r"A:\\Users\\-\\code")
+from utils import *
+from pathlib import Path
 
-url = "https://info34.pythonanywhere.com/"
-
-subprocess.Popen([
-    r"B:\Program Files\Mozilla Firefox\firefox.exe",
-    "--private-window",
-    url
-])
+open_browser_to_url("firefox", 64,2,"https://info34.pythonanywhere.com/")
