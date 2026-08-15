@@ -17,15 +17,15 @@ cwd = os.getcwd()
 files = os.listdir(cwd)
 import os,pyautogui,pyperclip
 import subprocess,time
-open_browser_to_url("firefox", 64,3,"https://info34.pythonanywhere.com/")
+open_browser_to_url("firefox", 64,5,"https://info34.pythonanywhere.com/")
 pyautogui.hotkey("win","left")    
 open_browser_to_url("firefox", 64,3,"https://info34.pythonanywhere.com/")
 pyautogui.hotkey("win","right")    
-
+time.sleep(2)
 pyautogui.hotkey("ctrl","f")
-pyautogui.write("browse")    
+paste_text("browse")   
 click_buttons(["esc","tab","enter"])
-time.sleep(3)
+time.sleep(5)
 
 google_username = "oak234345"
 google_password = "cats2534"

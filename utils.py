@@ -58,6 +58,7 @@ def print_array(array):
 
 
 def navigate_to_window(window_contains):
+    #navigate_to_window("meow")
     import win32gui
     import win32con
     #navigate_to_window("Google Accounts")
@@ -66,6 +67,7 @@ def navigate_to_window(window_contains):
         if win32gui.IsWindowVisible(hwnd) and win32gui.GetWindowText(hwnd):
             windows.append((hwnd, win32gui.GetWindowText(hwnd)))
     win32gui.EnumWindows(enum_handler, None)
+    print_array(windows)
     for hwnd, title in windows:
         if window_contains in title:
             print(f"\nSwitching to: {title} (Handle: {hwnd})")
