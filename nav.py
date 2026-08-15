@@ -33,7 +33,8 @@ paste_text(google_username)
 pyautogui.press('enter')   
 time.sleep(5)
 paste_text(google_password)
-pyautogui.press('pagedown') 
+pyautogui.press('enter') 
+pyautogui.hotkey("ctrl","pagedown") 
 
 facebook_username = "violin788788@proton.me"
 facebook_password = "Viovio3#"
