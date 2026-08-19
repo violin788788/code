@@ -24,7 +24,11 @@ pyautogui.hotkey("win","right")
 time.sleep(2)
 pyautogui.hotkey("ctrl","f")
 paste_text("browse")   
-click_buttons(["esc","tab","enter"])
+click_buttons(["esc"])
+pyautogui.hotkey("shift","tab")
+click_buttons(["enter"])
+
+
 time.sleep(5)
 
 google_username = "oak234345"

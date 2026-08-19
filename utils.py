@@ -44,7 +44,9 @@ def open_browser_to_url(browser, bits,wait_time,url):
     time.sleep(wait_time)
     pyautogui.hotkey("alt", "d")    
     pyautogui.hotkey("ctrl", "v")  
-    pyautogui.press('enter')   
+    pyautogui.press('enter') 
+
+      
 
 def click_buttons(array):
     #click_buttons(["esc","tab","enter"])
