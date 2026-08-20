@@ -1,0 +1,30 @@
+import os,time
+os.environ["OMP_NUM_THREADS"]="1"
+os.environ["ORT_NUM_THREADS"]="1"
+import cv2
+import insightface
+time_begin = time.time()
+import cv2
+import insightface
+from insightface.app import FaceAnalysis
+app=FaceAnalysis(name="buffalo_l",providers=["CPUExecutionProvider"])
+app.prepare(ctx_id=0)
+#source=cv2.imread("source.jpg")
+#target=cv2.imread("target.jpg")
+source=cv2.imread("source.png")
+target=cv2.imread("target.png")
+
+if source is None: raise Exception("source.jpg not found")
+if target is None: raise Exception("target.jpg not found")
+source_faces=app.get(source)
+target_faces=app.get(target)
+if not source_faces: raise Exception("No face found in source.jpg")
+if not target_faces: raise Exception("No face found in target.jpg")
+swapper=insightface.model_zoo.get_model("inswapper_128.onnx",providers=["CPUExecutionProvider"])
+#swapper=insightface.model_zoo.get_model("inswapper_128.onnx",providers=["CPUExecutionProvider"],provider_options=[{"arena_extend_strategy":"kSameAsRequested"}])
+result=swapper.get(target,target_faces[0],source_faces[0],paste_back=True)
+cv2.imwrite("result.jpg",result)
+print("Saved result.jpg")
+time_end = time.time()
+time_elapsed = time_end - time_begin
+print("time_elapsed",time_elapsed)

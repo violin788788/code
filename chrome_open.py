@@ -42,6 +42,8 @@ pyperclip.copy(url)
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
 pyautogui.hotkey("win", "left")
+
+
 """
 time.sleep(2)
 pyautogui.hotkey("ctrl", "v")

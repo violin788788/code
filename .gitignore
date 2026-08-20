@@ -26,6 +26,10 @@ argos-translate-gui/
 **/*.onnx
 *.wav
 **/*.wav
+*.xml
+**/*.xml
+*.dat
+**/*.dat
 
 
 
