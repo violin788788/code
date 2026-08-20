@@ -3,4 +3,6 @@ sys.path.insert(0, r"A:\\Users\\-\\code")
 from utils import *
 from pathlib import Path
 
-navigate_to_window("meow")
+import onnxruntime as ort
+
+print(ort.get_available_providers())

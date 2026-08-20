@@ -30,6 +30,8 @@ argos-translate-gui/
 **/*.xml
 *.dat
 **/*.dat
+*.mp4
+**/*.mp4
 
 
 
