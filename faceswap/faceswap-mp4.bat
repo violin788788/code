@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "faceswap.py"
+python "faceswap-mp4.py"
 pause
