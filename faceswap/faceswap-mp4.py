@@ -1,22 +1,29 @@
+import tkinter as tk
+from tkinter import filedialog
+root = tk.Tk()
+root.withdraw()
+mp4_file = filedialog.askopenfilename(title="Select MP4 video",filetypes=[("MP4 files","*.mp4"),("All files","*.*")])
+replacement = filedialog.askopenfilename(title="replacement?",filetypes=[("MP4 files","*.mp4"),("All files","*.*")])
+root.destroy()
+
+
+
 import os,time
 os.environ["OMP_NUM_THREADS"]="1"
 os.environ["ORT_NUM_THREADS"]="1"
 import cv2
 import insightface
+from tkinter import filedialog
 time_begin=time.time()
 from insightface.app import FaceAnalysis
 app=FaceAnalysis(name="buffalo_l",providers=["CPUExecutionProvider"])
 app.prepare(ctx_id=0)
+cap=cv2.VideoCapture(mp4_file)
+source=cv2.imread(replacement)
+out_file = mp4_file.replace(".mp4",replacement.replace(".","")+".mp4")
 
-
-mp4_file = "input.mp4"
-
-
-
-cap=cv2.VideoCapture("input.mp4")
-source=cv2.imread("hope.png")
-out_file = "output.mp4"
-end = 100
+#out_file = "output.mp4"
+end = 0
 
 if source is None: raise Exception("source.png not found")
 source_faces=app.get(source)
@@ -30,7 +37,6 @@ fourcc=cv2.VideoWriter_fourcc(*"mp4v")
 out=cv2.VideoWriter(out_file,fourcc,fps,(width,height))
 frame_number=0
 last_result=None
-end = 100
 while True:
     ret,target=cap.read()
     if not ret: break

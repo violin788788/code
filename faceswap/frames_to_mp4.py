@@ -1,3 +1,12 @@
+
+import tkinter as tk
+from tkinter import filedialog
+root = tk.Tk()
+root.withdraw()
+frames_dir = filedialog.askdirectory(title="Select folder")
+root.destroy()
+
+
 import sys
 sys.path.insert(0, r"A:\Users\-\code")
 from utils import *
@@ -17,7 +26,7 @@ files = os.listdir(cwd)
 
 import cv2
 import os
-frames_dir = "hope"
+#frames_dir = "hope"
 output_video = frames_dir+"_generated.mp4"
 fps = 30
 frames = sorted([f for f in os.listdir(frames_dir) if f.endswith(".jpg")])
