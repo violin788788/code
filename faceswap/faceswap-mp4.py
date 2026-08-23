@@ -20,10 +20,11 @@ app=FaceAnalysis(name="buffalo_l",providers=["CPUExecutionProvider"])
 app.prepare(ctx_id=0)
 cap=cv2.VideoCapture(mp4_file)
 source=cv2.imread(replacement)
-out_file = mp4_file.replace(".mp4",replacement.replace(".","")+".mp4")
+#out_file = mp4_file.replace(".mp4",replacement.replace(".","")+".mp4")
 
-#out_file = "output.mp4"
+out_file = "output.mp4"
 end = 0
+
 
 if source is None: raise Exception("source.png not found")
 source_faces=app.get(source)
@@ -57,4 +58,4 @@ print("Saved output.mp4")
 time_end=time.time()
 time_elapsed=time_end-time_begin
 print("time_elapsed",time_elapsed)
-os.startfile(out_file)
+#os.startfile(out_file)
