@@ -3,7 +3,7 @@ from tkinter import filedialog
 root = tk.Tk()
 root.withdraw()
 mp4_file = filedialog.askopenfilename(title="Select MP4 video",filetypes=[("MP4 files","*.mp4"),("All files","*.*")])
-replacement = filedialog.askopenfilename(title="replacement?",filetypes=[("MP4 files","*.mp4"),("All files","*.*")])
+replacement = filedialog.askopenfilename(title="replacement?",filetypes=[("All files","*.*")])
 root.destroy()
 
 
