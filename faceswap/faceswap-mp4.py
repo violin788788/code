@@ -29,6 +29,12 @@ end = 0
 if source is None: raise Exception("source.png not found")
 source_faces=app.get(source)
 if not source_faces: raise Exception("No face found in source.png")
+
+import os
+
+print("ONNX path:", os.path.abspath("inswapper_128.onnx"))
+print("ONNX size:", os.path.getsize("inswapper_128.onnx"), "bytes")
+
 swapper=insightface.model_zoo.get_model("inswapper_128.onnx",providers=["CPUExecutionProvider"])
 if not cap.isOpened(): raise Exception("input.mp4 not found")
 fps=cap.get(cv2.CAP_PROP_FPS)
