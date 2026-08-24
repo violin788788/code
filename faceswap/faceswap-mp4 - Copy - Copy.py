@@ -6,8 +6,6 @@ mp4_file = filedialog.askopenfilename(title="Select MP4 video",filetypes=[("MP4 
 replacement = filedialog.askopenfilename(title="replacement?",filetypes=[("All files","*.*")])
 root.destroy()
 
-
-
 import os,time
 os.environ["OMP_NUM_THREADS"]="1"
 os.environ["ORT_NUM_THREADS"]="1"
