@@ -1,5 +1,6 @@
 # Ignore embedded Git repositories
 info34/
+vote34/
 argos-translate/
 argos-translate-gui/
 
