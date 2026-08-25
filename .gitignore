@@ -1,8 +1,6 @@
 # Ignore embedded Git repositories
 info34/
 vote34/
-argos-translate/
-argos-translate-gui/
 
 # Ignore any file with "token" in its name
 *token*
