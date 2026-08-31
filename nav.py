@@ -39,7 +39,8 @@ time.sleep(5)
 paste_text(google_password)
 pyautogui.press('enter') 
 pyautogui.hotkey("ctrl","pagedown") 
-
+pyautogui.hotkey("ctrl","pagedown") 
+time.sleep(1)
 facebook_username = "violin788788@proton.me"
 facebook_password = "Viovio3#"
 pyautogui.press('tab')   
