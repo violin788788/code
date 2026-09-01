@@ -1,4 +1,5 @@
 import os,time
+from pathlib import Path
 os.environ["OMP_NUM_THREADS"]="1"
 os.environ["ORT_NUM_THREADS"]="1"
 import cv2
@@ -9,13 +10,15 @@ import insightface
 from insightface.app import FaceAnalysis
 app=FaceAnalysis(name="buffalo_l",providers=["CPUExecutionProvider"])
 app.prepare(ctx_id=0)
-#source=cv2.imread("source.jpg")
-#target=cv2.imread("target.jpg")
-source=cv2.imread("mam.png")
-#target=cv2.imread("sov.png")
-target=cv2.imread("dzer.png")
-save_file = "result.png"
+#original photo
 
+original_photo="lenin.png"
+switch_with = "sanders.png"
+
+target=cv2.imread(original_photo)
+source=cv2.imread(switch_with)
+#save_file = "result.png"
+save_file = Path(original_photo).stem+"-"+switch_with
 if source is None: raise Exception("source.jpg not found")
 if target is None: raise Exception("target.jpg not found")
 source_faces=app.get(source)
