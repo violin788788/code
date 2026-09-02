@@ -37,7 +37,7 @@ url = "https://info34.pythonanywhere.com"
 #pyperclip.copy(url)
 #subprocess.Popen([firefox_location, "--incognito"])
 subprocess.Popen([firefox_location, "--private-window", url])
-time.sleep(2)
+time.sleep(5)
 pyperclip.copy(url)
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
