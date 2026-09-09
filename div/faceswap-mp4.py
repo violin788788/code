@@ -23,7 +23,7 @@ source=cv2.imread(replacement)
 #out_file = mp4_file.replace(".mp4",replacement.replace(".","")+".mp4")
 
 out_file = "output.mp4"
-end = 0
+end = 100
 
 
 if source is None: raise Exception("source.png not found")
@@ -44,23 +44,26 @@ fourcc=cv2.VideoWriter_fourcc(*"mp4v")
 out=cv2.VideoWriter(out_file,fourcc,fps,(width,height))
 frame_number=0
 last_result=None
-while True:
-    ret,target=cap.read()
-    if not ret: break
-    if frame_number%3==0:
-        target_faces=app.get(target)
-        if target_faces:
-            last_result=swapper.get(target,target_faces[0],source_faces[0],paste_back=True)
-        else:
-            last_result=target
-    out.write(last_result)
+while True:    
     print("doing frame",frame_number,"of",end)
+    ret,target=cap.read()
+    if frame_number>end:
+        out.write(last_result)
+        continue
+    #if not ret: break
+    #if frame_number%3==0:
+    target_faces=app.get(target)
+    if target_faces:
+        last_result=swapper.get(target,target_faces[0],source_faces[0],paste_back=True)
+    else:
+        last_result=target
+    out.write(last_result)
     frame_number+=1
-    if frame_number==end:
-        break
+    #if frame_number==end:
+    #    break
 cap.release()
 out.release()
-print("Saved output.mp4")
+print("Saved ",out_file)
 time_end=time.time()
 time_elapsed=time_end-time_begin
 print("time_elapsed",time_elapsed)

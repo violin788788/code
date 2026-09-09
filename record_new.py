@@ -66,5 +66,5 @@ except KeyboardInterrupt:
     pass
 finally:
     out.release()
-    print("Saved as screen_recording.mp4")
+    print("Saved as ",out_file)
 os.startfile(out_file)
