@@ -29,7 +29,7 @@ import os
 #frames_dir = "hope"
 output_video = frames_dir+"_generated.mp4"
 fps = 30
-frames = sorted([f for f in os.listdir(frames_dir) if f.endswith(".png")])
+frames = sorted([f for f in os.listdir(frames_dir) if f.endswith(".jpg")])
 first_frame = cv2.imread(os.path.join(frames_dir, frames[0]))
 height, width = first_frame.shape[:2]
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")

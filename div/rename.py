@@ -23,7 +23,7 @@ print(directory_files)
 for a,val in enumerate(directory_files):
     print(a)
     old_file = os.path.join(directory,val)
-    frame_number = str(a+200)
+    frame_number = str(a+100)
     how_many = len(frame_number)
     if how_many<6:
         for b in range(0,6-how_many):
