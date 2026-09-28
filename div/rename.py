@@ -20,10 +20,13 @@ directory_files = os.listdir(directory)
 for a in range(0,len(directory_files)):
     print(directory_files[a])
 print(directory_files)
+
+start = 3000
+
 for a,val in enumerate(directory_files):
-    print(a)
     old_file = os.path.join(directory,val)
-    frame_number = str(a+100)
+    frame_number = str(a+start)
+    print("new frame",frame_number)
     how_many = len(frame_number)
     if how_many<6:
         for b in range(0,6-how_many):

@@ -46,15 +46,18 @@ fourcc=cv2.VideoWriter_fourcc(*"mp4v")
 out=cv2.VideoWriter(out_file,fourcc,fps,(width,height))
 if not out.isOpened():
     raise Exception("Could not create output video.")
-start=0
-end=100
+
+start_frame=0
+end_frame=100
+
 for frame_number in range(total_frames):
-    print("Doing frame",frame_number,"of",total_frames)
+    #print("Doing frame",frame_number,"of",total_frames)
     ret,target=cap.read()
     if not ret:
         print("Could not read frame",frame_number)
         break
-    if start<=frame_number<=end:
+    if start_frame<=frame_number<=end_frame:
+        print(start_frame,frame_number,end_frame)
         target_faces=app.get(target)
         if target_faces:
             result=swapper.get(target,target_faces[0],source_faces[0],paste_back=True)
