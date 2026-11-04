@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mini Video Editor</title>
+
+<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.12.6/dist/ffmpeg.min.js"></script>
+
+<style>
+body {
+    font-family: Arial;
+    background: white;
+    color: black;
+    margin: 20px;
+}
+
+h3 {
+    margin-top: 25px;
+}
+
+#mediaBin {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+}
+
+.mediaItem {
+    width: 110px;
+    text-align: center;
+    cursor: grab;
+    font-size: 10px;
+}
+
+.mediaItem img, .mediaItem canvas {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+#timeline {
+    position: relative;
+    border: 2px solid #ccc;
+    height: 140px;
+    margin-top: 20px;
+    background: #fafafa;
+    overflow-x: auto;
+}
+
+.clip {
+    position: absolute;
+    top: 40px;
+    height: 60px;
+    background: white;
+    border: 1px solid #888;
+    font-size: 11px;
+    cursor: move;
+    overflow: hidden;
+    text-align: center;
+}
+
+.resizeHandle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background: #ccc;
+    cursor: ew-resize;
+}
+
+canvas#preview {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<h2>Mini Montage Editor</h2>
+
+<input type="file" id="fileInput" multiple accept="video/*,audio/*,image/*">
+<button onclick="previewTimeline()">Preview</button>
+<button onclick="generateMP4()">Generate MP4</button>
+
+<h3>Media Bin</h3>
+<div id="mediaBin"></div>
+
+<h3>Timeline</h3>
+<div id="timeline"></div>
+
+<canvas id="preview" width="640" height="360"></canvas>
+
+<script>
+const { createFFmpeg, fetchFile } = FFmpeg;
+const ffmpeg = createFFmpeg({ log: true });
+
+const PIXELS_PER_SECOND = 60;
+const TIMELINE_DURATION = 20;
+
+const fileInput = document.getElementById("fileInput");
+const mediaBin = document.getElementById("mediaBin");
+const timeline = document.getElementById("timeline");
+const canvas = document.getElementById("preview");
+const ctx = canvas.getContext("2d");
+
+let clips = [];
+
+/* ------------------ MEDIA BIN + THUMBNAILS ------------------ */
+
+fileInput.addEventListener("change", async e => {
+    for (let file of e.target.files) {
+        const url = URL.createObjectURL(file);
+
+        const item = document.createElement("div");
+        item.className = "mediaItem";
+        item.draggable = true;
+        item.dataset.url = url;
+        item.dataset.type = file.type;
+        item.dataset.name = file.name;
+
+        if (file.type.startsWith("image")) {
+            const img = document.createElement("img");
+            img.src = url;
+            item.appendChild(img);
+        }
+        else if (file.type.startsWith("video")) {
+            const video = document.createElement("video");
+            video.src = url;
+            video.muted = true;
+
+            await new Promise(res => {
+                video.onloadeddata = () => {
+                    const c = document.createElement("canvas");
+                    c.width = 100;
+                    c.height = 70;
+                    c.getContext("2d").drawImage(video, 0, 0, 100, 70);
+                    item.appendChild(c);
+                    res();
+                };
+            });
+        }
+        else {
+            const icon = document.createElement("div");
+            icon.innerHTML = "🎵";
+            icon.style.fontSize = "40px";
+            item.appendChild(icon);
+        }
+
+        const label = document.createElement("div");
+        label.innerText = file.name;
+        item.appendChild(label);
+
+        item.addEventListener("dragstart", e => {
+            e.dataTransfer.setData("url", url);
+            e.dataTransfer.setData("type", file.type);
+            e.dataTransfer.setData("name", file.name);
+        });
+
+        mediaBin.appendChild(item);
+    }
+});
+
+/* ------------------ TIMELINE DROP ------------------ */
+
+timeline.addEventListener("dragover", e => e.preventDefault());
+
+timeline.addEventListener("drop", e => {
+    e.preventDefault();
+
+    const url = e.dataTransfer.getData("url");
+    const type = e.dataTransfer.getData("type");
+    const name = e.dataTransfer.getData("name");
+
+    const clip = document.createElement("div");
+    clip.className = "clip";
+    clip.style.left = "0px";
+
+    let duration = 5;
+
+    if (type.startsWith("video") || type.startsWith("audio")) {
+        duration = TIMELINE_DURATION;
+    }
+
+    clip.style.width = duration * PIXELS_PER_SECOND + "px";
+    clip.innerText = name;
+
+    timeline.appendChild(clip);
+
+    clips.push({
+        url,
+        type,
+        element: clip
+    });
+
+    makeDraggable(clip);
+
+    if (type.startsWith("image")) addResizeHandle(clip);
+});
+
+/* ------------------ DRAGGING ------------------ */
+
+function makeDraggable(el) {
+    el.onmousedown = e => {
+        if (e.target.classList.contains("resizeHandle")) return;
+
+        let startX = e.clientX;
+        let startLeft = parseInt(el.style.left);
+
+        function move(e) {
+            el.style.left = startLeft + (e.clientX - startX) + "px";
+        }
+
+        document.addEventListener("mousemove", move);
+        document.addEventListener("mouseup", () => {
+            document.removeEventListener("mousemove", move);
+        }, { once: true });
+    };
+}
+
+function addResizeHandle(clip) {
+    const handle = document.createElement("div");
+    handle.className = "resizeHandle";
+    clip.appendChild(handle);
+
+    handle.onmousedown = e => {
+        e.stopPropagation();
+        let startX = e.clientX;
+        let startWidth = parseInt(clip.style.width);
+
+        function move(e) {
+            clip.style.width =
+                Math.max(60, startWidth + (e.clientX - startX)) + "px";
+        }
+
+        document.addEventListener("mousemove", move);
+        document.addEventListener("mouseup", () => {
+            document.removeEventListener("mousemove", move);
+        }, { once: true });
+    };
+}
+
+/* ------------------ PREVIEW PLAYBACK ------------------ */
+
+async function previewTimeline() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    for (let clip of clips) {
+
+        let duration = parseInt(clip.element.style.width) / PIXELS_PER_SECOND;
+
+        if (clip.type.startsWith("image")) {
+            let img = new Image();
+            img.src = clip.url;
+            await new Promise(r => img.onload = r);
+
+            let start = Date.now();
+            while (Date.now() - start < duration * 1000) {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                await new Promise(r => setTimeout(r, 30));
+            }
+        }
+
+        if (clip.type.startsWith("video")) {
+            let video = document.createElement("video");
+            video.src = clip.url;
+            await video.play();
+
+            let start = Date.now();
+            while (Date.now() - start < duration * 1000) {
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                await new Promise(r => setTimeout(r, 30));
+            }
+
+            video.pause();
+        }
+    }
+}
+
+/* ------------------ GENERATE MP4 ------------------ */
+
+async function generateMP4() {
+
+    if (!ffmpeg.isLoaded()) {
+        await ffmpeg.load();
+    }
+
+    const stream = canvas.captureStream(30);
+    const recorder = new MediaRecorder(stream);
+    let chunks = [];
+
+    recorder.ondataavailable = e => chunks.push(e.data);
+    recorder.start();
+
+    await previewTimeline();
+
+    recorder.stop();
+
+    await new Promise(resolve => recorder.onstop = resolve);
+
+    const webmBlob = new Blob(chunks, { type: "video/webm" });
+
+    ffmpeg.FS("writeFile", "input.webm", await fetchFile(webmBlob));
+    await ffmpeg.run("-i", "input.webm", "output.mp4");
+
+    const data = ffmpeg.FS("readFile", "output.mp4");
+    const mp4Blob = new Blob([data.buffer], { type: "video/mp4" });
+
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(mp4Blob);
+    a.download = "final_video.mp4";
+    a.click();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+# Ignore embedded Git repositories
+info34/
+vote34/
+
+# Ignore any file with "token" in its name
+*token*
+**/*token*
+
+# Ignore these filetypes
+*.mp3
+*.pdf
+*.epub
+*.exe
+**/*.mp3
+**/*.pdf
+**/*.epub
+**/*.exe
+*.pyc
+*.pyo
+*.png
+**/*.png
+*.jpg
+**/*.jpg
+*.db
+**/*.db
+*.onnx
+**/*.onnx
+*.wav
+**/*.wav
+*.xml
+**/*.xml
+*.dat
+**/*.dat
+*.mp4
+**/*.mp4
+
+
+
+
+# Ignore virtual environments
+.venv/
+.env/
+virtualenv/
+
+# Ignore common cache/config directories
+.cache/
+.config/
+.ipython/
+.local/
+.virtualenvs/
+
+# Ignore IDE folders
+.vscode/
+.idea/
+
+# Ignore system files
+.lesshst
+.bashrc
+.vimrc
+.profile
+.pythonstartup.py

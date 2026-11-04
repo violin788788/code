@@ -1,0 +1,35 @@
+
+
+
+
+---------how to do a new git-----------
+
+create git
+git init
+
+create main branch
+git checkout -b main
+
+add remote
+git remote add origin https://github.com/violin788788/"+directory_name+".git"
+
+stage all changes
+git add -A
+
+commit changes
+git commit -m "Remove unwanted files and directories, and add/modify other changes"
+
+force?
+git push origin main --force
+
+username
+violin788788
+token
+
+
+---------that's how to do a new git-----------
+
+remove tracking
+git rm --cached .lesshst
+
+

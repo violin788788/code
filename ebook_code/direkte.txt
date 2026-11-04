@@ -1,0 +1,427 @@
+Direkte Gesetzgebung durch das Volk
+.fakecover {
+margin:0;
+padding:0;
+border:none;
+height:100%;
+width:100%;
+background:black;
+text-align: center;
+font-weight: normal;
+font-family: Georgia,"Times New Roman",Serif;
+}
+.cover {
+color: black;
+margin: 0px;
+padding:100px 0px 100px 0px;
+background:white;
+}
+.title {
+font-size: 35px;
+padding: 25px 5px 40px 5px;
+}
+.author {
+padding: 40px 5px 25px 5px;
+font-size: 25px;
+}
+.notice {
+padding: 80px 5px 10px 5px;
+font-size: 18px;
+color: white;
+}
+.top {
+height:120px;
+}
+.bottom {
+height:120px;
+}
+.flow {
+margin: 0;
+font-size: 1em;
+}
+.flow .pagebreak {
+page-break-before: always;
+}
+.flow p {
+text-align: left;
+text-indent: 0;
+margin-top: 0;
+margin-bottom: 0.5em;
+}
+.flow .gstxt_sup {
+font-size: 75%;
+position: relative;
+bottom: 0.5em;
+}
+.flow .gstxt_sub {
+font-size: 75%;
+position: relative;
+top: 0.3em;
+}
+.flow .gstxt_hlt {
+background-color: yellow;
+}
+.flow div.gtxt_inset_box {
+padding: 0.5em 0.5em 0.5em 0.5em;
+margin: 1em 1em 1em 1em;
+border: 1px black solid;
+}
+.flow div.gtxt_footnote {
+padding: 0 0.5em 0 0.5em;
+border: 1px black dotted;
+}
+.flow .gstxt_underline {
+text-decoration: underline;
+}
+.flow .gtxt_heading {
+text-align: center;
+margin-bottom: 1em;
+font-size: 150%;
+font-weight: bold;
+font-variant: small-caps;
+}
+.flow .gtxt_h1_heading {
+text-align: center;
+font-size: 120%;
+font-weight: bold;
+}
+.flow .gtxt_h2_heading {
+font-size: 110%;
+font-weight: bold;
+}
+.flow .gtxt_h3_heading {
+font-weight: bold;
+}
+.flow .gtxt_lineated {
+margin-left: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+white-space: pre-wrap;
+}
+.flow .gtxt_lineated_code {
+margin-left: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+white-space: pre-wrap;
+font-family: monospace;
+}
+.flow .gtxt_quote {
+margin-left: 2em;
+margin-right: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow .gtxt_list_entry {
+margin-left: 2ex;
+text-indent: -2ex;
+}
+.flow .gimg_graphic {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow .gimg_table {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow {
+font-family: serif;
+}
+.flow span,p {
+font-family: inherit;
+}
+Direkte Gesetzgebung durch das Volk
+Karl Bürkli
+Google™ Book Search
+This is a digital copy of a book that was preserved for generations on library shelves before it was carefully scanned by Google as part of a project to make the world's books discoverable online. See the back of the book for detailed information.
+Direkte Gesetzgebung durch das Volk
+.flow {
+margin: 0;
+font-size: 1em;
+}
+.flow .pagebreak {
+page-break-before: always;
+}
+.flow p {
+text-align: left;
+text-indent: 0;
+margin-top: 0;
+margin-bottom: 0.5em;
+}
+.flow .gstxt_sup {
+font-size: 75%;
+position: relative;
+bottom: 0.5em;
+}
+.flow .gstxt_sub {
+font-size: 75%;
+position: relative;
+top: 0.3em;
+}
+.flow .gstxt_hlt {
+background-color: yellow;
+}
+.flow div.gtxt_inset_box {
+padding: 0.5em 0.5em 0.5em 0.5em;
+margin: 1em 1em 1em 1em;
+border: 1px black solid;
+}
+.flow div.gtxt_footnote {
+padding: 0 0.5em 0 0.5em;
+border: 1px black dotted;
+}
+.flow .gstxt_underline {
+text-decoration: underline;
+}
+.flow .gtxt_heading {
+text-align: center;
+margin-bottom: 1em;
+font-size: 150%;
+font-weight: bold;
+font-variant: small-caps;
+}
+.flow .gtxt_h1_heading {
+text-align: center;
+font-size: 120%;
+font-weight: bold;
+}
+.flow .gtxt_h2_heading {
+font-size: 110%;
+font-weight: bold;
+}
+.flow .gtxt_h3_heading {
+font-weight: bold;
+}
+.flow .gtxt_lineated {
+margin-left: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+white-space: pre-wrap;
+}
+.flow .gtxt_lineated_code {
+margin-left: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+white-space: pre-wrap;
+font-family: monospace;
+}
+.flow .gtxt_quote {
+margin-left: 2em;
+margin-right: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow .gtxt_list_entry {
+margin-left: 2ex;
+text-indent: -2ex;
+}
+.flow .gimg_graphic {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow .gimg_table {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.flow {
+font-family: serif;
+}
+.flow span,p {
+font-family: inherit;
+}
+Nat-ök. Comm. 124 No 4
+ERSITÄTS-BIBLIOT
+UNIVE
+* BASEL
+*
+EK
+Direkte durch das Volk.
+Referat und Antrag der Sektion Zürich an den am 6. September 1869 in Basel zu eröffnenden Kongreß der internationalen Arbeiter-Affoziation.
+Die Erfahrung der leßten Jahrzehende hat die arbeitende Klasse Europa's von dem Wahne gründlich geheilt, daß die Imperial-Demokratie, der Imperial Sozialismus, d. h. die Diktatur eines Einzelnen im Stande oder auch nur Willens sei, für die soziale Hebung der arbeiten den Massen etwas zu thun. Nichts als Scheinreformen, Sand in die Augen, in Wirklichkeit ist der Arbeiter mehr denn je Steuermaschine und Kanonenfutter.
+Mit großer Schlauheit wurde seit dem Staatsstreich Bonaparte's von oben herab unter den Arbeitermassen der Glaube verbreitet, die politische oder Staatsform habe mit so zialen, d.h. Gesellschafts-Reformen nichts zu thun; daher sollten sich die Arbeiter nicht mit Politik, sondern einzig und allein nur mit ihrer sozialen Lage befassen. Die regierende Klasseweiß eben aus Erfahrung nur zu gut, welch' großen Vortheil sie aus einer ihr günstigen Staatsform zieht; weiß nurzu gut, daß so lange sich die Arbeitermasse politisch willenlos lenken läßt, und zur Gesezgebung direkte nichts zu sagen hat, d. h. die Staatsform nicht nach ihrem, dem Interesse der Arbeit einrichtet, der Sozialismus, selbst der radikalste, ein ungefähr licher Popang ist, weil ihm eben der politische Stützpunkt zu seinem sozialen Hebelfehlt, womit er die alte Gesellschaft mit ihrer Massenarmuth und ihrem Einzelreichthum aus den Angeln heben kann. Die soziale Reform ist dazu verdammt, im Zustande der Theorie zu verbleiben, so lange sie nicht das richtige Mittel gefunden hat, sie in Praxis zu sehen und dieses Mittel kann kein anderes sein, alsvor allem aus eine politische Reform, eine Staatsform zu schaffen, wo das Gesez von Allen Staatsbürgern gemacht wird, und nicht mehr nur von einigen wenigen Bevorrechteten.
+Frankreich's Arbeiter sind von der sogen. Imperialdemokratie Napoleons gründlich geheilt, ste wollen die sozialdemokratische Ne publik. Die Arbeiter Norddeutschland's haben den Imperial-Sozialismus, die junkerliche Diktatur v. Schweizers (der seinen widernatürlichen -,,Mannheimlichen Liebhabereien entsprechend, auch die arbeitende Klasse
+2318
+Catalog)
+zu After-Politik und zu After-Sozialismus mißbraucht hat) so übersatt, daß sie sich mit Ekel von diesem Jugend- und Volksverführer abwenden und mit Sack und Pack in das Lager der intern. Arbeiterassoz. übergehn, wo das Panner des Selbststimmungsrechtes, der so z ia ld emokratischen Staatsform, der europäischen Bundesrepublik weht, um welches sich auch die Arbeiter Süddeutschland's, Destreich's, Italien's und Spanien's immer zahlreicher zu schaaren beginnen.
+Aber wie soll dieser sozialdemokratische Staat organisirt werden? Das ist die große, für den Arbeiter so wichtige Frage. Der internationale Arbeiterbund sollte sich vollkommen klar und darüber ei nig sein, welche Art von Republik er will, damit bei Ausbruch einer Revolution die Arbeitermassen überall wissen, was zu thun ist.
+Die politische Bewegung in der Schweiz, hauptsächlich im Kanton Zü rich in den letzten zwei Jahren, ist wohl nur ein Symptom, ein Vorspiel einer großartigen, tiefgreifenden Bewegung, die sich in der europäischen Politik vollzieht. Die Bourgeois-Republik oder RepräsentativDemokratie ist in der Schweiz im Absterben begriffen, denn sie ist zu leicht befunden worden gegen die verderblichen Einflüsse, sozusagen den Jesuitismus des Großkapitals anzukämpfen, ste hat weder Thatkraft noch Willen, die soziale Frage zu lösen, und es tritt fortan die reine Demokratie auf den Plan, wo das Volk direkte an der Gesetzgebung Theil nimmt und dieselbe daher nach seinen sozialen Bedürfnissen umformen wird.
+Die Idee der direkten Gesezgebung durch das Volk muß unter den arbeitenden Massen Europa's immer mehr verbreitet werden, damit sie bei der nächsten monarchischen Enthäutung in Fleisch und Blut übergehe und in ganz Europa ähnliche politische Einrichtungen im Großen schaffe, wie ste bereits in der Schweiz im Kleinen vorhanden sind.
+Der Repräsentativstaat ist überall der gleiche. Die Arbeiter von Paris wissen von den Junitagen von 1848 her nur zu gut, daß diese Bourgeois: Repräsentanten die soziale Frage mit Kartätschen lösen wollen, und in jüngster Zeit haben noch die Grubenarbeiter in Belgien erfahren, daß ihre Constitutionellen auch kein anderes Mittel kennen, als Pulverund Blei; und selbst in der Repräsentativ-Demokratie von Zürich bestanden seit mehr als 20 Jahren harte Ausnahmsgesetze gegen die Coalitionder Arbeiteru. die sozialdemokratische Presse. So lange die Arbeiter die Staatsgeseke durch ihre Ausbeuter fabriziren und sich octroiren lassen, werden die Geseze auch ungünstig für die Arbeiter und nur günstig für die Herren sein; oder seit wann hätte ein Monarch Geseze gemacht im Interesse des Volkes gegen seine Dynastie? zuerst kommt Er, sein Interesse, sein Herrscherhaus und die Werkzeuge zur Aufrechterhaltung der staatlichen Ausbeutungsmaschine, und nur zuleht, wenn alle diese genug haben, wird an das ausgebeutete Volk gedacht und ihm in der Regel Steine statt Brod ge boten. (Wohl gibt es sogen. christliche Monarchen, welche wie die gutmüthigen Reiter das unter ihrer Last keuchende Geschöpf am Halse streicheln, aber daß dem zu Schanden Gerittenen, Schwerbelasteten dadurch am Meisten ge
+holfen wäre, wenn der Herr mit all' seinem Troß aus dem Sattel stiege, daran denkt der Obere von ferne nicht, - bis ihn der Untere abwirft).
+Ebenso kaun eine Aristokratie treffliche Geseze für sich, nicht aber für das Volk machen, oder hat die gescheidteste aller Aristokratien, diejenige England's, je etwas im Interesse der Arbeiter gethan? nein, wenn sie sich bis jezt gehalten hat, ist es nur, weil sie nicht soviel Starrsinn entwickelte, sich unumgänglich nothwendigen Reformen über Gebühr zu widersehen. Aber auch die vom Volke gewählten Geseßgeber des Repräsentativstaates sind nicht im Stande, gute Geseze für die arbeitenden Klassen zu machen, obschon ste für ihre, die Bourgeoisklasse ganz ausgezeichnete zu erlassen besähigt find; warum? weil erfahrungsgemäß die Repräsentativkörper in ihrer Mehrheit aus Kapitalisten und deren Kreaturen, dem sozialen Fortschritt feindlichen Bourgeois bestehen, und wie der Sklavenhalter seiner Natur nach unfähig ist, je Geseye im Interesse seiner Sklaven zu machen, so ist auch der Kapitalisten-Repräsentant unfähig, je Geseze im Interesse der Arbeiter zu erlassen. Die Repräsentativ-Demokratie, wenn sie auch die relativ weit bessere Staatsform ist, als die Monarchie oder Aristokratie, ist daher doch nicht diejenige politische Form, in der sich die Arbeiterwelt entfalten und die sozialen Fragen gelöst werden können Sie wäre es vielleicht eher, wenn die Arbeiter und besonders die Bauern nur die intelligentesten ihrer Klasse in den Rath wählen würden, leider zeigt aber die Erfahrung aller Länder, daß dies nur ausnahmsweise geschieht. In der Regel wählt das Volk nur Angehörige der sogen. höheren Stände, weil es das aus monarchischen Zeiten stammende verderbliche Vorurtheil hat, nur die Intelligen z erzeuge gute Geseze und es brauche blos gut studiiter Leute dazu, während bei der Gefeßgebung im Gegentheil das Interesse maßgebend ist. Dazu kommt noch, daß die Taggelder und Reiscentschädigungen systematisch so niedrig gestellt werden, daß es einem Angehörigen der arbeitenden Klasse schon ökonomisch unmöglich ist, als Repräsentant zu fungiren.
+Die Erfahrung der Demokratie lehrt auch, daß sich das Volk weit eher irrt, weit leichter verführt werden kann, wenn es sich um Personen (Rathswahlen), als wenn es sich um Beurtheilung von Sachen (z. B. Ab stimmungen über Geseze) handelt, aus dem einfachen Grunde, weil Herz und Nieren einer Person unendlich schwieriger zu prüfen sind, als der Kern einer Sache, d. h. Sinn und Geist eines Gesezes; weil es weit leichter ist zu beurtheilen, ob ein Gesez im Interesse der arbeitenden Massen gemacht ist, als ob ein Rathsherrimmer im Interesse des Volkes reden und stimmen werde.
+Somit wäre der Prüfstein, womit man das wahre vom falschen Golde unterscheiden kann, folgender: In der wahren, der reinen Demokratie oder Volksrepublik befaßt sich das Volk nicht nur mit den Perfonen (Rathswahlen), sondern auch und vor allem aus mit den Sachen (Gesezen). In der falschen, der repräsentativen Demokratie oder Bourgeoisrepublik darf sich das Volk einzig und allein nur mit den Per: sonen (Rathswahlen) befassen, welche dann die Sachen (Geseze) machen und zwar nach ihrem eigenen Gutdünken, Vortheil und Vorurtheil.
+Die
+4
+Bourgeoisdemokraten wollen, daß nur sie das Volkregieren sollen zum Vortheil Weniger. Die Sozialdemokraten wollen, daß sich das Volk selbst regiere zum Vortheil Aller, dadurch, daß es die Gesezgebung in seine eigene Hand nimmt, ste selbst besorgt und nicht mehr besorgen 1 åßt, d.h. die Selbsthülfe in unbeschränktestem Maßstabe, also auch auf politischem Gebiete in Anwendung bringt.
+Die Weltgeschichte beweist zum Ueberfluß, daß das Geseh nur das geschriebene Interesse des Gesezgebers ist; prosaisch ausgedrückt kann man sagen, der Geist des Gesezes liegt im Bauch des Gesezgebers; die Quintessen z der Geseze wird durch den Geldsack der Gesezgeber bestimmt. Dies ist um so wahrer, wenn es sich nicht um einen Einzelnen, sondern um eine ganze Klasse, nicht um Einzeln, sondern um Klassenherrschaft handelt. Noch nie hat die ausbeutende Klasse die ausgebeutete emanzipirt, oder freiwillig für die lektere günstige Geseze erlassen. Erst wenn die ausgebeutete Klasse Meister im Staate wurde und die Gesezgebung selbst in die Hand nahm, wurde das Gesek in ihrem, d. h. dem mehr allgemeinen Interesse gemacht; erst dann konnte sie sich auch ihren sozialen Bedürfnissen entsprechend entfalten. Was aber vom dritten Stande, der Bourgeoiste gilt, ist nur um so wahrer, wenn es sich um den Arbeiterstand, um das ganze Volk handelt. Wie der chemische Keim, d. h. der innere Trieb einer Pflanze zum Gedeihen physischer Eigenthümlichkeiten, d. h. äußere Verhältnisse, wie günstiges Erdreich und Klima bedarf, so brauchen auch die innern, sozusagen chemischen Triebe der Gesellschaft, die sozialen Ideen, zu ihrer naturgemäßen Entfaltung, zu ihrem Emporkeimen im praktischen Leben eine eigenthümliche, physische Staatsform, d. kh günstige å u = ßere Verhältnisse und die sind ja eben die sozialdemokratischen Geseze, welche niemals von Fürsten oder Pfaffen (die den Himmel hienieden schon haben) gemacht werden können, sondern nur von den arbeiten den Massen, die eine solche soziale Umgestaltung, ein menschenwürs diges Dasein hienieden sehnlichst herbeiwünschen.
+Kein Heiland wird je das Volk erlösen, es muß sich selbst erlösen. Daher der allgemeine Drang der Völker Europa's nach Emanzipation; wie die Pflanze im dunkeln Gewölbe gegen das Kellerloch nach dem Sonnenlicht hinwächst, so strebt auch die Arbeiterwelt Europa's aus der dumpfen Monarchie an die lichte Demokratie. Das Volk wird in der Freiheit den rechten Weg zur sozialen Erlösung schon instinktmäßig fühlen, eben weil es die Leiden tagtäglich empfindet, die ihm den nöthigen Ans sporn auch geben, die Ursache und Abhülfe der Noth kennen zu lernen.
+Es wird im wahren Volksstaate, wo ihm durch die direkte Gesezgebung das Werkzeug zur permanenten Bewegung in die Hände gegeben ist und die Bahn zur ewigen friedlichen Revolution offen vor ihm liegt, nicht nach vorgefaßten Sozialtheorieen, sondern nach den sich praktisch fühlbar machenden Bedürfnissen neue Formen und Geseze schaffen und es wird, wie in der Schweiz durch den Bleistift und nicht mehr durch die Feuerwaffe, durch blutige Revolution, wie im despotischen Staat, seinen Willen zur Geltung bringen.
+Die Befürchtung, die idealen Errungenschaften der Menschheit werden im sozialdemokratischen Staate weniger gepflegt und gefördert, als in monarchischen oder repräsentativen Staatsformen, ist eine eitle; denn die Geschichte beweist, daß, jefreier ein Volk, desto opferwilliger ist es auch für Bildungszwecke, weil es einsieht, daß nicht der geisttödtende, unfruchtbare Glaube, sondern nur die geisteserhebende, befruchtende Wissenschaft die Welt erlösen kann. Gerade die direkte Gesezgebung durch das Volk ist die für Förderung der Volksbildung allergünstigste Staatsform, denn Jedermann hat ein Interesse daran, daß sein Nebenmensch, der ja zum Gesez auch etwas zu sagen hat, diese seine Stimme mit Bewußtsein abgebe, und vor allem werden die sogen. Gebildeten, welchen die direkte Gesezgebung durch das Volk vorkommt, wie ein moderner Einbruch der Barbaren, ein Untergehen aller Kultur, das allergrößte Interesse daran haben und willig die Hand dazu bieten, daß man die Masse unentgeltlich und dazu noch möglichst gutschule und die höheren Lehranstalten jedem Befähigten zugänglich seien. Uebrigens ist die direkte Gesezgebung an und für sich schon ein gewaltiges Bildungsmittel, weil das Volk durch sein naheliegendstes Interesse angeregt wird, sich Belehrung zu verschaffen, damit es trotzdem nicht noch von der sogen. höheren (Ver-) Bildung und juristischen Spizfindigkeiten übertölpelt und ausgebeutet werde. Seltsamerweise können gerade diese sog. Gebildeten, welche die direkte Gesezgebung für unfähig halten, die idealen Güter der Menschheit zu pflegen und daher dieselbe als einen Rückschritt bezeichnen, nicht genug die alten Griechen bewundern, als die Hauptträger der Zivilisation des Alterthums und denken wohl nicht daran, daß gerade die fortgeschrittensten aller Griechen, die Athener, direkte Gesezgebung durch das Volk, d. h. seine freien Bürger hatten und daß gerade diese Staatsform zur Entfaltung des attischen Geistes am wesent lichsten beitrug; denn mit der Unterdrückung dieser Staatsform, mit der Fremdherrschaft verschwanden auch die großen Geister. Die alten Germanen hatten auch direkte Gesezgebung durch das Volk in ähnlicher Organisation, wie sie sich noch durch lange Jahrhunderte in den kleinen LandsgemeindeKantonen der Schweiz erhalten hat. Die Germanen huldigten dem Staatsgrundsaz: Ieder freie Mann soll Gesekgeber, Wehr= mann und Richter sein.
+Sonderbarerweise konnten die geseyes-, kriegs- und rechts. kundigen Römer alle Völker der alten Welt unterjochen, nur gerade dieses, staatlich doch so zersplitterte Volk der Germanen nicht; warum? eben weil Volksgefeß gebung, Volkswehr und Volksgerichte in ihm zu Fleisch und Blut geworden und Männer erzeugt hatte, an deren Urkraft Roms Almacht zerschellte. Leider wurden im Laufe der Zeiten die Deutschen so einfältig, die römische Dreifaltigkeit (Gottvater, Sohn und h. Geist) der germanischen Dreieinigkeit (Ges sezgeber, Wehrmann und Richter in einer Person) vorzuziehen, und sie werden so lange von Pfaffen und Cäsaren mit glühenden Zangen gezwickt werden, bis ste die uralten germanischen Staatseinrichtungen; Volksgeset gebung, Volkswehr und Volksgericht wieder auf den Scheffel
+★
+6
+stellen. Die alte Demokratie, welche durch monarchischen Unverstand und Pfaffen glauben dem Volk entrissen worden, muß durch Vernunft und Wissenschaft wieder zurückerobert und zeitgemäß entwickelt werden. Jedermann muß wieder Gesetzgeber, Wehrmann und Richter werden; er muß diese Rechte und Pflichten zeitweise ausüben und zwar in eigner Person. Hier ist keine Arbeitstheilung, keine llebertragung an andere möglich, ohne der Knechtschaft zu verfallen. Verzichtet das Volk auf das Recht über Ge seze endgültig zu entscheiden, überläßt es diese Pflicht einem Einzigen oder nur Wenigen, so werden diese bald sich das Recht herausnehmen, die Geseze nur für sich und gegen das allgemeine Wohl zu machen. Ueberläßt das Volk die Vertheidigung seiner Rechte und seines Vaterlandes einer Anzahl ausschließlich hierzu Abgerichteter und Abgesonderter, so schafft es ein stehendes Heer, das furchtbarste Werkzeug in den Händen der Staatslenker, das jedesmal gegen sein Recht und seine Freiheit gebraucht wird, wenn die bürgerlichen Schafe etwa einmal unter der monarchischen Scheere widerspenstig werden. Ueberläßt das Volk das Recht und die Pflicht „Recht zu sprechen" ständigen Beamten, statt Gesch wornengerichten, so läuft es Gefahr, daß sich ein Bureaukratismus und eine Jur isterei einnistet und entwickelt, die es, weiß der Teufel! nach welch' fremdländischem, römischem „Recht" richtet, nur nicht nach dem in den Rechtsanschauungen des Volkes begründeten.
+Die kleine Schweiz, eingepfercht inmitten mächtiger Monarchieen, deren Bevölkerung hundertmal größer ist, hat sich troß der so verderblichen monar chischen Einflüsse, troß der Miasmen des Von-Gottes=Gnadenthums dennoch durch Jahrhunderte lang die urgermanische Gesundheit, die ewig wahren Grundsäze jener Germanen, vor denen das völkerknechtende Rom zitterte, zum Theil wenigstens bewahrt, vor allem denjenigen der Volksbewaffnung. Weil der Schweizerwehrmann immer Wehr und Waffe zu Hause, d. h. das bewaffnete Stimmrecht hatte, weil die Schweizer nie von einem stehenden Heere etwas wissen wollten, darum hat sich ihre Republik erhalten, darum konnte immer der erwachende Volksgeist sich leicht Bahn brechen.
+Mit aller Wucht, welche die historische Erinnerung aus dem germanischen Alterthum und aus der Heldenzeit der alten Eidgenossenschaft (wo das Volk auch in den großen Kantonen über wichtige Fragen wie: Krieg und Frieden, Reformation, Steuern 2c. befragt und seine Genehmigung oder Verwerfung eingeholt wurde) einer modernen Idee verleihen kann, bricht sich jeht im Schweizervolke die direkte Gesezgebung durch das Volk Bahn. Bereits besteht dieselbe in den größeren Kantonen der deutschen Schweiz, Bern, Thurgau, Graubünden, vor allem aber in 3 ürich zu Recht, in welch' lekterem Kanton sie am ausgeprägtesten und reinsten in der Verfassung festgestellt ist. Bereits beginnt die Bewegung, welche die
+1
+7
+direkte Gesezgebung durch das Volk auch auf die Bundes gesezgebung ausdehnen will und zwar in derartiger Form, wie dieselbe in den größten Staaten durch das Volk ausgeübt werden könnte.
+Schon die französische Konstitution von 1793, welche an ihrer Spihe die ewig denkwürdige Erklärung der Menschenrechte enthält, stellte die direkte Gesezgebung durch das Volk auf, wenn auch in unentwickelterer Gestalt, als wie sie heutzutage hervortritt, und zwar in der Form des sog. Veto, wo eine gewisse Anzahl von Simmberechtigten Einsprache erheben muß, e he die Abst i m = mung über das betreffende Gesez erfolgt..
+Art. 53 der französischen Verfassung von 1793 sagt;
+„Der gesetzgebende Körper schlägt Geseze vor (propose des lois".
+Art. 58. „Der Gesezes-Entwurf wird gedruckt und allen Gemeinden „der Republik zugeschickt unter dem Titel: Gesezes - Vorschlag (loi proposée)".
+Art. 59. Wenn 40 Tage nach Versendung des Gesekesvorschlages, in „der Hålste der Departemente, mehr eines, der zehnte Theil der „regelmäßig einberufenen Urversammlungen ni ch t reklamirt hat, ist der Ent„wurf angenommen und wird Gesez."
+Art. 60. „Erfolgt diese Reklamation, so hat der geseßgebende Körper „die Urversammlungen einzuberufen" (zum Zwecke der Gesezesabstimmung). Leider kam diese Verfassung nie zur Anwendung, da die Wucht der äußeren und inneren Bedrängnisse der jungen Republik eine friedliche Entwickelung nicht gestattete. Wie aber überhaupt im Völkerleben eine gute Idee nie verloren geht und kein Schritt zum Bessern umsonst gethan ist, schlummerten auch diese Ideen von 1793 tief im Herzen des französischen Volkes fort. Als nun die zweite Republik aus der Februarrevolution von 1848 hervorging und der Sozialdemokrat Nittinghausen von Köln die Idee der direkten Gesezgebung durch das Volk, deren Weiterentwickelung und Verbreitung er sich als Lebensaufgabe gestellt, in den Jahren 1850 und 51 in's französische Volk hineinwarf, zündeten diese Gedanken sofort und es brach eine mächtige Bewegung in den Geistern gegen den Repräsentativstaat hervor, die unfehlbar bald ihre guten Früchte getragen hätte, wenn nicht die schöne Blüthe durch den verheerenden Staatsstreich des „Gesellschaftsretters" Bonaparte geknickt worden wäre. - Es ist eben ein Verhängniß des Cäsarismus, daß das Gras verdorrt, wo er seinen Fuß aufseht. Aus dieser Wüste der Reaktion flüchtete sich der Samen auf die einzige noch übrig geblie bene republikanische Dase, auf Schweizerboden, wo er im gesunden Volksleben nach und nach tiefe Wurzeln faßte. Ieht da der Cäsarismus im Absterben ist und ein neues Frühlingswehen durch die Völker zieht, schießt auch der ausgestreute Same überall als reale Saat lebenskräftig aus dem Boden hervor und die seit langem keimende Idee der direkten Gesezgebung durch das Volk nimmt als Staatsform praktische Gestaltung an.
+Es versteht sich von selbst, daß die direkte Gesezgebung in größeren Staaten nicht auf dieselbe Weise ausgeübt werden kann, wie sie vormals
+auf öffentlichem Plaße zu Athen, in den Eichenhainen des alten Germaniens und noch heute in den Landsgemeindekantonen der Schweiz gehandhabt wird. Das Wesen, d. h. die Theilnahme an der Gesezgebung muß fortbestehn, nur die Form, in welcher die Theilnahme vollzogen wird, muß schwinden, muß eine ganz andere werden, weil auch die Verhältnisse andere, größere geworden sind, welche nicht mehr gestatten, daß das ganze Volk sich auf einem Punkte zur Berathung versammelt. linser Jahrhundert jedoch hat mit seinen großartigen Erfindungen die reine Demokratie auch im Großen vorbereitet und ermöglicht, dadurch daß sie weite Entfernungen beinahe aufgehoben, so daß ein großer Volkskörper durch Dampf und Telegra: phie so zusammenhängt, daß die Aeußerungen und Zuckungen der einzelnen Glieder sofort überall verspürt werden und zum Bewußtsein gelangen. Immerhin muß die alte ehrwürdige Form, weil zu eng, verlassen werden.
+Das Handmehrder Landsgemeinde, d.h. die offene Abstimmung muß, da ja Jedermann jekt schreiben kann, erseht werden durch die geheime Abstimmung in den Gemeinden vermittelst der Wahlurne, welche mehrere Stunden am Stimmsonntage offen bereit steht, so daß jeder Bürger seinen beschriebenen Stimmzettel zu der ihm gelegenen Zeit hineinwerfen kann. Es wird dadurch dem Einfluß des Kapitals, den ungebührlichen Zumuthungen der Arbeitgeber, wodurch die offene Stimmgebung nur zu oft getrübt wird, der Lebensfaden abgeschnitten. Der Arbeiter wird bei der geheimen Stimmgabe seinen Willen freier äußern können, als wenn er befürchten muß, wie dies bei der offenen Abstimmung nur zu oft der Fall ist, daß er die freie Aeußerung seiner politischen Ueberzeugung durch soziale Nachtheile (Entzug der Arbeit u. s. w.) zu büßen hätte.
+Die Berathung an der Landsgemeinde wird jest, da ja jeder lesen kann, ersetzt durch die gedruckten Erläuterungen zu den Geseyesvorschlägen, durch die Diskussion in den Zeitungen und durch freie Versamm lungen, wenn die Wichtigkeit der Gesekesvorlagen solche Besprechungen hervorrufen.
+Die Antragstellung in den Landsgemeindekantonen findet in größeren Staatsverbänden durch eine anders organisirte Volksinitiative (Vorschlagsrecht des Volkes) ihren Ausdruck; diese besteht darin, daß ein durch die Verfassung bestimmter Bruchtheil (etwa 1210 bis 1220) des Volkes einen Vorschlag macht, dieses sein Begehren durch ein hierzu gewähltes Komite in Gesezesform aufstellen und schließlich zur Volksabstimmung bringen kann.
+Die direkte Gesezgebung durch das Volk besteht somit namentlich aus zwei Elementen: einem anregenden und einem beschließenden, 1) aus dem Vorschlagsrecht des Volkes, auch Volksinitiative genannt,
+2) aus der Volksabstimmung über die Geseke, auch Referendum geheißen.
+Zwischen beiden funktionirt als regelmäßiges Organ der Rath, welcher zwar nicht mehr ein geseßgebender, sondern nur noch ein geseyesvorschla=
+9
+gender, d. h. ein bloßer Nathgeber ist, dessen Rath befolgt werden kann oder auch nicht.
+Der Rath ist auf diese Weise zwischen zwei Feuer gefeßt, die ihn beständig warm erhalten werden.
+Schlägt der Rath schlechte Geseze vor, (macht er Begehungssänden), so werden sie durch die Volks abstimmung (Referendum) vers worfen.
+Will der Rath keine guten Geseke vorschlagen (begeht er lluterlafsungssünden), so kommt die Volksinitiative und macht ihre Vorschläge.
+Die Volksinitiative kann sich beispielsweise im Kanton Zürich auf zweierlei Arten äußern:
+1. Wenn der 13te Theil des Volkes (in Zürich 5000 Initianten bei 65,000 Stimmberechtigten) einen Vorschlag macht, muß derselbe vor die Volksabstimmung gebracht werden.
+2. Wenn ein Einzelnereinen Vorschlag macht, dem 123 des Rathes beistimmt, muß ebenfalls durch das Volk darüber abgestimmt werden Somit sind im Kanton Zürich 1) 5000 Initianten, 2) Ein Einzelner, dem 123 der Mitglieder des Kantonsra thes zustimmt,
+3) Der Kantonsrath selbst (aus etwa 220 Mitgliedern bestehend),
+alle drei gleich berechtigt, Vorschläge an das Volk zur Abstimmung zu bringen; nur ist der Rath das gewöhnliche Organ; die zwei andern Organe aber die außergewöhnlichen, die bloß in Thätigkeit kommen, wenn das gewöhnliche la hm wird.
+Wir lassen nun zum besseren Verständniß die Artikel über Initiative und Referendum aus der Zürcher-Verfassung folgen, welche mit folgenden Worten beginnt :
+„Das Volk des Kantons Zürich gibt sich kraft seines
+Selbstbestimmungsrechtes folgende Verfassung":
+III. Gesezgebung und Volksvertretung
+Art. 28.
+„Das Volk übt die geseßgebende Gewalt unter Mitwirkung des Kan
+„tonsrathes aus.
+A. Vorschlagsrecht des Volkes.
+Art. 29.
+„Das Vorschlagsrecht der Stimmberechtigten (Initiative) umfaßt das „Begehren nach Erlaß, Aufhebung oder Abänderung eines Gesezes oder ver„fassungsmäßig nicht ausschließlich in die Befugniß des Kantonsrathes fal„lenden Beschlusses. Derartige Begehren können in der Form der einfachen
+„Anregung oder des ausgearbeiteten Entwurses gestellt werden und sind im „einen wie im andern Falle zu begründen.
+„Wenn ein einzelner oder eine Behörde ein solches Begehren stellt, wel,ches von einem Drittheile der Mitglieder des Kantonsrathes unterstützt wird, „so muß über dasselbe durch das Volk entschieden werden. Dem Antragstel „ler oder dem Abgeordneten der antragstellenden Behörde steht das Recht der „persönlichen Begründung im Schooße des Kantonsrathes zu, insofern 25 „Mitglieder des Kantonsrathes das Gesuch um persönliche Begründung un„terstüßen.
+„Ebenso muß der Volksentscheid veranlaßt werden, wenn 5000 Stimm„berechtigte oder eine Anzahl von Gemeindeversammlungen, an denen wenig„stens 5000 Stimmberechtigte dafür gestimmt haben, ein solches Begehren „stellen, insofern der Kantonsrath denselben nicht entspricht. Eine rechtzeitig „eingereichte Anregung soll spätestens in der zweitfolgenden regelmäßigen „Volksabstimmung dem Volke zum Entscheide vorgelegt werden.
+„Die Anregung, beziehungsweise der Entwurf, ist vor der Abstimmung „immer dem Kantonsrathe zu begutachtender Beschlußfassung zu unterbreiten.
+„Für den Fall, daß ein von der Volksinitiative ausgegangener Ge„sebesentwurf zur Abstimmung gelangt, kann der Kantonsrath dem Volke „außer seinem Gutachten auch einen abgeänderten Entwurf zur Entscheidung „vorlegen".
+B. Volksabstimmung.
+Art. 30.
+„Aljährlich zwei Mal, im Frühjahr und im Herbst, findet die Abstim,,mung des Volkes über die gesesgeberischen Akte des Kantonsrathes statt ,,(Referendum). In dringenden Fällen kann dieser eine außerordentliche Ab,,stimmung anordnen.
+,,Der Volksabstimmung sind zu unterstellen:
+,,1) alle Verfassungsänderungen, Geseze und Konkordate;
+,,2) diejenigen Beschlüsse des Kantonsrathes, welche derselbe nicht
+,,endgültig zu fassen befugt ist (s. Art. 31);
+,,3) Schlußnahmen, welche der Kantonsrath von sich aus zur Ab
+,,stimmung bringen will.
+,,Der Kantonsrath ist berechtigt, bei der Vorlage eines Gesezes oder Be,,schlusses neben der Abstimmung über das Ganze ausnahmsweise auch eine „solche über einzelne Punkte anzuordnen.
+„Die Abstimmung findet mittelst der Stimmurne in den Gemeinden statt. „Die Betheiligung hieran ist eine allgemeine Bürgerpflicht.
+,,„Die Volksabstimmung kann nur bejahend oder verneinend sein.
+„Bei derselben entscheidet die absolute Mehrheit der bejahenden und ver
+,,neinenden Stimmen.
+„Der Kantonsrath ist nicht befugt, Geseze oder Beschlüsse vor der Ab,,stimmung provisorisch in Kraft zu sehen.
+„Alle zur Volksabstimmung gelangenden Vorlagen sind spätestens dreißig
+„Tage vor derselben zu veröffentlichen und den Stimmberechtigten einzu„händigen
+C. Kantonsrath.
+Art. 31.
+,,„Dem Kantonsrath kommt zu :
+1. die Berathung und Beschlußfassung über alle Gegenstände, welche
+,,der Volksabstimmung unterstellt werden;
+2.
+3.
+4. dielleberwachung der gesammten Landesverwaltung und der Rechtspflege
+„5. die endgültige Entscheidung über neue einmalige Ausgaben für „einen bestimmten Zweck, welche den Betrag von 250,000 Franken nicht „übersteigen, sowie über neue jährlich wiederkehrende Ausgaben bis auf den „Betrag von 20,000 Franken;
+10
+6. Die Festsetzung des jährlichen Voranschlages der Einnahmen und „Ausgaben des Staatshaushaltes nach Maßgabe der bestehenden Geseze „und Beschlüsse.
+„7. die Prüfung der Staatsrechnung...''
+Wir möchten nicht behaupten, daß obige Artikel in allen Theilen das durchaus Richtige getroffen hätten und so zu sagen als unfehlbares Schema aufgestellt seien. Die Mannigfaltigkeit der individuellen Anschauungen wird da und dort Mängel herausfinden. Allein diese Artikel verdienen als erster ernsthafter Versuch insofern alle Beachtung, als sie ein Gesammtwerk sind, eine aus den Berathungen und Abstimmungen eines ganzen Volkes hervorgegangene neue Staatsform, in welcher sich die Gesammtheit nach ihren fortschreitenden Bedürfnissen ungehemmt entwickeln kann.
+Wir leben der Ueberzeugung, daß die direkte Gesezgebung durch das Volk durch die Institutionen der Volksinitiative und Volks abstimmung über Geseze in den größten Staaten eingeführt werden kann und muß, und daß die sozialen Fragen ohne diese politischen Einrichtungen nicht gelöst werden können.
+Die Sektion Zürich hält sich daher für ebenso verpflichtet, als berechtigt, die Idee der direkten Gesezgebung durch das Volk vor das Forum des internationalen Arbeiterbundes zu bringen, in der Ueberzeugung, daß diese Idee, wie die ewig denkwürdige Erklärung der Menschenrechte, als wirksamstes Mittel zur Verwirklichung dieser sozialen Rechte ihren Weg um den Erdkreis machen wird.
+Sie stellt deßhalb folgenden Antrag :
+12
+Der Kongreß des internationalen Arbeiterbundes
+In Erwägung:
+in Basel.
+daß das Gesez das geschriebene Juteresse des Gesezßgebers ist;
+daß bei der Gesezgebung das Interesse der Gesammtheit naturgemäß maß. gebend sein soll;
+daß erfahrungsgemäß Repräsentativkörper mehr das Kapital als die Arbeit repräsentiren, und daher in der Regel die Geseze aus Kosten der arbei tenden Massen zu Gunsten des Kapitals gemacht werden;
+daß nur durch direkte Betheiligung an der Gesezgebung im Volke das politisch-soziale Bewußtsein durchdringen kann, welches die erste Vorbedingung zur Lösung der sozialen Fragen ist;
+beschließt:
+Es sei eine Hauptaufgabe der arbeitenden Klassen dahin zu wirken, daß die sozial-demokratische Republik verwirklicht werde, in welcher die Gesezgebung direkte durch das Volk ausgeübt wird. Alles für das Volk und alles durch das Volk!
+Direkte Gesetzgebung durch das Volk
+.frontmatter_header {
+font-size:1.2em;
+font-weight:bold
+;}
+.frontmatter_body {
+font-size:1em;
+}
+About this Book - From Google
+This is a digital copy of a book that was preserved for generations on library
+shelves before it was carefully scanned by Google as part of a project to make
+the world's books discoverable online. It has survived long enough for the
+copyright to expire and the book to enter the public domain. A public domain
+book is one that was never subject to copyright or whose legal copyright term
+has expired. Whether a book is in the public domain may vary country to
+country. Public domain books are our gateways to the past, representing a
+wealth of history, culture and knowledge that's often difficult to discover.
+Marks, notations and other marginalia present in the original volume may appear
+in this file - a reminder of this book's long journey from the publisher to a
+library and finally to you.
+Google Book Search has digitized millions of physical books and made them
+available online at the Google Books web site. The digitization at
+the most basic level is based on page images of the
+physical books. To make this book available as an ePub formated file we have
+taken those page images and extracted the text using Optical Character
+Recognition (or OCR for short) technology. The extraction of text from page
+images is a difficult engineering task. Smudges on the physical books' pages,
+fancy fonts, old fonts, torn pages, etc. can all lead to errors in the
+extracted text. Imperfect OCR is only the first challenge in the ultimate goal
+of moving from collections of page images to extracted-text based books. Our
+computer algorithms also have to automatically determine the structure of the
+book (what are the headers and footers, where images are placed, whether text
+is verse or prose, and so forth). Getting this right allows us to render the
+book in a way that follows the format of the original book.
+Despite our best efforts you may see spelling mistakes, garbage characters,
+extraneous images, or missing pages in this book. Based on our estimates, these
+errors should not prevent you from enjoying the content of the book. The
+technical challenges of automatically constructing a perfect book are daunting,
+but we continue to make enhancements to our OCR and book structure extraction
+technologies.
+We hope you'll enjoy these books as much as we do.
+Usage guidelines
+Google is proud to partner with libraries to digitize public domain
+materials and make them widely accessible. Public domain books belong
+to the public and we are merely their custodians. Nevertheless, this
+work is expensive, so in order to keep providing this resource, we
+have taken steps to prevent abuse by commercial parties, including
+placing technical restrictions on automated querying.
+We also ask that you:
+Make non-commercial use of the files: We designed Google Book
+Search for use by individuals, and we request that you use these files
+for personal, non-commercial purposes.
+Refrain from automated querying: Do not send automated queries
+of any sort to Google's system: If you are conducting research on
+machine translation, optical character recognition or other areas
+where access to a large amount of text is helpful, please contact
+us. We encourage the use of public domain materials for these purposes
+and may be able to help.
+Maintain attribution: The Google "watermark" you see on
+each file is essential for informing people about this project and
+helping them find additional materials through Google Book Search.
+Please do not remove it.
+Keep it legal: Whatever your use, remember that you are responsible
+for ensuring that what you are doing is legal. Do not assume that
+just because we believe a book is in the public domain for users in
+the United States, that the work is also in the public domain for
+users in other countries. Whether a book is still in copyright varies
+from country to country, and we can't offer guidance on whether any
+specific use of any specific book is allowed. Please do not assume
+that a book's appearance in Google Book Search means it can be used
+in any manner anywhere in the world. Copyright infringement liability
+can be quite severe.
+About Google Book Search
+Google's mission is to organize the world's information and to make
+it universally accessible and useful. Google Book Search helps readers
+discover the world's books while helping authors and publishers reach
+new audiences.
