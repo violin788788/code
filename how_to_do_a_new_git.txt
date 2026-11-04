@@ -1,8 +1,26 @@
 
+delete .git that is already in directory
+you might have to create the repo on github too, just new repo, but it is empty
+
+paste code in lines below and click enter, it will ask for username and token (token = password)
+ 
+------------------------------------------------------------------------------------------
+
+git init
+git checkout -b main
+git remote add origin https://github.com/violin788788/__repo_name___.git"
+git add -A
+git commit -m "Remove unwanted files and directories, and add/modify other changes"
+git push origin main --force
+
+------------------------------------------------------------------------------------------
+
+username = violin788788
+password = token
 
 
 
----------how to do a new git-----------
+if fails for no reason - try this junk -  how to do a new git
 
 create git
 git init
@@ -33,3 +51,13 @@ remove tracking
 git rm --cached .lesshst
 
 
+
+
+git remote add origin https://github.com/violin788788/code.git"
+
+
+git remote add origin https://github.com/violin788788/"+"code"+".git"
+
+Oakoakoak1!
+
+Oakoakoak1!
