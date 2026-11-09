@@ -44,11 +44,11 @@ if system_type=="Linux":
 github_repo=f"https://github.com/violin788788/{directory_name}"
 python_anywhere_console = "https://www.pythonanywhere.com/user/info34/consoles/"
 
+"""
 open_browser_to_url("chrome", 64,2,github_repo)
 open_browser_to_url("chrome", 64,2,python_anywhere_console)
 
-print("")
+"""
 print("")
 print("don't forget to run python git-pull.py on python anywhere console")
-print("")
 print("")
