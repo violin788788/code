@@ -15,13 +15,16 @@ files = os.listdir(cwd)
 
 from pathlib import Path
 import shutil
-directory = "rename"
+directory = "rac2"
 directory_files = os.listdir(directory)
+start = 200
+
+print("click any button to confirm correct directory = ",directory)
+input()
+
 for a in range(0,len(directory_files)):
     print(directory_files[a])
 print(directory_files)
-
-start = 3000
 
 for a,val in enumerate(directory_files):
     old_file = os.path.join(directory,val)

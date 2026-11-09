@@ -8,7 +8,7 @@ paste code in lines below and click enter, it will ask for username and token (t
 
 git init
 git checkout -b main
-git remote add origin https://github.com/violin788788/__repo_name___.git"
+git remote add origin https://github.com/violin788788/code.git"
 git add -A
 git commit -m "Remove unwanted files and directories, and add/modify other changes"
 git push origin main --force

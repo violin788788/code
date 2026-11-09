@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "record_new.py"
+python "record.py"
 pause
