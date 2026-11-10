@@ -55,7 +55,8 @@ if not out.isOpened():
     raise Exception("Could not create output video.")
 
 start_frame=0
-end_frame=100
+#end_frame=100
+end_frame=50
 
 for frame_number in range(total_frames):
     #print("Doing frame",frame_number,"of",total_frames)

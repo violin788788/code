@@ -15,9 +15,9 @@ files = os.listdir(cwd)
 
 from pathlib import Path
 import shutil
-directory = "rac2"
+directory = "new2"
 directory_files = os.listdir(directory)
-start = 200
+start = 0
 
 print("click any button to confirm correct directory = ",directory)
 input()
