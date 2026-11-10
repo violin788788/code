@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-python "boot.py"
+python "browse.py"
 pause

@@ -43,10 +43,8 @@ print("FPS:",fps)
 print("Resolution:",width,"x",height)
 print("Total frames:",total_frames)
 #out_file="output.mp4"
-
 name_rep_file = Path(replacement).name
 name_mp4_file = Path(mp4_file).name
-
 out_file= name_rep_file[0:name_rep_file.find(".")]+"_"+name_mp4_file
 print("out_file",out_file)
 fourcc=cv2.VideoWriter_fourcc(*"mp4v")
@@ -54,9 +52,13 @@ out=cv2.VideoWriter(out_file,fourcc,fps,(width,height))
 if not out.isOpened():
     raise Exception("Could not create output video.")
 
+
+
 start_frame=0
 #end_frame=100
-end_frame=50
+end_frame=70
+
+
 
 for frame_number in range(total_frames):
     #print("Doing frame",frame_number,"of",total_frames)
