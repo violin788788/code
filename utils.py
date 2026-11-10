@@ -21,7 +21,7 @@ def read_txt(file_path):
 
 def open_browser_to_url(browser, bits,wait_time,url):
     #open_browser_to_url("firefox", 64,2,"www.pythonanywhere.com")
-    drive = "B:"
+    drive = "A:"
     if bits == 32:
         program_files = "Program Files (x86)"
     elif bits == 64:
