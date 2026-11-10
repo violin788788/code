@@ -43,8 +43,10 @@ if system_type=="Linux":
     sys.exit()
 github_repo=f"https://github.com/violin788788/{directory_name}"
 python_anywhere_console = "https://www.pythonanywhere.com/user/info34/consoles/"
+github_url = "https://github.com/violin788788/code"
+subprocess.Popen(f'start chrome --incognito {github_url}', shell=True)
 
-open_browser_to_url("chrome", 64,2,"https://github.com/violin788788/code")
+#open_browser_to_url("chrome", 64,2,"https://github.com/violin788788/code")
 
 #open https://github.com/violin788788/code
 
