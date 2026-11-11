@@ -81,8 +81,9 @@ for frame_number in range(total_frames):
         result=cv2.resize(result,(width,height))
     out.write(result)
     end_time = datetime.now()
+    time_difference = end_time-start_time
     time_difference = time_difference.total_seconds()
-    time_difference_string = "time to generated = "+str(time_difference)
+    time_difference_string = str(time_difference)+" seconds to generate frame"
     print(start_frame,frame_number,end_frame,time_difference_string)
     
 cap.release()
