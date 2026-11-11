@@ -6,7 +6,6 @@ root.withdraw()
 frames_dir = filedialog.askdirectory(title="Select folder")
 root.destroy()
 
-
 import sys
 sys.path.insert(0, r"A:\Users\-\code")
 from utils import *
@@ -21,8 +20,6 @@ def show(value):
 drive = os.path.splitdrive(os.getcwd())[0]
 cwd = os.getcwd()
 files = os.listdir(cwd)
-
-
 
 import cv2
 import os

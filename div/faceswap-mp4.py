@@ -5,6 +5,7 @@ import os
 import time
 import cv2
 import insightface
+from datetime import datetime
 root=tk.Tk()
 root.withdraw()
 mp4_file=filedialog.askopenfilename(title="Select MP4 video",filetypes=[("MP4 files","*.mp4"),("All files","*.*")])
@@ -61,13 +62,14 @@ end_frame=70
 
 
 for frame_number in range(total_frames):
+    start_time = datetime.now()
     #print("Doing frame",frame_number,"of",total_frames)
     ret,target=cap.read()
     if not ret:
         print("Could not read frame",frame_number)
         break
     if start_frame<=frame_number<=end_frame:
-        print(start_frame,frame_number,end_frame)
+        #print(start_frame,frame_number,end_frame,time_difference_string)
         target_faces=app.get(target)
         if target_faces:
             result=swapper.get(target,target_faces[0],source_faces[0],paste_back=True)
@@ -78,6 +80,11 @@ for frame_number in range(total_frames):
     if result.shape[1]!=width or result.shape[0]!=height:
         result=cv2.resize(result,(width,height))
     out.write(result)
+    end_time = datetime.now()
+    time_difference = time_difference.total_seconds()
+    time_difference_string = "time to generated = "+str(time_difference)
+    print(start_frame,frame_number,end_frame,time_difference_string)
+    
 cap.release()
 out.release()
 print("")
