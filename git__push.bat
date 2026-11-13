@@ -1,3 +1,3 @@
 @echo off
-python git__push.py
+python git__push_code.py
 pause

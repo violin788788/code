@@ -15,6 +15,10 @@ files = os.listdir(cwd)
 
 import screen_brightness_control as sbc
 
+# Get the current brightness level (returns a percentage or list of percentages)
+current_brightness = sbc.get_brightness()
+print(f"Current screen brightness is: {current_brightness}%")
+
 brightness = int(input("what level of brightness do you want?(i.e. 30 for 30%, 70 for 70%..)= "))
 sbc.set_brightness(brightness)
 
