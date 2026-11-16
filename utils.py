@@ -1,6 +1,7 @@
 #from utils import *
 import sys,os,math,subprocess
 import sys,pyperclip,time,pyautogui
+import pygetwindow as gw
 """
 def show(value):
     #show(epub_file)
@@ -85,3 +86,19 @@ def paste_text(text):
     pyperclip.copy(text)
     pyautogui.hotkey("ctrl", "v")  
     #pyautogui.press('enter') 
+
+
+def nav_to_window(window_iden):
+  #nav_to_window("cmd")
+  # Find all windows that contain "Play Books" in their title
+  windows = gw.getWindowsWithTitle(window_iden)
+  if windows:
+      # Select the first matching window
+      play_books_window = windows[0]
+      # Unminimize if it's minimized, then bring to the front
+      if play_books_window.isMinimized:
+          play_books_window.restore()
+      play_books_window.activate()
+      print(f"Navigated to: {play_books_window.title}")
+  else:
+      print("No window with "+window_iden+" found.")

@@ -14,6 +14,7 @@ cwd = os.getcwd()
 files = os.listdir(cwd)
 
 import subprocess
+import pygetwindow as gw
 
 # Define the URL
 url = "https://info34.pythonanywhere.com"
@@ -21,6 +22,10 @@ url = "https://info34.pythonanywhere.com"
 # Windows command (uses 'start chrome' to locate the executable automatically)
 subprocess.Popen(f'start chrome --incognito --new-window {url}', shell=True)
 subprocess.Popen(f'start chrome --incognito --new-window {url}', shell=True)
+time.sleep(2)
+nav_to_window("cmd")
+time.sleep(4)
+pyautogui.press("enter")
 
 # Mac command (uncomment if using macOS)
 # subprocess.Popen(['open', '-na', 'Google Chrome', '--args', '--incognito', url])
