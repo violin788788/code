@@ -57,11 +57,23 @@ if not out.isOpened():
 
 start_frame=0
 #end_frame=100
-end_frame=70
+end_frame=100
+every_how_many_frames = 2 
+frames_to_convert = (end_frame-start_frame)/every_how_many_frames
+est_time_minutes = frames_to_convert*10/60
 
+print("start_frame",start_frame)
+print("end_frame",end_frame)
+print("every_how_many_frames",every_how_many_frames)
+print("frames to convert",frames_to_convert)
+print("est_time_minutes",est_time_minutes)
 
-
+skip_count = 0
 for frame_number in range(total_frames):
+    skip_count = skip_count+1
+    if skip_count==every_how_many_frames:
+        skip_count=0
+        continue
     start_time = datetime.now()
     #print("Doing frame",frame_number,"of",total_frames)
     ret,target=cap.read()
@@ -86,6 +98,7 @@ for frame_number in range(total_frames):
     time_difference_string = str(time_difference)+" seconds to generate frame"
     print(start_frame,frame_number,end_frame,time_difference_string)
     
+
 cap.release()
 out.release()
 print("")
