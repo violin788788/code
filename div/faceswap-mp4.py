@@ -126,7 +126,10 @@ for frame_number in range(total_frames):
     frames_written += 1
 
     time_difference = (datetime.now() - start_time).total_seconds()
-    print(f"Range [{start_frame}-{end_frame}] | Frame {frame_number} | {time_difference:.2f}s to generate")
+    frames_left = int((end_frame-frame_number)/every_how_many_frames)
+    est_time_left = "estimted time left = "+str(int(frames_left*7/60))
+
+    print(f"Range [{start_frame}-{end_frame}] | Frame {frame_number} | {time_difference:.2f}s to generate",est_time_left)
 
 # 6. Cleanup & Summary
 cap.release()
