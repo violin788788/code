@@ -71,7 +71,7 @@ print("Total frames:", total_frames)
 # Frame range & skipping settings
 start_frame = 0
 end_frame = min(500, total_frames - 1)  # Prevents exceeding total frames
-every_how_many_frames = 3
+every_how_many_frames = 10
 
 frames_to_convert = ((end_frame - start_frame) // every_how_many_frames) + 1
 est_time_minutes = (frames_to_convert * 10) / 60
